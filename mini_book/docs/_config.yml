@@ -1,0 +1,45 @@
+#######################################################################################
+# Book settings
+title : SATAY DATA ANALYSIS 
+author: Gregory van Beek  
+copyright : GPL License 3.0
+logo: 'Greg.png'
+
+# Information about where the book exists on the web
+description: >-
+ A book to visualize all the SATAY analysis workflow, in order to reuse it in the lab. 
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks           : auto
+
+#######################################################################################
+# HTML-specific settings
+html:
+  home_page_in_navbar       : true
+  navbar_number_sections    : true  # Add a number to each section in your left navbar
+  favicon                   : Greg.png
+  extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
+  extra_footer              : ""  # Will be displayed underneath the footer.
+  google_analytics_id       : ""  # A GA id that can be used to track book views.
+
+# #######################################################################################
+# Interact link settings
+notebook_interface            : "notebook"
+
+#######################################################################################
+# Launch button settings
+repository:
+  url                         : https://github.com/leilaicruz/SATAY-jupyter-book
+  path_to_book                : mini_book/docs/_build/html
+  branch                      : gh-pages 
+
+binder:
+  binderhub_url               : "https://mybinder.org/"
+  text                        : "Launch binder"
+
+latex:
+  latex_engine                : "xelatex"
+
+launch_buttons:
+  thebelab                  : true

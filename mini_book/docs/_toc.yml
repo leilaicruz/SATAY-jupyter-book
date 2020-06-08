@@ -1,0 +1,14 @@
+# - file: README
+
+- file: README
+- header: Get started
+- file: MysT_Notebooks
+- header : SATAY general Documentation
+- file : Installation_Guide_SATAY_Analysis_Software
+- file : satay_analysis_notes
+- file: General-satay-description-files/
+- header: Git Bash Preprocessing of the Sequencing data
+# - file: SATAY_Analysis_Workflow_gitbash
+
+    # - file: python_by_example
+    # - file: learn_more
