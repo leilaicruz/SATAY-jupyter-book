@@ -4,11 +4,10 @@
 - header: Get started
 - file: MysT_Notebooks
 - header : SATAY general Documentation
-- file : Installation_Guide_SATAY_Analysis_Software
-- file : satay_analysis_notes
-- file: General-satay-description-files/
+# - file : General-satay-description-files/Installation_Guide_SATAY_Analysis_Software
+# - file : General-satay-description-files/satay_analysis_notes
+# - file: General-satay-description-files/
 - header: Git Bash Preprocessing of the Sequencing data
-# - file: SATAY_Analysis_Workflow_gitbash
+#- file: fitness_vs_transposon_density_essentiality_annotated
 
-    # - file: python_by_example
-    # - file: learn_more
+

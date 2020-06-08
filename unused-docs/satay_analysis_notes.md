@@ -1,29 +1,5 @@
----
-title: "Notes and Workflow for SATAY analysis"
-output: pdf_document
-documentclass: article
-classoption: onecolumn
-pdf_document:
-pdf-engine: pdflatex
-toc: true
-lof: False
-numberSections: true
-highlight: tango
-sectionsDepth: 3
-chapters: True
-figPrefix:
-  - "Fig."
-  - "Figs."
-secPrefix:
-  - "Section"
-  - "Sections"
-fontsize: 11pt
-geometry: margin=2.5cm
-autoEqnLabels: true
-cref: true
-crossref: true
-colorlinks: true
----
+
+
 # Summary
 
 This file discusses the general outline of the experiments and interpretation of experiments using SAturated Transposon Analysis in Yeast (SATAY).
@@ -204,7 +180,7 @@ Since the sequence of the transposon is known, the part of the gene can be extra
 This is repeated for the other half of the transposon that includes the other part of the gene.
 When both parts of the gene are known, the sequence from the original gene can be determined.
 
-![Schematic overview of transposon insertion experiments.](./media/satay_experiment_overview.png)
+<!-- ![Schematic overview of transposon insertion experiments.](./media/satay_experiment_overview.png) -->
 
 ## Sequence alignment
 
@@ -1323,7 +1299,7 @@ Segal, E. S., Gritsenko, V., Levitan, A., Yadav, B., Dror, N., Steenwyk, J. L., 
 
 Usaj, M., Tan, Y., Wang, W., VanderSluis, B., Zou, A., Myers, C. L., ... & Boone, C. (2017). TheCellMap. org: A web-accessible database for visualizing and mining the global yeast genetic interaction network. G3: Genes, Genomes, Genetics, 7(5), 1539-1549
 
-\pagebreak
+
 
 > ***"I want to be a healer, and love all things that grow and are not barren"***
 > - J.R.R. Tolkien

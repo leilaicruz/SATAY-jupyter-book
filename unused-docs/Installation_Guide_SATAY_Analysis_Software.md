@@ -1,29 +1,16 @@
 ---
-title: " Software installation guide for whole genome sequencing and transposon mapping"
-output: pdf_document
-documentclass: article
-classoption: onecolumn
-pdf_document:
-latex_engine: pdflatex
-toc: true
-lof: False
-numberSections: true
-highlight: tango
-sectionsDepth: 3
-chapters: True
-figPrefix:
-  - "Fig."
-  - "Figs."
-secPrefix:
-  - "Section"
-  - "Sections"
-fontsize: 11pt
-geometry: margin=0.5in
-autoEqnLabels: true
-cref: true
-crossref: true
-colorlinks: true
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.4.1+dev
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
 ---
+
 ## Introduction
 
 This file discusses the installation procedures for the programs required for whole genome sequencing analysis and transposon mapping. The numbering corresponds with the order in which this software is used.
