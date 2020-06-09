@@ -93,7 +93,7 @@ df_transposon_fitness=defaultdict(dict)
 ```
 ## Big for loop to associate fitness values to essential and non essential genes 
 
-```{python} 
+```{note}
 for i in data_transposon['Gene_name']:
     if len(data_fitness_sga[data_fitness_sga['query-allele-name']==i])!=0:
         df_transposon_fitness['gene-merge'][i]=i
