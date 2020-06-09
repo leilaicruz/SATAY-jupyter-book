@@ -3,12 +3,13 @@
 - file: README
 - header: Get started
 - file: MysT_Notebooks
-- header : SATAY general Documentation
-- file: MysT_Notebooks
+# - header : SATAY general Documentation
+# - file: MysT_Notebooks
 # - file : General-satay-description-files/Installation_Guide_SATAY_Analysis_Software
 # - file : General-satay-description-files/satay_analysis_notes
 # - file: General-satay-description-files/
-- header: Git Bash Preprocessing of the Sequencing data
+# - header: Git Bash Preprocessing of the Sequencing data
+- header: Postprocessing scripts
 - file: fitness_vs_transposon_density_essentiality_annotated
 
 
