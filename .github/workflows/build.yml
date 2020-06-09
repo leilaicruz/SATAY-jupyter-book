@@ -24,7 +24,8 @@ jobs:
 
       - name: Clean Jupyter_book
         shell: bash -l {0}
-        run: jupyter-book clean --all mini_book/docs/
+        run: jb clean mini_book/docs/
+        
 
       - name: Install jupyter_book
         shell: bash -l {0}
