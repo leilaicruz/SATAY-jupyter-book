@@ -66,7 +66,7 @@ data_fitness_sga=pd.read_excel(r"C:\Users\gregoryvanbeek\Documents\Gene_Database
 
 ```
 
-```{note} 
+```python
 data_fitness_sga.columns=['query-strain','query-allele-name','array-strain','array-allele-name','array-type','score','p-value','query-fitness','array-fitness','double-fitness','double-fitness-std']
 ```
 
@@ -82,7 +82,7 @@ data_transposon=data_transposon.apply(lambda x: x.astype(str).str.lower()) # mak
 
 ## Transform back these columns into float variables
 
-```{note} 
+```python
 - data_transposon['Transposon_density_per_gene']=data_transposon['Transposon_density_per_gene'].apply(lambda x: (float(x)))
 - data_transposon['Read_density_per_gene']=data_transposon['Read_density_per_gene'].apply(lambda x: (float(x)))
 ```
@@ -93,7 +93,7 @@ df_transposon_fitness=defaultdict(dict)
 ```
 ## Big for loop to associate fitness values to essential and non essential genes 
 
-```{note}
+```python
 for i in data_transposon['Gene_name']:
     if len(data_fitness_sga[data_fitness_sga['query-allele-name']==i])!=0:
         df_transposon_fitness['gene-merge'][i]=i
@@ -130,7 +130,7 @@ known_essential_gene_list = list_known_essentials([r"C:\Users\gregoryvanbeek\Doc
 aliases_designation_dict, aliases_sgd_dict, aliases_swissprot_dict = gene_aliases(r"C:\Users\gregoryvanbeek\Documents\Gene_Database\Yeast_Protein_Names.txt")
 ```
 
-```{note}
+```python
 essential_counter = 0
 for n in range(df_transposon_fitness_filtered.shape[0]):
     gene_inDF = df_transposon_fitness_filtered['gene-merge'][n].upper()
@@ -155,7 +155,7 @@ for n in range(df_transposon_fitness_filtered.shape[0]):
 print('Number of essential genes found = ',essential_counter)
 ```
 
-```{note}
+```python
 df_transposon_fitness_filtered_renamed = df_transposon_fitness_filtered.rename(columns={'essential-by-benoit': 'annotated-essentials'})
 df_transposon_fitness_filtered_ordered = df_transposon_fitness_filtered_renamed.sort_values(by=['annotated-essentials'], ascending=True)
 sns.scatterplot(x='transposon-density' ,y='fitness-SGA',hue='annotated-essentials', data=df_transposon_fitness_filtered_ordered,palette=['green','red'],alpha=0.6, linewidth=0)
