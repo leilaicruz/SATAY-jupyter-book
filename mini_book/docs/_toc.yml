@@ -9,6 +9,6 @@
 # - file : General-satay-description-files/satay_analysis_notes
 # - file: General-satay-description-files/
 - header: Git Bash Preprocessing of the Sequencing data
-#- file: fitness_vs_transposon_density_essentiality_annotated
+- file: fitness_vs_transposon_density_essentiality_annotated
 
 

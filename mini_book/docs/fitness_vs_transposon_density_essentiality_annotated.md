@@ -1,6 +1,19 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.4.1+dev
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 
-```{code-cell}
-'''
+# Fitness vs Transposon density . Is there a fitness difference between low density and high density? 
+
+```{note}
 This script reads:
 - 'Data-fitness.xlsx'
 - 'transposon-density-per-gene-benoit.xlsx'.
@@ -17,61 +30,63 @@ All genes that are used to create the plot are searched for is they are annotate
 This is also done for any potential aliases the genes might have.
 
 This code is a part from 'fitness_vs_transposon_density.py' created by Leila.
-'''
+
 ```
 
 ```{code-cell}
-#import numpy as np
-#import scipy.io
+import numpy as np
+import scipy.io
 import seaborn as sns
-#from scipy import stats, optimize, interpolate
+from scipy import stats, optimize, interpolate
 import pandas as pd
 from collections import defaultdict 
-#import math
+import math
 import matplotlib.pyplot as plt
-#from scipy.stats import norm, lognorm
-#from scipy import stats
-#import matplotlib.cm as cm
-#import matplotlib.mlab as mlab
-#import os, fnmatch
+from scipy.stats import norm, lognorm
+from scipy import stats
+import matplotlib.cm as cm
+import matplotlib.mlab as mlab
+import os, fnmatch
 import sys
-#SET PATH TO PYTHON MODULES (r"N:\tnw\BN\LL\Shared\Gregory\Python\Python_modules")
+```
+```{admonition} Implement this in a self consistent matter!
+SET PATH TO PYTHON MODULES (r"N:\tnw\BN\LL\Shared\Gregory\Python\Python_modules")
 sys.path.insert(1,r"C:\Users\gregoryvanbeek\Documents\Python Scripts\Python_modules")
 from essential_genes_names import list_known_essentials
 from gene_names import gene_aliases
 ```
+## Importing datasets 
 
-```{code-cell}
+```{admonition} Implement this in a self consistent matter!
 ## published data in the cellmap.org 2016 
 data_fitness_sga=pd.read_excel(r"C:\Users\gregoryvanbeek\Documents\Gene_Database\Fitness_Data\Data-fitness.xlsx",header=0,sheet_name='NxN')
 ```
 
-```{code-cell}
+```{note} 
 data_fitness_sga.columns=['query-strain','query-allele-name','array-strain','array-allele-name','array-type','score','p-value','query-fitness','array-fitness','double-fitness','double-fitness-std']
 ```
 
-```{code-cell}
+```{admonition} Implement this in a self consistent matter!
 ## data saved from the df dataframe of statistics_per_gene.ipynb
 data_transposon=pd.read_excel(r"C:\Users\gregoryvanbeek\Documents\Gene_Database\transposon-density-per-gene-benoit.xlsx",header=0)
 data_transposon=data_transposon.drop(['Unnamed: 0'],axis=1)
 data_transposon=data_transposon.apply(lambda x: x.astype(str).str.lower()) # make everything lowercase
 ```
 
-```{code-cell}
-#transform back these columns into float variables
+## Transform back these columns into float variables
+
+```{note} 
 data_transposon['Transposon_density_per_gene']=data_transposon['Transposon_density_per_gene'].apply(lambda x: (float(x)))
 data_transposon['Read_density_per_gene']=data_transposon['Read_density_per_gene'].apply(lambda x: (float(x)))
 ```
 
-```{code-cell}
-
-```
 
 ```{code-cell}
 df_transposon_fitness=defaultdict(dict)
 ```
+## Big for loop to associate fitness values to essential and non essential genes 
 
-```{code-cell}
+```{admonition} Implement this in a self consistent matter!
 for i in data_transposon['Gene_name']:
     if len(data_fitness_sga[data_fitness_sga['query-allele-name']==i])!=0:
         df_transposon_fitness['gene-merge'][i]=i
@@ -92,25 +107,23 @@ for i in data_transposon['Gene_name']:
                 df_transposon_fitness['essential-by-benoit']='false'
 ```
 
-```{code-cell}
+```{note}
 df_transposon_fitness=pd.DataFrame(df_transposon_fitness)
 df_transposon_fitness_filtered=df_transposon_fitness[df_transposon_fitness['fitness-SGA']<1]
 ```
 
-```{code-cell}
+## USE FUNCTIONS TO GET NAMES OF ESSENTIAL GENES. FILES USED ARE:
 
-```
+```{admonition} Implement this in a self consistent matter!
 
-```{code-cell}
-#USE FUNCTIONS TO GET NAMES OF ESSENTIAL GENES. FILES USED ARE:
-#r"N:\tnw\BN\LL\Shared\Gregory\Gene_Database\Cervisiae_EssentialGenes_List_1.txt"
-#r"N:\tnw\BN\LL\Shared\Gregory\Gene_Database\Cervisiae_EssentialGenes_List_2.txt"
-#r"N:\tnw\BN\LL\Shared\Gregory\Gene_Database\Yeast_Protein_Names.txt"
+r"N:\tnw\BN\LL\Shared\Gregory\Gene_Database\Cervisiae_EssentialGenes_List_1.txt"
+r"N:\tnw\BN\LL\Shared\Gregory\Gene_Database\Cervisiae_EssentialGenes_List_2.txt"
+r"N:\tnw\BN\LL\Shared\Gregory\Gene_Database\Yeast_Protein_Names.txt"
 known_essential_gene_list = list_known_essentials([r"C:\Users\gregoryvanbeek\Documents\Gene_Database\Cervisiae_EssentialGenes_List_1.txt",r"C:\Users\gregoryvanbeek\Documents\Gene_Database\Cervisiae_EssentialGenes_List_2.txt"])
 aliases_designation_dict, aliases_sgd_dict, aliases_swissprot_dict = gene_aliases(r"C:\Users\gregoryvanbeek\Documents\Gene_Database\Yeast_Protein_Names.txt")
 ```
 
-```{code-cell}
+```{note}
 essential_counter = 0
 for n in range(df_transposon_fitness_filtered.shape[0]):
     gene_inDF = df_transposon_fitness_filtered['gene-merge'][n].upper()
@@ -135,14 +148,11 @@ for n in range(df_transposon_fitness_filtered.shape[0]):
 print('Number of essential genes found = ',essential_counter)
 ```
 
-```{code-cell}
+```{note}
 df_transposon_fitness_filtered_renamed = df_transposon_fitness_filtered.rename(columns={'essential-by-benoit': 'annotated-essentials'})
 df_transposon_fitness_filtered_ordered = df_transposon_fitness_filtered_renamed.sort_values(by=['annotated-essentials'], ascending=True)
 sns.scatterplot(x='transposon-density' ,y='fitness-SGA',hue='annotated-essentials', data=df_transposon_fitness_filtered_ordered,palette=['green','red'],alpha=0.6, linewidth=0)
-#plt.savefig('transposon-density-vs-fitness-NxN-scatter.png',dpi=300,format='png',transparent=False)
-#sns.jointplot("transposon-density", "fitness-SGA", data=df_transposon_fitness_filtered, height=6, ratio=3, color='essential-by-benoit', xlim=[0,0.5],ylim=[0,1.0],kind='scatter',alpha=0.3)
+plt.savefig('transposon-density-vs-fitness-NxN-scatter.png',dpi=300,format='png',transparent=False)
+sns.jointplot("transposon-density", "fitness-SGA", data=df_transposon_fitness_filtered, height=6, ratio=3, color='essential-by-benoit', xlim=[0,0.5],ylim=[0,1.0],kind='scatter',alpha=0.3)
 ```
 
-```{code-cell}
-
-```
