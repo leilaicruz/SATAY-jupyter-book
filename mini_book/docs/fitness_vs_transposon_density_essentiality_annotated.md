@@ -66,7 +66,7 @@ data_fitness_sga=pd.read_excel(r"C:\Users\gregoryvanbeek\Documents\Gene_Database
 
 ```
 
-```{note} 
+```python
 data_fitness_sga.columns=['query-strain','query-allele-name','array-strain','array-allele-name','array-type','score','p-value','query-fitness','array-fitness','double-fitness','double-fitness-std']
 ```
 
