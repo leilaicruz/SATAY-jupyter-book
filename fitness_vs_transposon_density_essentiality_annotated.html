@@ -74,26 +74,14 @@
 <li class="navbar-special">
 <p class="margin-caption">Get started</p>
 </li>
-<li class="navbar-special">
-<p class="margin-caption">SATAY general Documentation</p>
-</li>
   <li class="">
     <a href="MysT_Notebooks.html">2. Notebooks written entirely in markdown</a>
   </li>
 <li class="navbar-special">
-<p class="margin-caption">Get started</p>
-</li>
-<li class="navbar-special">
-<p class="margin-caption">SATAY general Documentation</p>
-</li>
-  <li class="">
-    <a href="MysT_Notebooks.html">3. Notebooks written entirely in markdown</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Git Bash Preprocessing of the Sequencing data</p>
+<p class="margin-caption">Postprocessing scripts</p>
 </li>
   <li class="active">
-    <a href="">4. Fitness vs Transposon density . Is there a fitness difference between low density and high density?</a>
+    <a href="">3. Fitness vs Transposon density . Is there a fitness difference between low density and high density?</a>
   </li>
 </ul>
 </nav>
@@ -178,15 +166,17 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#importing-datasets" class="nav-link">Importing datasets</a>
+            <a href="#importing-datasets" class="nav-link">Importing datasets</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#published-data-in-the-cellmap-org-2016" class="nav-link">Published data in the cellmap.org 2016</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#published-data-in-the-cellmap-org-2016" class="nav-link">published data in the cellmap.org 2016</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
+        <li class="nav-item toc-entry toc-h3">
             <a href="#data-saved-from-the-df-dataframe-of-statistics-per-gene-ipynb" class="nav-link">data saved from the df dataframe of statistics_per_gene.ipynb</a>
+        </li>
+    
+            </ul>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -262,33 +252,35 @@ from gene_names import gene_aliases</p>
 </div>
 <div class="section" id="importing-datasets">
 <h2>Importing datasets<a class="headerlink" href="#importing-datasets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="published-data-in-the-cellmap-org-2016">
+<h3>Published data in the cellmap.org 2016<a class="headerlink" href="#published-data-in-the-cellmap-org-2016" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-implement-this-in-a-self-consistent-matter admonition">
 <p class="admonition-title">Implement this in a self consistent matter!</p>
+<p>data_fitness_sga=pd.read_excel(r”C:\Users\gregoryvanbeek\Documents\Gene_Database\Fitness_Data\Data-fitness.xlsx”,header=0,sheet_name=’NxN’)</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>data_fitness_sga.columns=[‘query-strain’,’query-allele-name’,’array-strain’,’array-allele-name’,’array-type’,’score’,’p-value’,’query-fitness’,’array-fitness’,’double-fitness’,’double-fitness-std’]</p>
 </div>
-<div class="admonition-implement-this-in-a-self-consistent-matter admonition">
-<p class="admonition-title">Implement this in a self consistent matter!</p>
-</div>
-</div>
-<div class="section" id="published-data-in-the-cellmap-org-2016">
-<h2>published data in the cellmap.org 2016<a class="headerlink" href="#published-data-in-the-cellmap-org-2016" title="Permalink to this headline">¶</a></h2>
-<p>data_fitness_sga=pd.read_excel(r”C:\Users\gregoryvanbeek\Documents\Gene_Database\Fitness_Data\Data-fitness.xlsx”,header=0,sheet_name=’NxN’)</p>
 </div>
 <div class="section" id="data-saved-from-the-df-dataframe-of-statistics-per-gene-ipynb">
-<h2>data saved from the df dataframe of statistics_per_gene.ipynb<a class="headerlink" href="#data-saved-from-the-df-dataframe-of-statistics-per-gene-ipynb" title="Permalink to this headline">¶</a></h2>
+<h3>data saved from the df dataframe of statistics_per_gene.ipynb<a class="headerlink" href="#data-saved-from-the-df-dataframe-of-statistics-per-gene-ipynb" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-implement-this-in-a-self-consistent-matter admonition">
+<p class="admonition-title">Implement this in a self consistent matter!</p>
 <p>data_transposon=pd.read_excel(r”C:\Users\gregoryvanbeek\Documents\Gene_Database\transposon-density-per-gene-benoit.xlsx”,header=0)
 data_transposon=data_transposon.drop([‘Unnamed: 0’],axis=1)
 data_transposon=data_transposon.apply(lambda x: x.astype(str).str.lower()) # make everything lowercase</p>
+</div>
+</div>
 </div>
 <div class="section" id="transform-back-these-columns-into-float-variables">
 <h2>Transform back these columns into float variables<a class="headerlink" href="#transform-back-these-columns-into-float-variables" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>data_transposon[‘Transposon_density_per_gene’]=data_transposon[‘Transposon_density_per_gene’].apply(lambda x: (float(x)))
-data_transposon[‘Read_density_per_gene’]=data_transposon[‘Read_density_per_gene’].apply(lambda x: (float(x)))</p>
+<ul class="simple">
+<li><p>data_transposon[‘Transposon_density_per_gene’]=data_transposon[‘Transposon_density_per_gene’].apply(lambda x: (float(x)))</p></li>
+<li><p>data_transposon[‘Read_density_per_gene’]=data_transposon[‘Read_density_per_gene’].apply(lambda x: (float(x)))</p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -300,8 +292,8 @@ data_transposon[‘Read_density_per_gene’]=data_transposon[‘Read_density_per
 </div>
 <div class="section" id="big-for-loop-to-associate-fitness-values-to-essential-and-non-essential-genes">
 <h2>Big for loop to associate fitness values to essential and non essential genes<a class="headerlink" href="#big-for-loop-to-associate-fitness-values-to-essential-and-non-essential-genes" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-implement-this-in-a-self-consistent-matter admonition">
-<p class="admonition-title">Implement this in a self consistent matter!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>for i in data_transposon[‘Gene_name’]:
 if len(data_fitness_sga[data_fitness_sga[‘query-allele-name’]==i])!=0:
 df_transposon_fitness[‘gene-merge’][i]=i

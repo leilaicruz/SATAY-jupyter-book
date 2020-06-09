@@ -50,34 +50,41 @@ import os, fnmatch
 import sys
 ```
 ```{admonition} Implement this in a self consistent matter!
+
 SET PATH TO PYTHON MODULES (r"N:\tnw\BN\LL\Shared\Gregory\Python\Python_modules")
 sys.path.insert(1,r"C:\Users\gregoryvanbeek\Documents\Python Scripts\Python_modules")
 from essential_genes_names import list_known_essentials
 from gene_names import gene_aliases
+
 ```
 ## Importing datasets 
+### Published data in the cellmap.org 2016 
 
 ```{admonition} Implement this in a self consistent matter!
-## published data in the cellmap.org 2016 
+
 data_fitness_sga=pd.read_excel(r"C:\Users\gregoryvanbeek\Documents\Gene_Database\Fitness_Data\Data-fitness.xlsx",header=0,sheet_name='NxN')
+
 ```
 
 ```{note} 
 data_fitness_sga.columns=['query-strain','query-allele-name','array-strain','array-allele-name','array-type','score','p-value','query-fitness','array-fitness','double-fitness','double-fitness-std']
 ```
 
+### data saved from the df dataframe of statistics_per_gene.ipynb
+
 ```{admonition} Implement this in a self consistent matter!
-## data saved from the df dataframe of statistics_per_gene.ipynb
+
 data_transposon=pd.read_excel(r"C:\Users\gregoryvanbeek\Documents\Gene_Database\transposon-density-per-gene-benoit.xlsx",header=0)
 data_transposon=data_transposon.drop(['Unnamed: 0'],axis=1)
 data_transposon=data_transposon.apply(lambda x: x.astype(str).str.lower()) # make everything lowercase
+
 ```
 
 ## Transform back these columns into float variables
 
 ```{note} 
-data_transposon['Transposon_density_per_gene']=data_transposon['Transposon_density_per_gene'].apply(lambda x: (float(x)))
-data_transposon['Read_density_per_gene']=data_transposon['Read_density_per_gene'].apply(lambda x: (float(x)))
+- data_transposon['Transposon_density_per_gene']=data_transposon['Transposon_density_per_gene'].apply(lambda x: (float(x)))
+- data_transposon['Read_density_per_gene']=data_transposon['Read_density_per_gene'].apply(lambda x: (float(x)))
 ```
 
 
@@ -86,7 +93,7 @@ df_transposon_fitness=defaultdict(dict)
 ```
 ## Big for loop to associate fitness values to essential and non essential genes 
 
-```{admonition} Implement this in a self consistent matter!
+```{note}
 for i in data_transposon['Gene_name']:
     if len(data_fitness_sga[data_fitness_sga['query-allele-name']==i])!=0:
         df_transposon_fitness['gene-merge'][i]=i
