@@ -258,9 +258,8 @@ from gene_names import gene_aliases</p>
 <p class="admonition-title">Implement this in a self consistent matter!</p>
 <p>data_fitness_sga=pd.read_excel(r”C:\Users\gregoryvanbeek\Documents\Gene_Database\Fitness_Data\Data-fitness.xlsx”,header=0,sheet_name=’NxN’)</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>data_fitness_sga.columns=[‘query-strain’,’query-allele-name’,’array-strain’,’array-allele-name’,’array-type’,’score’,’p-value’,’query-fitness’,’array-fitness’,’double-fitness’,’double-fitness-std’]</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_fitness_sga</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;query-strain&#39;</span><span class="p">,</span><span class="s1">&#39;query-allele-name&#39;</span><span class="p">,</span><span class="s1">&#39;array-strain&#39;</span><span class="p">,</span><span class="s1">&#39;array-allele-name&#39;</span><span class="p">,</span><span class="s1">&#39;array-type&#39;</span><span class="p">,</span><span class="s1">&#39;score&#39;</span><span class="p">,</span><span class="s1">&#39;p-value&#39;</span><span class="p">,</span><span class="s1">&#39;query-fitness&#39;</span><span class="p">,</span><span class="s1">&#39;array-fitness&#39;</span><span class="p">,</span><span class="s1">&#39;double-fitness&#39;</span><span class="p">,</span><span class="s1">&#39;double-fitness-std&#39;</span><span class="p">]</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="data-saved-from-the-df-dataframe-of-statistics-per-gene-ipynb">
@@ -275,12 +274,9 @@ data_transposon=data_transposon.apply(lambda x: x.astype(str).str.lower()) # mak
 </div>
 <div class="section" id="transform-back-these-columns-into-float-variables">
 <h2>Transform back these columns into float variables<a class="headerlink" href="#transform-back-these-columns-into-float-variables" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p>data_transposon[‘Transposon_density_per_gene’]=data_transposon[‘Transposon_density_per_gene’].apply(lambda x: (float(x)))</p></li>
-<li><p>data_transposon[‘Read_density_per_gene’]=data_transposon[‘Read_density_per_gene’].apply(lambda x: (float(x)))</p></li>
-</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Transposon_density_per_gene&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Transposon_density_per_gene&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="o">-</span> <span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Read_density_per_gene&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Read_density_per_gene&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -292,26 +288,25 @@ data_transposon=data_transposon.apply(lambda x: x.astype(str).str.lower()) # mak
 </div>
 <div class="section" id="big-for-loop-to-associate-fitness-values-to-essential-and-non-essential-genes">
 <h2>Big for loop to associate fitness values to essential and non essential genes<a class="headerlink" href="#big-for-loop-to-associate-fitness-values-to-essential-and-non-essential-genes" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>for i in data_transposon[‘Gene_name’]:
-if len(data_fitness_sga[data_fitness_sga[‘query-allele-name’]==i])!=0:
-df_transposon_fitness[‘gene-merge’][i]=i
-df_transposon_fitness[‘transposon-density’][i]=float(data_transposon[data_transposon[‘Gene_name’]==i][‘Transposon_density_per_gene’].tolist()[0])
-df_transposon_fitness[‘fitness-SGA’][i]=data_fitness_sga[data_fitness_sga[‘query-allele-name’]==i][‘query-fitness’].tolist()[0]
-if data_transposon[data_transposon[‘Gene_name’]==i][‘Essential_gene’].tolist()==[‘true’]:
-df_transposon_fitness[‘essential-by-benoit’]=’true’
-else :
-df_transposon_fitness[‘essential-by-benoit’]=’false’
-else :
-if len(data_fitness_sga[data_fitness_sga[‘array-allele-name’]==i])!=0:
-df_transposon_fitness[‘gene-merge’][i]=i
-df_transposon_fitness[‘transposon-density’][i]=float(data_transposon[data_transposon[‘Gene_name’]==i][‘Transposon_density_per_gene’].tolist()[0])
-df_transposon_fitness[‘fitness-SGA’][i]=data_fitness_sga[data_fitness_sga[‘array-allele-name’]==i][‘array-fitness’].tolist()[0]
-if data_transposon[data_transposon[‘Gene_name’]==i][‘Essential_gene’].tolist()==[‘true’]:
-df_transposon_fitness[‘essential-by-benoit’]=’true’
-else :
-df_transposon_fitness[‘essential-by-benoit’]=’false’</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="s1">&#39;query-allele-name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">])</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;gene-merge&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span>
+        <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;transposon-density&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">data_transposon</span><span class="p">[</span><span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Transposon_density_per_gene&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;fitness-SGA&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="s1">&#39;query-allele-name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;query-fitness&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">data_transposon</span><span class="p">[</span><span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Essential_gene&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">==</span><span class="p">[</span><span class="s1">&#39;true&#39;</span><span class="p">]:</span>
+            <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;true&#39;</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;false&#39;</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="s1">&#39;array-allele-name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">])</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;gene-merge&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span>
+            <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;transposon-density&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">data_transposon</span><span class="p">[</span><span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Transposon_density_per_gene&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;fitness-SGA&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="n">data_fitness_sga</span><span class="p">[</span><span class="s1">&#39;array-allele-name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;array-fitness&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">data_transposon</span><span class="p">[</span><span class="n">data_transposon</span><span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Essential_gene&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="o">==</span><span class="p">[</span><span class="s1">&#39;true&#39;</span><span class="p">]:</span>
+                <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;true&#39;</span>
+            <span class="k">else</span> <span class="p">:</span>
+                <span class="n">df_transposon_fitness</span><span class="p">[</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;false&#39;</span>
+</pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -329,38 +324,36 @@ r”N:\tnw\BN\LL\Shared\Gregory\Gene_Database\Yeast_Protein_Names.txt”
 known_essential_gene_list = list_known_essentials([r”C:\Users\gregoryvanbeek\Documents\Gene_Database\Cervisiae_EssentialGenes_List_1.txt”,r”C:\Users\gregoryvanbeek\Documents\Gene_Database\Cervisiae_EssentialGenes_List_2.txt”])
 aliases_designation_dict, aliases_sgd_dict, aliases_swissprot_dict = gene_aliases(r”C:\Users\gregoryvanbeek\Documents\Gene_Database\Yeast_Protein_Names.txt”)</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>essential_counter = 0
-for n in range(df_transposon_fitness_filtered.shape[0]):
-gene_inDF = df_transposon_fitness_filtered[‘gene-merge’][n].upper()
-if gene_inDF in known_essential_gene_list:
-df_transposon_fitness_filtered[‘essential-by-benoit’][n] = ‘true’
-print(gene_inDF, ‘ is annotated as essential’)
-essential_counter += 1
-elif gene_inDF in aliases_designation_dict:
-for alias in aliases_designation_dict.get(gene_inDF):
-if alias in known_essential_gene_list:
-df_transposon_fitness_filtered[‘essential-by-benoit’][n] = ‘true’
-print(gene_inDF, ‘ with alias ‘,alias, ‘ is annotated as essential’)
-essential_counter += 1
-else:
-for key, val in aliases_designation_dict.items():
-if gene_inDF in val:
-for alias in val:
-if alias in known_essential_gene_list:
-df_transposon_fitness_filtered[‘essential-by-benoit’][n] = ‘true’
-print(gene_inDF, ‘ with alias ‘,alias, ‘ is annotated as essential’)
-essential_counter += 1
-print(‘Number of essential genes found = ‘,essential_counter)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">essential_counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df_transposon_fitness_filtered</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">gene_inDF</span> <span class="o">=</span> <span class="n">df_transposon_fitness_filtered</span><span class="p">[</span><span class="s1">&#39;gene-merge&#39;</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">gene_inDF</span> <span class="ow">in</span> <span class="n">known_essential_gene_list</span><span class="p">:</span>
+        <span class="n">df_transposon_fitness_filtered</span><span class="p">[</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">gene_inDF</span><span class="p">,</span> <span class="s1">&#39; is annotated as essential&#39;</span><span class="p">)</span>
+        <span class="n">essential_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">gene_inDF</span> <span class="ow">in</span> <span class="n">aliases_designation_dict</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">aliases_designation_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_inDF</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">known_essential_gene_list</span><span class="p">:</span>
+                <span class="n">df_transposon_fitness_filtered</span><span class="p">[</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">gene_inDF</span><span class="p">,</span> <span class="s1">&#39; with alias &#39;</span><span class="p">,</span><span class="n">alias</span><span class="p">,</span> <span class="s1">&#39; is annotated as essential&#39;</span><span class="p">)</span>
+                <span class="n">essential_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">aliases_designation_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">gene_inDF</span> <span class="ow">in</span> <span class="n">val</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">val</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">alias</span> <span class="ow">in</span> <span class="n">known_essential_gene_list</span><span class="p">:</span>
+                        <span class="n">df_transposon_fitness_filtered</span><span class="p">[</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">gene_inDF</span><span class="p">,</span> <span class="s1">&#39; with alias &#39;</span><span class="p">,</span><span class="n">alias</span><span class="p">,</span> <span class="s1">&#39; is annotated as essential&#39;</span><span class="p">)</span>
+                        <span class="n">essential_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of essential genes found = &#39;</span><span class="p">,</span><span class="n">essential_counter</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>df_transposon_fitness_filtered_renamed = df_transposon_fitness_filtered.rename(columns={‘essential-by-benoit’: ‘annotated-essentials’})
-df_transposon_fitness_filtered_ordered = df_transposon_fitness_filtered_renamed.sort_values(by=[‘annotated-essentials’], ascending=True)
-sns.scatterplot(x=’transposon-density’ ,y=’fitness-SGA’,hue=’annotated-essentials’, data=df_transposon_fitness_filtered_ordered,palette=[‘green’,’red’],alpha=0.6, linewidth=0)
-plt.savefig(‘transposon-density-vs-fitness-NxN-scatter.png’,dpi=300,format=’png’,transparent=False)
-sns.jointplot(“transposon-density”, “fitness-SGA”, data=df_transposon_fitness_filtered, height=6, ratio=3, color=’essential-by-benoit’, xlim=[0,0.5],ylim=[0,1.0],kind=’scatter’,alpha=0.3)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_transposon_fitness_filtered_renamed</span> <span class="o">=</span> <span class="n">df_transposon_fitness_filtered</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">:</span> <span class="s1">&#39;annotated-essentials&#39;</span><span class="p">})</span>
+<span class="n">df_transposon_fitness_filtered_ordered</span> <span class="o">=</span> <span class="n">df_transposon_fitness_filtered_renamed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;annotated-essentials&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;transposon-density&#39;</span> <span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;fitness-SGA&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;annotated-essentials&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_transposon_fitness_filtered_ordered</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;transposon-density-vs-fitness-NxN-scatter.png&#39;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="s2">&quot;transposon-density&quot;</span><span class="p">,</span> <span class="s2">&quot;fitness-SGA&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_transposon_fitness_filtered</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;essential-by-benoit&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
