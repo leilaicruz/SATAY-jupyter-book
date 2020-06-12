@@ -199,13 +199,10 @@ div.highlight {
     margin: 0 .1em;
     background-color: white;
     color: #5a5a5a;
+    font-size: 1.4em;
     border: none;
     padding-top: .1rem;
-    padding-bottom: .1rem;
-    font-size: 1.4em; }
-    .topbar .topbar-main button.topbarbtn i.fab {
-      vertical-align: baseline;
-      line-height: 1; }
+    padding-bottom: .1rem; }
   .topbar .topbar-main div.dropdown-buttons-trigger, .topbar .topbar-main a.edit-button, .topbar .topbar-main a.full-screen-button {
     float: right; }
 
@@ -222,13 +219,9 @@ span.topbar-button-text {
 div.dropdown-buttons-trigger div.dropdown-buttons {
   display: none;
   position: absolute;
-  max-width: 130px;
+  max-width: 120px;
   margin-top: .2em;
   z-index: 1000; }
-  div.dropdown-buttons-trigger div.dropdown-buttons.sourcebuttons .topbarbtn i {
-    padding-right: 6px;
-    margin-left: -5px;
-    font-size: .9em !important; }
   div.dropdown-buttons-trigger div.dropdown-buttons button.topbarbtn {
     padding-top: .35rem;
     padding-bottom: .35rem;
