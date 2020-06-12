@@ -56,8 +56,8 @@ import seaborn as sb
 # file_dirname = os.path.dirname(os.path.abspath('__file__'))
 file_dirname = os.path.dirname('__file__')
 sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
-# os.chdir('mini_book/docs/Python_scripts/python_modules/')
-from chromosome_and_gene_positions import gene_position
+# os.chdir('mini_book/docs/Python_scripts/python_modules/') # with this path works in the local build
+from Python_scripts.python_modules.chromosome_and_gene_positions import gene_position
 from gene_names import gene_aliases
 from chromosome_names_in_files import chromosome_name_bedfile
 import statistics_perchromosome
