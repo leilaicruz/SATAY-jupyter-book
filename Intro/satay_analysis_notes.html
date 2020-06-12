@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Summary &#8212; SATAY DATA ANALYSIS</title>
+    <title>All what you need to know from SATAY &#8212; SATAY DATA ANALYSIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -77,7 +77,7 @@
 <p class="margin-caption">Get started</p>
 </li>
   <li class="active">
-    <a href="">2. Summary</a>
+    <a href="">2. All what you need to know from SATAY</a>
   </li>
   <li class="">
     <a href="../MysT_Notebooks.html">3. Notebooks written entirely in markdown</a>
@@ -170,8 +170,8 @@
         
               <div>
                 
-  <div class="section" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="all-what-you-need-to-know-from-satay">
+<h1>All what you need to know from SATAY<a class="headerlink" href="#all-what-you-need-to-know-from-satay" title="Permalink to this headline">¶</a></h1>
 <p>This file discusses the general outline of the experiments and interpretation of experiments using SAturated Transposon Analysis in Yeast (SATAY).
 The introduction explains the purpose of the experiments and what kind of results we expect and how to interpret these results.
 The Methods and File types section explains the different kind of files used during processing and analysis and how to read and use them.
@@ -214,7 +214,7 @@ The genome of all cells (called the library) is saturated when all possible inse
 In that case all regions of the DNA are checked for their essentiality.</p>
 <div class="section" id="essentiality">
 <h2>Essentiality<a class="headerlink" href="#essentiality" title="Permalink to this headline">¶</a></h2>
-<p>Essentiality of genes are defined as its deletion is determental to cell in the form that either the cell cannot grow anymore and dies, or the cell cannot give rise to offspring.
+<p>Essentiality of genes are defined as its deletion is detrimental to cell in the form that either the cell cannot grow anymore and dies, or the cell cannot give rise to offspring.
 Essentiality can be grouped in two categories, namely type I and type II [Chen et.al. 2016].
 Type I essential genes are genes, when inhibited, show a loss-of-function that can only be rescued (or masked) when the lost function is recovered by a gain-of-function mechanism.
 Typically these genes are important for some indispensable core function in the cell (e.g. Cdc42 in <em>S. Cerevisiae</em> that is type I essential for cell polarity).
@@ -235,7 +235,7 @@ mutant.</p></li>
 <p>An example is given in the figure below, where an interaction map is
 shown for WT cells and a possible interaction map for a mutant where
 both the essentiality and the interactions are changed.</p>
-<!-- ![Example interaction network for a WT cell and a mutant with essential and non-essential genes.](./media/example_interaction_network.png) -->
+<p><img alt="Example interaction network for a WT cell and a mutant with essential and non-essential genes." src="../_images/example_interaction_network.png" /></p>
 <p>Situation 1 and 3 are expected to be the trickiest since those ones are difficult to validate.
 To check the synthetic lethality in cells, a double mutation needs to be made where one mutation makes the genetic background and the second mutation should confirm whether the second mutated gene is actually essential or not.
 This is typically made by sporulating the two mutants, but deleting a gene that is already essential in wild type prevents the cell from growing or dividing and can therefore not be sporulated with the mutant to create the double deletion.
@@ -512,7 +512,7 @@ The examples used here are from a dataset discussed in the paper by Michel et.al
 The transposons tend to reinsert in the chromosome near the chromosomal pericentromeric region causing those regions to have about 20% more insertions compared to other chromosomal regions.</p>
 <p>This figure gives a rough overview that allows for identifying how well the data fits the expectation.
 Also an alternative version of this plot is made (<code class="docutils literal notranslate"><span class="pre">TransposonRead_Profile_Compare.py</span></code>) that makes a similar plot for two datasets at the same time, allowing the comparison of the two datasets with each other and with the expectation.</p>
-<p><img alt="Comparison of the same datasets, but with different processing steps. Shown here is the transposon count for the two files including the absolute difference between the two datasets show in blue. Note also here that some regions has a higher likelihood of bearing transposons compared to the surrounding regions." src="Intro/./media/Cerevisiae_Michel2017_WT2_Compare_chromIX.png" /></p>
+<p><img alt="Comparison of the same datasets, but with different processing steps. Shown here is the transposon count for the two files including the absolute difference between the two datasets show in blue. Note also here that some regions has a higher likelihood of bearing transposons compared to the surrounding regions." src="../_images/Cerevisiae_Michel2017_WT2_Compare_chromIX.png" /></p>
 </div>
 <div class="section" id="profile-plot-number-of-reads-per-individual-genes">
 <h3>Profile plot number of reads per individual genes<a class="headerlink" href="#profile-plot-number-of-reads-per-individual-genes" title="Permalink to this headline">¶</a></h3>

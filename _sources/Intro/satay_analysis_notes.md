@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Summary
+# All what you need to know from SATAY
 
 This file discusses the general outline of the experiments and interpretation of experiments using SAturated Transposon Analysis in Yeast (SATAY).
 The introduction explains the purpose of the experiments and what kind of results we expect and how to interpret these results.
@@ -62,7 +62,7 @@ In that case all regions of the DNA are checked for their essentiality.
 
 ## Essentiality
 
-Essentiality of genes are defined as its deletion is determental to cell in the form that either the cell cannot grow anymore and dies, or the cell cannot give rise to offspring.
+Essentiality of genes are defined as its deletion is detrimental to cell in the form that either the cell cannot grow anymore and dies, or the cell cannot give rise to offspring.
 Essentiality can be grouped in two categories, namely type I and type II [Chen et.al. 2016].
 Type I essential genes are genes, when inhibited, show a loss-of-function that can only be rescued (or masked) when the lost function is recovered by a gain-of-function mechanism.
 Typically these genes are important for some indispensable core function in the cell (e.g. Cdc42 in *S. Cerevisiae* that is type I essential for cell polarity).
@@ -88,7 +88,7 @@ An example is given in the figure below, where an interaction map is
 shown for WT cells and a possible interaction map for a mutant where
 both the essentiality and the interactions are changed.
 
-<!-- ![Example interaction network for a WT cell and a mutant with essential and non-essential genes.](./media/example_interaction_network.png) -->
+![Example interaction network for a WT cell and a mutant with essential and non-essential genes.](./media/example_interaction_network.png)
 
 Situation 1 and 3 are expected to be the trickiest since those ones are difficult to validate.
 To check the synthetic lethality in cells, a double mutation needs to be made where one mutation makes the genetic background and the second mutation should confirm whether the second mutated gene is actually essential or not.
