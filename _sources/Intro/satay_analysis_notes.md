@@ -17,9 +17,16 @@ This file discusses the general outline of the experiments and interpretation of
 The introduction explains the purpose of the experiments and what kind of results we expect and how to interpret these results.
 The Methods and File types section explains the different kind of files used during processing and analysis and how to read and use them.
 It also explains some custom made software for analyzing the data.
-This software is stored in the [Github page](<https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis>) of the this research.
+This software is stored in the [Github page](https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis) of the this research.
 The steps needed for the processing and initial analysis of the data is explained in the Data Analysis section.
 This includes a detailed step-by-step tutorial on how to use the different software packages and what steps need to be taken for the processing to go from the raw sequencing reads to the location of all the transposon insertion and the number of reads at each location.
+
+```{margin} A SATAY FORUM 
+If you want to get started just join this [FORUM](https://groups.google.com/forum/#!forum/satayusers). 
+And the website for the library generation can be found [HERE](https://sites.google.com/site/satayusers/complete-protocol/library-generation)
+```
+
+
 
 # Introduction
 
@@ -44,7 +51,7 @@ In other words, are there common changes in the subnetwork when a random change 
 - Are there relations between the changes in the interaction network after a mutation and the Genetic Ontology (GO-)terms of changed genes?
 
 To check the essentiality of genes, SATAY (SAturated Transposon Analysis in Yeast) experiments will be performed on different genetic backgrounds [Michel et.al., 2017] [Segal et.al., 2018].
-This uses transposons to inhibit genes and it allows to compare the effects of this inhibition on the fitness of the cells (see for example the [galaxyproject website](<https://galaxyproject.github.io/training-material/topics/genome-annotation/tutorials/tnseq/tutorial.html>) which explains it in the context of bacteria, but the same principles hold for yeast cells).
+This uses transposons to inhibit genes and it allows to compare the effects of this inhibition on the fitness of the cells (see for example the [galaxyproject website](https://galaxyproject.github.io/training-material/topics/genome-annotation/tutorials/tnseq/tutorial.html) which explains it in the context of bacteria, but the same principles hold for yeast cells).
 Transposons are small pieces of DNA that can integrate in a random location in the genome.
 When the insertion happens at the location of a gene, this gene will be inhibited (i.e. it can still be transcribed, but typically it cannot be translated into a functional protein).
 
