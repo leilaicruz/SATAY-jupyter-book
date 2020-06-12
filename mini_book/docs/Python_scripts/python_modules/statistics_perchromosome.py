@@ -10,9 +10,12 @@ import numpy as np
 #import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sb
-sys.path.insert(1,r'C:\Users\gregoryvanbeek\Documents\GitHub\LaanLab-SATAY-DataAnalysis\python_modules')
-from chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic
-from chromosome_names_in_files import chromosome_name_bedfile
+
+file_dirname = os.path.dirname('__file__')
+sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
+
+from Python_scripts.python_modules.chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic
+from Python_scripts.python_modules.chromosome_names_in_files import chromosome_name_bedfile
 
 #%%
 def chromosome_insertion_periodicity(chromosome=None,bed_file=None,gff_file=None,printing=False):
