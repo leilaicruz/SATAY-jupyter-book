@@ -55,7 +55,7 @@ import seaborn as sb
 
 # file_dirname = os.path.dirname(os.path.abspath('__file__'))
 file_dirname = os.path.dirname('__file__')
-sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
+# sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
 # os.chdir('mini_book/docs/Python_scripts/python_modules/') # with this path works in the local build
 from Python_scripts.python_modules.chromosome_and_gene_positions import gene_position
 from Python_scripts.python_modules.gene_names import gene_aliases
@@ -79,7 +79,9 @@ The `save_figure_path` directs to the location where the figures need to be stor
 
 ```{code-cell} ipython3
 # os.chdir('../')
-gff_file = 'Data_Files/Saccharomyces_cerevisiae.R64-1-1.99.gff3'
+file_dirname = os.path.dirname('__file__')
+
+gff_file = 'Python_scripts/Data_Files/Saccharomyces_cerevisiae.R64-1-1.99.gff3'
 abs_gff_file = os.path.join(file_dirname, gff_file)
 # gff_file = os.path.join(file_dirname,'Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
 gene_information_file = os.path.join(file_dirname,'Data_Files','Yeast_Protein_Names.txt')
