@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# statistics_pergene.py
+# Statistics per gene 
 
 +++
 
@@ -38,7 +38,7 @@ Data that needs to be loaded:
 4. essential_genes_files: List of essential genes. Can be input as multiple files which will be automatically merged.
 5. gene_information_file: List of genes with their possible aliasses and lengths in amino acids.
 
-```{code-cell}
+```{code-cell}ipython3
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -46,23 +46,27 @@ import pandas as pd
 import seaborn as sns
 ```
 
-```{code-cell}
-file_dirname = os.path.dirname(os.path.abspath('__file__'))
+```{code-cell}ipython3
+# file_dirname = os.path.dirname(os.path.abspath('__file__'))
+file_dirname = os.path.dirname('__file__')
+# sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
+# os.chdir('mini_book/docs/Python_scripts/python_modules/')
 
 filepath = os.path.join(file_dirname,'..','satay_analysis_testdata','Output_Processing')
-filename = "Cerevisiae_WT2_Michel2017_trimmed1.bam_pergene.txt" #CHANGE THIS TO ANY FILE YOU WANT TO ANALYSE.
+filename = "Cerevisiae_WT2_Michel2017_trimmed1.bam_pergene.txt" # CHANGE THIS TO ANY FILE YOU WANT TO ANALYSE.
 normalize = 'True'
 
 essential_genes_files = [os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
                         os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
 
 gene_information_file = os.path.join(file_dirname,'Data_Files','Yeast_Protein_Names.txt')
+os.chdir('mini_book/docs/Python_scripts/')
 ```
 
 ### Create list of all essential genes
 This can be input from multiple files given in the `essential_genes_files` variable that are merged in one list.
 
-```{code-cell}
+```{code-cell}ipython3
 known_essential_gene_list = []
 
 for files in essential_genes_files:
@@ -77,33 +81,33 @@ for files in essential_genes_files:
 Dictionary consists of keys which are all genes (including all their potential aliasses and different naming conventions) and of values which are the length in terms of base pairs.
 The number of base pairs is calculated by multiplying the number of amino acids by 3.
 
-```{code-cell}
-#CREATE A DICTIONARY WITH ALL GENES (BOTH THE COMMON NAME AND THEIR SYSTEMATIC NAME) AND SAVE THEM WITH THEIR RESPECTIVE LENGHTS (IN TERMS OF BP WHICH IS DEFINED AS bp=aa*3)
+```{code-cell}ipython3
+# CREATE A DICTIONARY WITH ALL GENES (BOTH THE COMMON NAME AND THEIR SYSTEMATIC NAME) AND SAVE THEM WITH THEIR RESPECTIVE LENGHTS (IN TERMS OF BP WHICH IS DEFINED AS bp=aa*3)
 gene_length_dict = {}
 with open(gene_information_file) as f:
     lines = f.readlines()
 
-#THE GENES START AT LINE 58 AND STOP 6 LINES BEFORE THE END OF THE FILE.
+# THE GENES START AT LINE 58 AND STOP 6 LINES BEFORE THE END OF THE FILE.
     for i in range(58,len(lines)-6):
         n=0
         l = lines[i]
 
-#COUNT HOW MANY TIMES ';' OCCURS IN A LINE.
+# COUNT HOW MANY TIMES ';' OCCURS IN A LINE.
         extra_columns = l.count(';')
         l_short = ' '.join(l.split())
         l_list = l_short.split(' ')
 
-#IGNORE SEQUENCES THAT ARE NOT NEEDED.
+# IGNORE SEQUENCES THAT ARE NOT NEEDED.
         if l_list[1+extra_columns] == 'GAG' or l_list[1+extra_columns] == 'POL':
             extra_columns = extra_columns + 1
 
-#DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE NAME (e.g. Cdc42)
+# DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE NAME (e.g. Cdc42)
         gene_length_dict[l_list[0].strip(';')] = int(l_list[5+extra_columns])*3
 
-#DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE SYSTEMATIC NAME (e.g. YLR229C)
+# DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE SYSTEMATIC NAME (e.g. YLR229C)
         gene_length_dict[l_list[1+extra_columns]] = int(l_list[5+extra_columns])*3
 
-#DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE ALIASES (IF PRESENT).
+# DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE ALIASES (IF PRESENT).
         if extra_columns > 0:
             for n in range(extra_columns+1):
                 gene_length_dict[l_list[0+n].strip(';')] = int(l_list[5+extra_columns])*3
@@ -121,22 +125,22 @@ Lists are made for
 
 The gene_counter counts the number of genes included in the analysis. The fail_counter are the number of genes that are present in the data, but could be found in the list of gene lengths and could therefore not be normalized. These genes are ignored. This should not be much more than 0.5% of the total amount of genes.
 
-```{code-cell}
+```{code-cell}ipython3
 file = os.path.join(filepath,filename)
 
 with open(file) as f:
     lines = f.readlines()
 ```
 
-```{code-cell}
+```{code-cell}ipython3
 :tags: [outputPrepend]
 
-gene_name_list = [] #LIST OF ALL GENES ANALYZED AND OUTPUT BY THE MATLAB CODE OF BENOIT.
-reads_pergene_list = [] #NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.
-tn_pergene_list = [] #NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.
-gene_essential_boolean_list = [] #WHICH OF THE GENES ANALYZED ARE ESSENTIAL (MARKED AS TRUE) AND NON ESSENTIAL (MARKED AS FALSE)
-reads_pergene_norm_list = [] #NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.
-tn_pergene_norm_list = [] #NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.
+gene_name_list = [] # LIST OF ALL GENES ANALYZED AND OUTPUT BY THE MATLAB CODE OF BENOIT.
+reads_pergene_list = [] # NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.
+tn_pergene_list = [] # NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.
+gene_essential_boolean_list = [] # WHICH OF THE GENES ANALYZED ARE ESSENTIAL (MARKED AS TRUE) AND NON ESSENTIAL (MARKED AS FALSE)
+reads_pergene_norm_list = [] # NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.
+tn_pergene_norm_list = [] # NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.
 
 gene_counter = 0
 fail_counter = 0
@@ -194,7 +198,7 @@ print('Genes not found: ',failed_genes_list)
 ### Create dataframe
 This puts the data in the form of a dataframe (part of the `pandas` package). This is necessary for plotting.
 
-```{code-cell}
+```{code-cell}ipython3
 if normalize == False:
     genes = {'Gene_name': gene_name_list,
             'Transposons_per_gene': tn_pergene_list,
@@ -213,7 +217,7 @@ else:
 
 ### Print statistics
 
-```{code-cell}
+```{code-cell}ipython3
 print('Average number of reads all genes: %.0f ' % np.nanmean(reads_pergene_list))
 print('Median number of reads all genes: %.0f ' % np.nanmedian(reads_pergene_list))
 print('Standard Deviation number of reads all genes: %.0f ' % np.nanstd(reads_pergene_list))
@@ -267,7 +271,7 @@ print('')
 A histogram is plotted where the number of reads and number of transposons are shown for essential and non-essential genes together.
 This shows the distribution of the number of reads and insertions for the complete dataset.
 
-```{code-cell}
+```{code-cell}ipython3
 plt.figure(figsize=(15,5))
 grid = plt.GridSpec(1, 2, wspace=0.4, hspace=0.3)
 
@@ -296,7 +300,7 @@ This shows the distribution for the reads and insertions for the dataset separat
 
 When `normalization` is set to `True`, the plots represent read- and transposon densities. Otherwise the plots show the actual counts.
 
-```{code-cell}
+```{code-cell}ipython3
 plt.figure(figsize=(15,5))
 grid = plt.GridSpec(1, 2, wspace=0.4, hspace=0.3)
 
