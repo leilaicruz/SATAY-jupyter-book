@@ -280,7 +280,7 @@ The genome of all cells (called the library) is saturated when all possible inse
 <p>In that case all regions of the DNA are checked for their essentiality.</p>
 </div>
 <div class="margin sidebar">
-<p class="sidebar-title">A SATAY FORUM </p>
+<p class="sidebar-title">A SATAY FORUM</p>
 <p>If you want to get started just join this <a class="reference external" href="https://groups.google.com/forum/#%21forum/satayusers">FORUM</a>.
 And the website for the library generation can be found <a class="reference external" href="https://sites.google.com/site/satayusers/complete-protocol/library-generation">HERE</a></p>
 </div>
@@ -320,13 +320,13 @@ However, when the cells are grown in another growth condition where mainly other
 It is suggested to compare the results of experiments with cells from the same genetic background grown in different conditions with each other to rule out conditions specific results.</p>
 <div class="margin sidebar">
 <p class="sidebar-title">The yeast interaction network</p>
-<p>The yeast interaction network is already made based on previous research see here &gt;&gt; <code class="xref any docutils literal notranslate"><span class="pre">thecellmap.org</span></code>.</p>
+<p>The yeast interaction network is already made based on previous research see here &gt;&gt; <span class="xref myst">thecellmap.org</span>.</p>
 </div>
 <p>We want to check the essentiality of all genes in different mutants and compare this with both wild type cells and with each other.
 The goal is to make an overview of the changes in the essentiality of the genes and the interaction network between the proteins.
 With this we aim to eventually be able to predict the synthetic lethality of multiple mutations based on the interaction maps of the individual mutations.</p>
 <div class="margin sidebar">
-<p class="sidebar-title">Current progress in Machine Learning workflows! </p>
+<p class="sidebar-title">Current progress in Machine Learning workflows!</p>
 <p>Currently the idea is to use machine learning that uses the results from the transposon sequencing experiments, the interaction map of genes and possibly GO-terms. Some implementations of Machine learning workflows can be seen <a class="reference external" href="https://leilaicruz.github.io/jupyter-book/Machine-learning-related-projects/prot_domains2lethality-PAPER-REPLICATION.html">here, in another Jupyter Book :)</a></p>
 </div>
 </div>
@@ -398,7 +398,7 @@ Also, we can use a similar approach as was performed by the Kornmann lab [Michel
 <li><p>The process of SATAY starts with inserting a plasmid in the cells that contains a transposase (TPase) and the transposon (MiniDs) flanked on both sides by adenine (ADE).
 The transposon has a specific, known, sequence that codes for the transposase that cuts the transposon from the plasmid (or DNA) to (another part of) the DNA.</p></li>
 </ul>
-<p><code class="xref any docutils literal notranslate"><span class="pre">Simplified</span> <span class="pre">example</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">transposon</span> <span class="pre">insertion</span> <span class="pre">plasmid.</span></code></p>
+<p><span class="xref myst">Simplified example for the transposon insertion plasmid.</span></p>
 <ul class="simple">
 <li><p>The MiniDs transposon is cut loose from the plasmid and randomly inserted in the DNA of the host cell.</p></li>
 <li><p>If the transposon is inserted in a gene, the gene can still be transcribed by the ribosomes, but typically cannot be (properly) translated in a functional protein.</p></li>
@@ -578,7 +578,7 @@ Currently, genes that are taken as essential are the annotated essentials based 
 </div>
 <div class="section" id="distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes">
 <h4>Distribution number of insertions and reads compared with essential and non-essential genes<a class="headerlink" href="#distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes" title="Permalink to this headline">¶</a></h4>
-<p>See <code class="xref any docutils literal notranslate"><span class="pre">this</span> <span class="pre">script</span> <span class="pre">to</span> <span class="pre">visualize</span> <span class="pre">the</span> <span class="pre">implementation</span></code></p>
+<p>See <span class="xref myst">this script to visualize the implementation</span></p>
 <p>Ideally, the number of transposon insertions of all essential genes are small and the number of insertions in non-essential genes are is large so that there is a clear distinction can be made.
 However, this is not always so clear.
 For example, the distribution of transposons in WT cells in the data from Michel et. al. looks like this:</p>
@@ -611,7 +611,7 @@ Also an alternative version of this plot is made (<code class="docutils literal 
 </div>
 <div class="section" id="profile-plot-number-of-reads-per-individual-genes">
 <h3>Profile plot number of reads per individual genes<a class="headerlink" href="#profile-plot-number-of-reads-per-individual-genes" title="Permalink to this headline">¶</a></h3>
-<p>See <code class="xref any docutils literal notranslate"><span class="pre">this</span> <span class="pre">script</span> <span class="pre">to</span> <span class="pre">visualize</span> <span class="pre">the</span> <span class="pre">implementation</span></code>, which is <span class="xref std std-doc">../gene_reads.md</span></p>
+<p>See <span class="xref myst">this script to visualize the implementation</span>, which is <span class="xref std std-doc">../gene_reads.md</span></p>
 <p>Instead of plotting the number of reads for an entire chromosome, it is also useful to plot the read profile for individual genes to see how the insertion sites and reads are distributed within a gene.
 For this a bar plot is made where the number of reads per transposon are determined.
 This also shows the distribution of the distances between subsequent transposon insertions for both the gene and the chromosome the gene is located.
