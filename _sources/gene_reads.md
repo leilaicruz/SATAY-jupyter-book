@@ -66,10 +66,9 @@ import Python_scripts.python_modules.statistics_perchromosome as statistics_perc
 #FUNCTION INPUTS
 gene_name = 'bem1'
 region=None
-# bed_file = "satay_analysis_testdata/Output_Processing/Cerevisiae_WT2_Michel2017_trimmed1.bam.bed"
-# abs_bed_file = os.path.join(file_dirname, bed_file)
+
 bed_file = os.path.join(file_dirname,'satay_analysis_testdata','Output_Processing','Cerevisiae_WT2_Michel2017_trimmed1.bam.bed')#CHANGE THIS TO ANY .BED FILE YOU WANT TO ANALYSE.
-# bed_file = os.path.join(file_dirname,'..','satay_analysis_testdata','Output_Processing','Cerevisiae_WT2_Michel2017_trimmed1.bam.bed')# This works locally 
+
 print(os.path.exists(os.path.join(file_dirname,'satay_analysis_testdata','Output_Processing')))
 savefigure=False
 ```
