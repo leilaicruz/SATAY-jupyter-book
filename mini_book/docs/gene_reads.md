@@ -84,7 +84,7 @@ file_dirname = os.path.dirname('__file__')
 gff_file = 'Python_scripts/Data_Files/Saccharomyces_cerevisiae.R64-1-1.99.gff3'
 abs_gff_file = os.path.join(file_dirname, gff_file)
 # gff_file = os.path.join(file_dirname,'Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
-gene_information_file = os.path.join(file_dirname,'Data_Files','Yeast_Protein_Names.txt')
+gene_information_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Yeast_Protein_Names.txt')
 
 
 if savefigure == True:
