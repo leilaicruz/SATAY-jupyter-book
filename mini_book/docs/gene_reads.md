@@ -78,7 +78,7 @@ Next additional files are loaded. Change these to your local paths leading to th
 The `save_figure_path` directs to the location where the figures need to be stored.
 
 ```{code-cell} ipython3
-os.chdir('../')
+# os.chdir('../')
 gff_file = 'Data_Files/Saccharomyces_cerevisiae.R64-1-1.99.gff3'
 abs_gff_file = os.path.join(file_dirname, gff_file)
 # gff_file = os.path.join(file_dirname,'Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
