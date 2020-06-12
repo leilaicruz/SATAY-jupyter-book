@@ -47,20 +47,20 @@ import seaborn as sns
 ```
 
 ```{code-cell}ipython3
-# file_dirname = os.path.dirname(os.path.abspath('__file__'))
+
 file_dirname = os.path.dirname('__file__')
 # sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
 # os.chdir('mini_book/docs/Python_scripts/python_modules/')
 
-filepath = os.path.join(file_dirname,'..','satay_analysis_testdata','Output_Processing')
+filepath = os.path.join(file_dirname,'satay_analysis_testdata','Output_Processing')
 filename = "Cerevisiae_WT2_Michel2017_trimmed1.bam_pergene.txt" # CHANGE THIS TO ANY FILE YOU WANT TO ANALYSE.
 normalize = 'True'
 
-essential_genes_files = [os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
-                        os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
+essential_genes_files = [os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
+                        os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
 
-gene_information_file = os.path.join(file_dirname,'Data_Files','Yeast_Protein_Names.txt')
-os.chdir('mini_book/docs/Python_scripts/')
+gene_information_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Yeast_Protein_Names.txt')
+# os.chdir('mini_book/docs/Python_scripts/')
 ```
 
 ### Create list of all essential genes
