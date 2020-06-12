@@ -26,9 +26,7 @@ If you want to get started just join this [FORUM](https://groups.google.com/foru
 And the website for the library generation can be found [HERE](https://sites.google.com/site/satayusers/complete-protocol/library-generation)
 ```
 
-
-
-# Introduction
+```{toggle} To get the context of the technique, click the buttom to reveal :) 
 
 About 20% of the genes in wild type *Saccharomyces Cerevisiae* are essential, meaning that they cannot be deleted without crippling the cell to such an extent that it either cannot survive (lethality) or multiply
 (sterility).
@@ -52,12 +50,13 @@ In other words, are there common changes in the subnetwork when a random change 
 
 To check the essentiality of genes, SATAY (SAturated Transposon Analysis in Yeast) experiments will be performed on different genetic backgrounds [Michel et.al., 2017] [Segal et.al., 2018].
 This uses transposons to inhibit genes and it allows to compare the effects of this inhibition on the fitness of the cells (see for example the [galaxyproject website](https://galaxyproject.github.io/training-material/topics/genome-annotation/tutorials/tnseq/tutorial.html) which explains it in the context of bacteria, but the same principles hold for yeast cells).
-Transposons are small pieces of DNA that can integrate in a random location in the genome.
+
+- Transposons are small pieces of DNA that can integrate in a random location in the genome.
 When the insertion happens at the location of a gene, this gene will be inhibited (i.e. it can still be transcribed, but typically it cannot be translated into a functional protein).
 
-After a transposon is randomly inserted in the DNA, the growth of the cell is checked.
-If the cell cannot produce offspring, the transposon has likely been inserted in an essential gene or genomic region.
-This is done for many cells at the same time.
+- After a transposon is randomly inserted in the DNA, the growth of the cell is checked.
+- If the cell cannot produce offspring, the transposon has likely been inserted in an essential gene or genomic region.
+- This is done for many cells at the same time.
 
 All the cells are let to grow after insertion and the cells that have a transposon inserted in an essential part of their DNA (therefore having a low fitness) will, after some time, be outcompeted by the cells with an insertion in a non-essential part of the DNA (cells with a relatively high fitness).
 By means of sequencing, the location of the transposon insertion can be checked and related to a specific gene.
@@ -65,16 +64,20 @@ Since the cells that have an essential part of the genome blocked do not occur i
 Thus, when the sequencing results of all the cells are aligned to a reference genome, some genomic locations are missing in the sequencing results.
 These missing locations corresponds to potentially essential genomic regions.
 The genome of all cells (called the library) is saturated when all possible insertion sites have at least one insertion of a transposon.
+
 In that case all regions of the DNA are checked for their essentiality.
 
-## Essentiality
+```
 
-Essentiality of genes are defined as its deletion is detrimental to cell in the form that either the cell cannot grow anymore and dies, or the cell cannot give rise to offspring.
-Essentiality can be grouped in two categories, namely type I and type II [Chen et.al. 2016].
-Type I essential genes are genes, when inhibited, show a loss-of-function that can only be rescued (or masked) when the lost function is recovered by a gain-of-function mechanism.
-Typically these genes are important for some indispensable core function in the cell (e.g. Cdc42 in *S. Cerevisiae* that is type I essential for cell polarity).
-Type II essential genes are the ones that look essential upon inhibition, but the effects of its inhibition can be rescued or masked by the deletion of (an)other gene(s).
-These genes are therefore not actually essential, but when inhibiting the genes some toxic side effects are provoked that are deleterious for the cells.
+
+
+## Gene Essentiality
+
+Essentiality of genes are defined as its deletion is detrimental to cell in the form that either the cell cannot grow anymore and dies, or the cell cannot give rise to offspring. Essentiality can be grouped in two categories, namely type I and type II [Chen et.al. 2016].
+- Type I essential genes are genes, when inhibited, show a loss-of-function that can only be rescued (or masked) when the lost function is recovered by a gain-of-function mechanism.
+- Typically these genes are important for some indispensable core function in the cell (e.g. Cdc42 in *S. Cerevisiae* that is type I essential for cell polarity).
+- Type II essential genes are the ones that look essential upon inhibition, but the effects of its inhibition can be rescued or masked by the deletion of (an)other gene(s).
+- These genes are therefore not actually essential, but when inhibiting the genes some toxic side effects are provoked that are deleterious for the cells.
 
 The idea is that the essentiality of genes (both type I and type II), may change between different genetic backgrounds.
 For changes in essentiality four cases are considered:
@@ -103,28 +106,39 @@ This is typically made by sporulating the two mutants, but deleting a gene that 
 Therefore, these double mutants are hard or impossible to make.
 
 Another point to be aware of is that some genes might be essential in specific growth conditions (see also the subsection).
-For example, cells that are grown in an environment that is rich of a specific nutrient, the gene(s) that are requried for the digestion of this nutrient might be essential in this condition.
+For example, cells that are grown in an environment that is rich of a specific nutrient, the gene(s) that are required for the digestion of this nutrient might be essential in this condition.
 The SATAY experiments will therefore show that these genes are intolerant for transposon insertions.
-However, when the cells are grown in another growth condition where mainly other nutrients are present, the same genes might now not be essential and therefore also be more tolerent to transposon insertions in that region.
+However, when the cells are grown in another growth condition where mainly other nutrients are present, the same genes might now not be essential and therefore also be more tolerant to transposon insertions in that region.
 It is suggested to compare the results of experiments with cells from the same genetic background grown in different conditions with each other to rule out conditions specific results.
 
-For wild-type (and some mutated) yeast, the interaction network is already made based on previous research [thecellmap.org](<thecellmap.org>).
+```{margin} The yeast interaction network
+The yeast interaction network is already made based on previous research see here >> [thecellmap.org](thecellmap.org).
+
+```
+
 We want to check the essentiality of all genes in different mutants and compare this with both wild type cells and with each other.
 The goal is to make an overview of the changes in the essentiality of the genes and the interaction network between the proteins.
 With this we aim to eventually be able to predict the synthetic lethality of multiple mutations based on the interaction maps of the individual mutations.
-Currently the idea is to use machine learning that uses the results from the transposon sequencing experiments, the interaction map of genes and possibly GO-terms (see for current progress [the github page for machine learning](<https://github.com/leilaicruz/machine-learning-for-yeast>).)
+
+```{margin}
+
+Currently the idea is to use machine learning that uses the results from the transposon sequencing experiments, the interaction map of genes and possibly GO-terms. Some implementations of Machine learning workflows can be seen [here, in another Jupyter Book :)](https://leilaicruz.github.io/jupyter-book/Machine-learning-related-projects/prot_domains2lethality-PAPER-REPLICATION.html)
+
+```
+
+
 
 ## Interpreting Transposon Counts & Reads
 
 Once cells have a transposon inserted somewhere in the DNA, the cells are let to grow so they can potentially generate a few new generations.
-A cell with a tranposon inserted in an essential part of its DNA grows very slowly or might not grow at all (due to its decreased fitness).
+A cell with a transposon inserted in an essential part of its DNA grows very slowly or might not grow at all (due to its decreased fitness).
 Since the sequencing starts only at the location of a transposon insertion (see experimental methods section), it can be concluded that roughly each read from the sequencing corresponds with a transposon insertion (roughly mainly because transposon inserted in essential genes can generate no reads).
 Cells with a transposon inserted in an essential genomic region, will not have divided and therefore will not have a contribution to the sequencing reads.
 When the reads are aligned to a reference sequence and the number of reads are mapped against the genome, empty regions indicate possible essential genes.
 Negative selection can thus be found by looking for empty regions in the reads mapping.
 When a transposon is inserted in a non-essential genomic region, these cells can still divide and give rise to offspring and after sequencing the non-essential regions will be represented by relatively many reads.
 
-During processing the genes can be analyzed using the number of transposon insertions per gene (or region) or the number of reads per gene.
+During processing the genes can be analysed using the number of transposon insertions per gene (or region) or the number of reads per gene.
 Reads per gene, instead of transposons per gene, might be a good measure for positive selection since it is more sensitive (bigger difference in number of reads between essential and non-essential genes), but also tends to be nosier.
 Transposons per gene is less noisy, but is also less sensitive since the number of transposons inserted in a gene does not change in subsequent generations of a particular cell.
 Therefore it is hard to tell the fitness of cells when a transposon is inserted a non-essential region solely based on the number of transposon insertions.
@@ -133,9 +147,8 @@ Ideally only the transposons inserted in non-essential genomic regions will have
 However, sometimes non-essential genes also have few or no transposon insertion sites.
 According to [Michel et.al.](https://elifesciences.org/articles/23570) this can have 3 main reasons.
 
-1. During alignment of the reads, the reads that represent repeated DNA sequences are discarded, since there is no unique way of fitting
- them in the completed sequence.
- (Although the DNA sequence is repeated, the number of transposon counts can differ between the repeated regions).
+1. During alignment of the reads, the reads that represent repeated DNA sequences are discarded, since there is no unique way of fitting them in the completed sequence.
+ (Although the DNA sequence is repeated, the number of transposon counts can differ between the repeated regions)
  Transposons within such repeated sequences are therefore discarded and the corresponding reads not count.
  If this happens at a non-essential gene, it appears that it has no transposons, but this is thus merely an alignment related error in the analysis process.
 
@@ -151,7 +164,7 @@ According to [Michel et.al.](https://elifesciences.org/articles/23570) this can 
  In the processing, it might therefore look as if these genes are essential, but in fact they are not.
  The cells just grow very slowly.
 
-The other way around might also occcur, where essential genes are partly tolerant to transposons.
+The other way around might also occur, where essential genes are partly tolerant to transposons.
 This is shown by Michel et.al. to be caused that some regions (that code for specific subdomains of the proteins) of the essential genes are dispensable.
 The transposons in these essential genes are clearly located at a specific region in the gene, the one that codes for a non-essential subdomain.
 However, this is not always possible, as in some cases deletion of non-essential subdomains of essential genes create unstable, unexpressed or toxin proteins.
@@ -160,10 +173,10 @@ Michel et.al. devised an algorithm to estimate the likelihood $L$ of a gene havi
 
 $$L = \frac{\text{d }N_{\text{cds}}}{l_{\text{cds}}}$$
 
-where $d$ is the longest interval (in terms of base pairs) between 5 neighboring transposons in a Coding DNA Sequence (cds) ($\geq 300$ bp), $N_{cds}$ is the total number transposons mapping in the cds ($\geq 20$) transposons) and $l_{cds}$ is the total length of the CDS.
+where $d$ is the longest interval (in terms of base pairs) between 5 neighbouring transposons in a Coding DNA Sequence (cds) ($\geq 300$ bp), $N_{cds}$ is the total number transposons mapping in the cds ($\geq 20$) transposons) and $l_{cds}$ is the total length of the CDS.
 Additionally, it must hold that $0.1 l_{cds} \leq d \leq 0.9 l_{cds}$.
 
-It is expected that only essential genes cary essential subdomains, and indeed what was found by Michel et.al. that the genes with the highest likelihood were mostly also genes previously annotated as essential by other studies.
+It is expected that only essential genes carry essential subdomains, and indeed what was found by Michel et.al. that the genes with the highest likelihood were mostly also genes previously annotated as essential by other studies.
 
 Because of the reasons mentioned before, not a simple binary conclusion can be made solely based on the amount of transposon insertions or the number of reads.
 Instead, a gene with little reads *might* be essential, but to be sure the results from other experiments need to be implemented as well, for example where the cells were grown in a different growth conditions.
@@ -173,19 +186,20 @@ Therefore, SATAY analysis only says something about the relative fitness of cell
 
 Many essential genes in wild type cells are already known and published.
 The results from our SATAY experiments we can verify using the known essential genes and check how well they fit with the number of reads in each gene.
-Also, we can use a similar approach as was performed by the Kornmann lab [Michel et.al. 2017] using wild type cells (see also [the SATAY users website](<https://sites.google.com/site/satayusers/>)).
+Also, we can use a similar approach as was performed by the Kornmann lab [Michel et.al. 2017] using wild type cells. 
 Comparison of our results with those obtained by the Kornmann lab might confirm the quality of our experimental and analysis methods.
 Once our experimental method is verified, we want to compare the differences in essentiality of genes in wild type with different mutants (e.g. dBem1, dBem2, dBem3 and dNrp1).
 For fast processing of many experimental results, a tool needs to be developed that automatically converts the raw sequencing data to a list of the number of transposons and reads for each gene, and potentially list some of their properties (e.g. essentiality, GO-terms, interactions etc.).
 
-## Experimental method summary
+```{toggle} To get the a summary of the experimental method, click the buttom to reveal :) 
+
 
 The process of SATAY starts with inserting a plasmid in the cells that contains a transposase (TPase) and the transposon (MiniDs) flanked on both sides by adenine (ADE).
 The transposon has a specific, known, sequence that codes for the transposase that cuts the transposon from the plasmid (or DNA) to (another part of) the DNA.
 
-<!-- ![Simplified example for the transposon insertion plasmid.](./media/Plasmid_transposon.png) -->
+[Simplified example for the transposon insertion plasmid.](./media/Plasmid_transposon.png)
 
-(See next figure for the following section).
+
 The MiniDs transposon is cut loose from the plasmid and randomly inserted in the DNA of the host cell.
 If the transposon is inserted in a gene, the gene can still be transcribed by the ribosomes, but typically cannot be (properly)
 translated in a functional protein.
@@ -199,7 +213,7 @@ Since the sequence of the transposon is known, the part of the gene can be extra
 This is repeated for the other half of the transposon that includes the other part of the gene.
 When both parts of the gene are known, the sequence from the original gene can be determined.
 
-<!-- ![Schematic overview of transposon insertion experiments.](./media/satay_experiment_overview.png) -->
+[Schematic overview of transposon insertion experiments.](./media/satay_experiment_overview.png)
 
 ## Sequence alignment
 
@@ -381,6 +395,7 @@ This value is assigned a ‘+’ or ‘-‘ to indicate the reading orientation.
 There are 42 scores, each of which are related to a specific error.
 See for example [phred score conversion table](<https://drive5.com/usearch/manual/quality_score.html>) for a conversion table.
 
+```
 ## Determine essentiality based on transposon counts
 
 Using the number of transposons and reads, it can be determined which genes are potentially essential and which are not.
