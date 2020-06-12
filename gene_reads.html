@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Gene_reads.py &#8212; SATAY DATA ANALYSIS</title>
+    <title>Gene reads script &#8212; SATAY DATA ANALYSIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -25,11 +25,12 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script async="async" src="_static/thebelab.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/Greg.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -70,22 +71,25 @@
   
   <ul class="nav sidenav_l1">
   <li class="">
-    <a href="README.html">1. Creating an Conda Environment</a>
+    <a href="Intro.html">1. To reproduce an example of  Jupyter book, and you are a Windows user:</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Get started</p>
 </li>
   <li class="">
-    <a href="MysT_Notebooks.html">2. Notebooks written entirely in markdown</a>
+    <a href="Intro/satay_analysis_notes.html">2. Summary</a>
+  </li>
+  <li class="">
+    <a href="MysT_Notebooks.html">3. Notebooks written entirely in markdown</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Postprocessing scripts</p>
 </li>
   <li class="active">
-    <a href="">3. Gene_reads.py</a>
+    <a href="">4. Gene reads script</a>
   </li>
   <li class="">
-    <a href="statistics_pergene.html">4. Statistics per gene</a>
+    <a href="statistics_pergene.html">5. Statistics per gene</a>
   </li>
 </ul>
 </nav>
@@ -122,16 +126,16 @@
             
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
-                
+                <a class="dropdown-buttons" href="_sources/gene_reads.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/gene_reads.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <a class="dropdown-buttons" href="_sources/gene_reads.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
             
         </div>
 
-        <!-- Edit this page -->
+        <!-- Source interaction buttons -->
         
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -142,8 +146,6 @@
         <div class="dropdown-buttons-trigger">
             <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
             <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=tree/mini_book/docs/_build/html/gene_reads.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
                 
                 
                 <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
@@ -225,8 +227,8 @@
         
               <div>
                 
-  <div class="section" id="gene-reads-py">
-<h1>Gene_reads.py<a class="headerlink" href="#gene-reads-py" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="gene-reads-script">
+<h1>Gene reads script<a class="headerlink" href="#gene-reads-script" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>To get an indication of possible essential genes, the number of transposon insertions and amount of reads per transposon is plotted along the length of the gene. If a gene consists of a large area without any insertions or with little reads, this might indicate an essential (region of a) gene.
@@ -266,27 +268,27 @@ Finally, the figure can be automatically saved (at a location specified in the b
 
 <span class="c1"># file_dirname = os.path.dirname(os.path.abspath(&#39;__file__&#39;))</span>
 <span class="n">file_dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;__file__&#39;</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;python_modules&#39;</span><span class="p">))</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;mini_book/docs/Python_scripts/python_modules/&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">chromosome_and_gene_positions</span> <span class="kn">import</span> <span class="n">gene_position</span>
-<span class="kn">from</span> <span class="nn">gene_names</span> <span class="kn">import</span> <span class="n">gene_aliases</span>
-<span class="kn">from</span> <span class="nn">chromosome_names_in_files</span> <span class="kn">import</span> <span class="n">chromosome_name_bedfile</span>
-<span class="kn">import</span> <span class="nn">statistics_perchromosome</span>
+<span class="c1"># sys.path.insert(1,os.path.join(file_dirname,&#39;python_modules&#39;))</span>
+<span class="c1"># os.chdir(&#39;mini_book/docs/Python_scripts/python_modules/&#39;) # with this path works in the local build</span>
+<span class="kn">from</span> <span class="nn">Python_scripts.python_modules.chromosome_and_gene_positions</span> <span class="kn">import</span> <span class="n">gene_position</span>
+<span class="kn">from</span> <span class="nn">Python_scripts.python_modules.gene_names</span> <span class="kn">import</span> <span class="n">gene_aliases</span>
+<span class="kn">from</span> <span class="nn">Python_scripts.python_modules.chromosome_names_in_files</span> <span class="kn">import</span> <span class="n">chromosome_name_bedfile</span>
+<span class="kn">import</span> <span class="nn">Python_scripts.python_modules.statistics_perchromosome</span> <span class="k">as</span> <span class="nn">statistics_perchromosome</span>
 
 
 <span class="c1">#FUNCTION INPUTS</span>
 <span class="n">gene_name</span> <span class="o">=</span> <span class="s1">&#39;bem1&#39;</span>
 <span class="n">region</span><span class="o">=</span><span class="kc">None</span>
-<span class="c1"># bed_file = &quot;satay_analysis_testdata/Output_Processing/Cerevisiae_WT2_Michel2017_trimmed1.bam.bed&quot;</span>
-<span class="c1"># abs_bed_file = os.path.join(file_dirname, bed_file)</span>
-<span class="n">bed_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;satay_analysis_testdata&#39;</span><span class="p">,</span><span class="s1">&#39;Output_Processing&#39;</span><span class="p">,</span><span class="s1">&#39;Cerevisiae_WT2_Michel2017_trimmed1.bam.bed&#39;</span><span class="p">)</span><span class="c1">#CHANGE THIS TO ANY .BED FILE YOU WANT TO ANALYSE.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;satay_analysis_testdata&#39;</span><span class="p">,</span><span class="s1">&#39;Output_Processing&#39;</span><span class="p">)))</span>
+
+<span class="n">bed_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;satay_analysis_testdata&#39;</span><span class="p">,</span><span class="s1">&#39;Output_Processing&#39;</span><span class="p">,</span><span class="s1">&#39;Cerevisiae_WT2_Michel2017_trimmed1.bam.bed&#39;</span><span class="p">)</span><span class="c1">#CHANGE THIS TO ANY .BED FILE YOU WANT TO ANALYSE.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;satay_analysis_testdata&#39;</span><span class="p">,</span><span class="s1">&#39;Output_Processing&#39;</span><span class="p">)))</span>
 <span class="n">savefigure</span><span class="o">=</span><span class="kc">False</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>False
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -298,11 +300,13 @@ Finally, the figure can be automatically saved (at a location specified in the b
 The <code class="docutils literal notranslate"><span class="pre">save_figure_path</span></code> directs to the location where the figures need to be stored.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;../&#39;</span><span class="p">)</span>
-<span class="n">gff_file</span> <span class="o">=</span> <span class="s1">&#39;Data_Files/Saccharomyces_cerevisiae.R64-1-1.99.gff3&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># os.chdir(&#39;../&#39;)</span>
+<span class="n">file_dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;__file__&#39;</span><span class="p">)</span>
+
+<span class="n">gff_file</span> <span class="o">=</span> <span class="s1">&#39;Python_scripts/Data_Files/Saccharomyces_cerevisiae.R64-1-1.99.gff3&#39;</span>
 <span class="n">abs_gff_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span> <span class="n">gff_file</span><span class="p">)</span>
 <span class="c1"># gff_file = os.path.join(file_dirname,&#39;Data_Files&#39;,&#39;Saccharomyces_cerevisiae.R64-1-1.99.gff3&#39;)</span>
-<span class="n">gene_information_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Yeast_Protein_Names.txt&#39;</span><span class="p">)</span>
+<span class="n">gene_information_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Python_scripts&#39;</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Yeast_Protein_Names.txt&#39;</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">savefigure</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>

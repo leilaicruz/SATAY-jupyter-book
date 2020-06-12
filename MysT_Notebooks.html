@@ -25,16 +25,17 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script async="async" src="_static/thebelab.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/Greg.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Gene_reads.py" href="gene_reads.html" />
-    <link rel="prev" title="Creating an Conda Environment" href="README.html" />
+    <link rel="next" title="Gene reads script" href="gene_reads.html" />
+    <link rel="prev" title="Summary" href="Intro/satay_analysis_notes.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -70,22 +71,25 @@
   
   <ul class="nav sidenav_l1">
   <li class="">
-    <a href="README.html">1. Creating an Conda Environment</a>
+    <a href="Intro.html">1. To reproduce an example of  Jupyter book, and you are a Windows user:</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Get started</p>
 </li>
+  <li class="">
+    <a href="Intro/satay_analysis_notes.html">2. Summary</a>
+  </li>
   <li class="active">
-    <a href="">2. Notebooks written entirely in markdown</a>
+    <a href="">3. Notebooks written entirely in markdown</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Postprocessing scripts</p>
 </li>
   <li class="">
-    <a href="gene_reads.html">3. Gene_reads.py</a>
+    <a href="gene_reads.html">4. Gene reads script</a>
   </li>
   <li class="">
-    <a href="statistics_pergene.html">4. Statistics per gene</a>
+    <a href="statistics_pergene.html">5. Statistics per gene</a>
   </li>
 </ul>
 </nav>
@@ -122,16 +126,16 @@
             
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
-                
+                <a class="dropdown-buttons" href="_sources/MysT_Notebooks.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/MysT_Notebooks.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <a class="dropdown-buttons" href="_sources/MysT_Notebooks.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
             
         </div>
 
-        <!-- Edit this page -->
+        <!-- Source interaction buttons -->
         
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -142,8 +146,6 @@
         <div class="dropdown-buttons-trigger">
             <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
             <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=tree/mini_book/docs/_build/html/MysT_Notebooks.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
                 
                 
                 <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
@@ -393,8 +395,8 @@ Content in another markdown cell
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="README.html" title="previous page">Creating an Conda Environment</a>
-    <a class='right-next' id="next-link" href="gene_reads.html" title="next page">Gene_reads.py</a>
+    <a class='left-prev' id="prev-link" href="Intro/satay_analysis_notes.html" title="previous page">Summary</a>
+    <a class='right-next' id="next-link" href="gene_reads.html" title="next page">Gene reads script</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -25,15 +25,16 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script async="async" src="_static/thebelab.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/Greg.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Gene_reads.py" href="gene_reads.html" />
+    <link rel="prev" title="Gene reads script" href="gene_reads.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -69,22 +70,25 @@
   
   <ul class="nav sidenav_l1">
   <li class="">
-    <a href="README.html">1. Creating an Conda Environment</a>
+    <a href="Intro.html">1. To reproduce an example of  Jupyter book, and you are a Windows user:</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Get started</p>
 </li>
   <li class="">
-    <a href="MysT_Notebooks.html">2. Notebooks written entirely in markdown</a>
+    <a href="Intro/satay_analysis_notes.html">2. Summary</a>
+  </li>
+  <li class="">
+    <a href="MysT_Notebooks.html">3. Notebooks written entirely in markdown</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Postprocessing scripts</p>
 </li>
   <li class="">
-    <a href="gene_reads.html">3. Gene_reads.py</a>
+    <a href="gene_reads.html">4. Gene reads script</a>
   </li>
   <li class="active">
-    <a href="">4. Statistics per gene</a>
+    <a href="">5. Statistics per gene</a>
   </li>
 </ul>
 </nav>
@@ -121,16 +125,16 @@
             
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
-                
+                <a class="dropdown-buttons" href="_sources/statistics_pergene.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
                 <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/statistics_pergene.md.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <a class="dropdown-buttons" href="_sources/statistics_pergene.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
                 <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
             </div>
             
         </div>
 
-        <!-- Edit this page -->
+        <!-- Source interaction buttons -->
         
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -141,8 +145,6 @@
         <div class="dropdown-buttons-trigger">
             <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
             <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=tree/mini_book/docs/_build/html/statistics_pergene.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
                 
                 
                 <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
@@ -250,20 +252,19 @@ This is determined using two files that contains all known essential genes.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># file_dirname = os.path.dirname(os.path.abspath(&#39;__file__&#39;))</span>
-<span class="n">file_dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;__file__&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;__file__&#39;</span><span class="p">)</span>
 <span class="c1"># sys.path.insert(1,os.path.join(file_dirname,&#39;python_modules&#39;))</span>
 <span class="c1"># os.chdir(&#39;mini_book/docs/Python_scripts/python_modules/&#39;)</span>
 
-<span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;satay_analysis_testdata&#39;</span><span class="p">,</span><span class="s1">&#39;Output_Processing&#39;</span><span class="p">)</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;satay_analysis_testdata&#39;</span><span class="p">,</span><span class="s1">&#39;Output_Processing&#39;</span><span class="p">)</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;Cerevisiae_WT2_Michel2017_trimmed1.bam_pergene.txt&quot;</span> <span class="c1"># CHANGE THIS TO ANY FILE YOU WANT TO ANALYSE.</span>
 <span class="n">normalize</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
 
-<span class="n">essential_genes_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Cervisiae_EssentialGenes_List_1.txt&#39;</span><span class="p">),</span>
-                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Cervisiae_EssentialGenes_List_2.txt&#39;</span><span class="p">)]</span>
+<span class="n">essential_genes_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Python_scripts&#39;</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Cervisiae_EssentialGenes_List_1.txt&#39;</span><span class="p">),</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Python_scripts&#39;</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Cervisiae_EssentialGenes_List_2.txt&#39;</span><span class="p">)]</span>
 
-<span class="n">gene_information_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Yeast_Protein_Names.txt&#39;</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;mini_book/docs/Python_scripts/&#39;</span><span class="p">)</span>
+<span class="n">gene_information_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Python_scripts&#39;</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Yeast_Protein_Names.txt&#39;</span><span class="p">)</span>
+<span class="c1"># os.chdir(&#39;mini_book/docs/Python_scripts/&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -659,7 +660,7 @@ But if a low transposon count is present, typically no definite conclusion can b
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="gene_reads.html" title="previous page">Gene_reads.py</a>
+    <a class='left-prev' id="prev-link" href="gene_reads.html" title="previous page">Gene reads script</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
