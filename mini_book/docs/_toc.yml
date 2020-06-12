@@ -1,7 +1,8 @@
 # - file: README
 
-- file: README
+- file: Intro
 - header: Get started
+- file: Intro/satay_analysis_notes
 - file: MysT_Notebooks
 # - header : SATAY general Documentation
 # - file: MysT_Notebooks
