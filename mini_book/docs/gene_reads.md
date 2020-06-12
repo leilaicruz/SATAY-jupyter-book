@@ -60,7 +60,7 @@ file_dirname = os.path.dirname('__file__')
 from Python_scripts.python_modules.chromosome_and_gene_positions import gene_position
 from Python_scripts.python_modules.gene_names import gene_aliases
 from Python_scripts.python_modules.chromosome_names_in_files import chromosome_name_bedfile
-import Python_scripts.python_modules.statistics_perchromosome 
+import Python_scripts.python_modules.statistics_perchromosome as statistics_perchromosome
 
 
 #FUNCTION INPUTS
