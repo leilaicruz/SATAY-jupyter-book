@@ -23,6 +23,8 @@ html:
   extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
   extra_footer              : ""  # Will be displayed underneath the footer.
   google_analytics_id       : ""  # A GA id that can be used to track book views.
+  use_repository_button     : true
+  use_issues_button         : true
 
 # #######################################################################################
 # Interact link settings
@@ -35,6 +37,7 @@ repository:
   path_to_book                : mini_book/docs/_build/html
   branch                      : gh-pages 
 
+
 binder:
   binderhub_url               : "https://mybinder.org/"
   text                        : "Launch binder"
@@ -43,4 +46,8 @@ latex:
   latex_engine                : "xelatex"
 
 launch_buttons:
-  thebelab                  : true
+  thebelab                  : true # Add a thebelab button to pages (requires the repository to run on Binder)
+  notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url             : https://mybinder.org/v2/gh/leilaicruz/SATAY-jupyter-book/tree/gh-pages/master  # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+ 
