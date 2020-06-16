@@ -24,7 +24,7 @@ This code is a part from 'fitness_vs_transposon_density.py' created by Leila.
 
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 import numpy as np
 import scipy.io
 import seaborn as sns
