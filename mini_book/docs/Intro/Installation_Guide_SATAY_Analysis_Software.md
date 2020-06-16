@@ -180,7 +180,7 @@ The adapter.fa file is included and located in the /resources directory.
 BWA is used for aligning the reads to a reference genome and to index the reference sequence.
 After downloading the software in the VM, install it by entering the following commands in the terminal:
 
-```
+```bash
 bunzip2 bwa-0.7.17.tar.bz2
 tar -xvf bwa-0.7.17.tar
 cd bwa-0.7.17
@@ -197,7 +197,7 @@ To run, enter `bwa` in the terminal.
 Samtools is used for processing after alignment, for example for converting SAM files to BAM files.
 After downloading the software in the VM, install it by entering the following commands in the terminal:
 
-```
+```bash
 bunzip2 samtools-1.10.tar.bz2
 tar -xvf samtools-1.10.tar
 cd samtools-1.10
@@ -215,7 +215,7 @@ Do the same protocol for bcftools.
 Sambamba is used for processing after alignment, for example for sorting and indexing the BAM files.
 After downloading the software in the VM, install it by entering the following commands in the terminal:
 
-```
+```bash 
 gunzip sambamba-0.7.1-linux-static.gz
 chmod +x sambamba-0.7.1-linux-static
 sudo ln -s /path/to/sambamba-0.7.1-linux-static /usr/local/bin
