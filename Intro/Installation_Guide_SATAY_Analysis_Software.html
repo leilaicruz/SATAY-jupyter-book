@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>” Software installation guide for whole genome sequencing and transposon mapping” &#8212; SATAY DATA ANALYSIS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="../_static/thebelab.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/Greg.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/Greg.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../Intro.html">1. To reproduce an example of  Jupyter book, and you are a Windows user:</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Get started</p>
+</li>
+  <li class="">
+    <a href="satay_analysis_notes.html">2. All what you need to know from SATAY</a>
+  </li>
+  <li class="">
+    <a href="data-analysis-workflow.html">3. Data analysis steps</a>
+  </li>
+  <li class="">
+    <a href="../MysT_Notebooks.html">4. Notebooks written entirely in markdown</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Postprocessing scripts</p>
+</li>
+  <li class="">
+    <a href="../gene_reads.html">5. Gene reads script</a>
+  </li>
+  <li class="">
+    <a href="../statistics_pergene.html">6. Statistics per gene</a>
+  </li>
+  <li class="">
+    <a href="../statistics_perchromosome_Compare.html">7. Statistics_Perchromosome_Compare</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                <a class="dropdown-buttons" href="../_sources/Intro/Installation_Guide_SATAY_Analysis_Software.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/Intro/Installation_Guide_SATAY_Analysis_Software.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/leilaicruz/SATAY-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/leilaicruz/SATAY-jupyter-book/issues/new?title=Issue%20on%20page%20%2FIntro/Installation_Guide_SATAY_Analysis_Software.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                
+            </div>
+        </div>
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org//v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=lab/tree/Intro/Installation_Guide_SATAY_Analysis_Software.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#introduction" class="nav-link">Introduction</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#using-the-already-existing-virtual-machine" class="nav-link">Using the already existing virtual machine</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#setting-up-already-existing-virtual-machine" class="nav-link">0. Setting up already existing virtual machine</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#creating-a-virtual-machine-from-scratch" class="nav-link">Creating a virtual machine from scratch</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#virtualbox-6-1-4" class="nav-link">1. VirtualBox-6.1.4</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#fastqc-windows-or-linux" class="nav-link">2. Fastqc (Windows or Linux)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#a-trimmomatic-0-39-windows-or-linux" class="nav-link">3a. Trimmomatic-0.39 (Windows or Linux)</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#fastq-v1-1-windows-optional" class="nav-link">123Fastq-v1.1 (Windows) (optional)</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#b-bbduk-38-84-windows-or-linux" class="nav-link">3b. BBDuk-38.84 (Windows or Linux)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#bwa-linux" class="nav-link">4. BWA (Linux)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#samtools-and-bcftools-linux" class="nav-link">5. SAMTools and bcftools (Linux)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#sambamba-linux" class="nav-link">6. Sambamba (Linux)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#igv-windows-optional" class="nav-link">7. IGV (Windows) (optional)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#matlab-transposon-count-windows" class="nav-link">8. Matlab Transposon count (Windows)</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="software-installation-guide-for-whole-genome-sequencing-and-transposon-mapping">
+<h1>” Software installation guide for whole genome sequencing and transposon mapping”<a class="headerlink" href="#software-installation-guide-for-whole-genome-sequencing-and-transposon-mapping" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This file discusses the installation procedures for the programs required for whole genome sequencing analysis and transposon mapping. The numbering corresponds with the order in which this software is used.
+Note that a part of the software is for windows and Linux, and a part is for Linux only. Therefore a virtual machine is included to run Ubuntu (or another unix based operating system to your liking).
+For a more detailed workflow and the commands of all the individual commands, see <a class="reference external" href="https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis/blob/dev_Gregory/docs/satay_analysis_notes.md">satay_analysis_notes.md</a>.</p>
+<p>A Linux virtual machine is already created that is completely set up and includes all the software discussed below.
+This is located on the N-drive in the ‘VirtualMacines’ folder.
+Step 0 below discusses how this virtual machine can be installed on your computer and how to use it.
+The following steps are only important when you want to create a virtual machine from scratch so you can set it up completely to your liking or using another operating system than Ubuntu that is used existing virtual machine on the N-drive.</p>
+<p>To run a program in the command line, you need to specify the entire path to the location where the program is installed.
+An easier way is to add the program to the system path. This can be done with the command
+<code class="docutils literal notranslate"><span class="pre">setx</span> <span class="pre">PATH</span> <span class="pre">'/path/to/program'</span></code>.
+To check if the program is added to the path, use
+<code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$PATH$</span></code>.</p>
+<p>Some programs requires java to be installed. To check if java is installed, run the command ‘java -version’ in the command line.
+If it is not installed, download and install it from <span class="xref myst">https://www.java.com/nl/download/</span></p>
+</div>
+<div class="section" id="using-the-already-existing-virtual-machine">
+<h2>Using the already existing virtual machine<a class="headerlink" href="#using-the-already-existing-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-up-already-existing-virtual-machine">
+<h3>0. Setting up already existing virtual machine<a class="headerlink" href="#setting-up-already-existing-virtual-machine" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">https://www.virtualbox.org/</span></p>
+<p>Running a virtual machine requires VirtualBox (VB), which can be downloaded from the above link and installed using the normal procedure for installing software on Windows machines.
+The memory of the virtual machine (called the virtual hard drive (vhd)) is stored on the N-drive in the VirtualMachines folder with the name VM_Ubuntu64_1.vhd.
+<strong>Before using this virtual machine, make sure you make a copy of the virtual hard drive</strong> either to your local machine or, when there is not enough memory on your computer, somewhere on the drives in your personal folder.
+The file is over 50Gb in size, so it might be troublesome to store it locally.
+When storing it on the drives, make sure it has a stable internet connection when you use it since when the connection is lost, the virtual machine crashes as it cannot access its memory anymore.</p>
+<p>To use the existing vhd, a new virtual machine has to be created within VirtualBox.
+To do this, apply the following steps.</p>
+<ol class="simple">
+<li><p>Open VB -&gt; click ‘New’ (blue icon)</p></li>
+<li><p>Choose a name for the virtual machine and set ‘type’: Linux, ‘Version’: Ubuntu 64-bit.</p></li>
+<li><p>Allocate RAM memory (adviced is to use the recommended amount to prevent problems or not more than 1/4 of the total memory available in your computer)</p></li>
+<li><p>Select ‘Use an existing virtual hard disk file’ and use the yellow folder icon to search for your copied virtual hard drive.</p></li>
+</ol>
+<p>The Virtual machine should now be working.
+Run the virtual machine by selecting ‘Start’.
+It should start up and work like a normal Linux machine.
+For some things a password and username might be required, which can be found in the text file located in the same drive as the vhd file.</p>
+<p>It might be good to make sure the system is updated.
+For this, apply the following steps:</p>
+<ol class="simple">
+<li><p>Open the terminal app</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code> (requires password)</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code>. Type ‘Y’ if the terminal asks if software needs to be installed.</p></li>
+<li><p>Restart the system.</p></li>
+</ol>
+<p>Things that might not be working yet are the guest additions.
+These are needed for optimizing the virtual machines performance and are needed for allowing the virtual machine to communicate with some of the hardware of the physical machine like screen size and shared folders (for example, if you use VirtualBox for first time, the screen of the virtual machine might be tiny, but this is because it can not yet communicate the screen size of your physical computer).</p>
+<p>To set up the guest additions use the following commands and options</p>
+<ol class="simple">
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">dkms</span> <span class="pre">linux-headers-$(uname</span> <span class="pre">-r)</span></code></p></li>
+<li><p>Click  the ‘devices’ tab in the top of the window. Click ‘Insert Guest Additions CD Image’ and run the installer. Power off the VM when done.</p></li>
+<li><p>In VB click ‘settings’ (yellow gear symbol) and go to the ‘General’ tab; ‘Advanced’. Set both ‘shared clipboard’ and ‘drag n drop’ to bidirectional and click ‘ok’</p></li>
+<li><p>In VB click ‘settings’ again (yellow gear symbol) and go to the ‘Shared Folders’. Add path to a folder that is going to be used as shared folder. Set ‘Auto Mount’ and click ‘Ok’</p></li>
+<li><p>Start the VM and check if the shared folder is present (either on the desktop, the files folder or in the media folder).</p></li>
+<li><p>To automatically resize the screen of the virtual machine, go to the ‘view’ tab in the top of the screen and select ‘Auto-resize guest display’.</p></li>
+</ol>
+<p>The desktop of the virtual machine include the shared folder and a text file with the commands for the preprocessing pipeline.
+In the files app, the documents folder includes three subfolders:</p>
+<ul class="simple">
+<li><p>data_processing: This location can be used to temporarily store the sequencing data.</p></li>
+<li><p>Reference_Sequences: This includes by default the reference sequences for the S288c and the W303 strain in .fasta format including some additional files that are needed for the alignment software.</p></li>
+<li><p>Software: This includes all the software packages required for the preprocessing and also includes the java download.</p></li>
+</ul>
+<p>The adapters.fasta file in which the adapter sequences are stored that are used during trimming is located in ~/Documents/Software/BBMap/bbmap/resources/adapters.fa.
+Documents that are placed in the shared folder can be seen in both the virtual machine and the host computer.</p>
+</div>
+</div>
+<div class="section" id="creating-a-virtual-machine-from-scratch">
+<h2>Creating a virtual machine from scratch<a class="headerlink" href="#creating-a-virtual-machine-from-scratch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="virtualbox-6-1-4">
+<h3>1. VirtualBox-6.1.4<a class="headerlink" href="#virtualbox-6-1-4" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">https://www.virtualbox.org/</span>, <span class="xref myst">https://ubuntu.com/download/desktop</span></p>
+<p>VirtualBox is used for running Linux based sofware on a Windows machine.
+For the operating system, recommended is to download Ubuntu 18.04 LTS 64-bit from <span class="xref myst">https://ubuntu.com/#download</span>, but any other Linux OS should be fine.
+Save the downloaded document at a convenient location on your computer.
+To install:</p>
+<ol class="simple">
+<li><p>Run the VirtualBox-6.1.4-136177-Win application to install Virtualbox (VB) on your computer</p></li>
+<li><p>Open VB -&gt; click ‘New’ (blue icon)</p></li>
+<li><p>Choose a name for the virtual machine, type Linux, and Version Ubuntu 64-bit.</p></li>
+<li><p>Allocate RAM memory (adviced is to use the recommended amount to prevent problems or not more than 1/4 of the total memory available in your computer)</p></li>
+<li><p>Make new virtual hard drive (choose VHD)</p></li>
+<li><p>Choose size of VHD (recommended is a minimal amount 50GB)</p></li>
+<li><p>Go to settings of your new virtual machine (VM) (yellow gear symbol) and go to the storage tab.</p></li>
+<li><p>Click ‘empty’ under ‘Controller IDE’. Next to ‘IDE Secondary master’ click the blue CD icon and select ‘choose/create a virtual optical disk’. Click ‘Add’ and choose your downloaded Linux OS.</p></li>
+<li><p>Start the VM and run the Linux install process with the recommended settings. Note that this might freeze sometimes, so it might be necessary to reinstall it a few times)</p></li>
+</ol>
+<p>The following steps are to add a shared folder between the Windows machine and the VM that allows for easier sharing of data (this is not obligatory). This requires to install ‘guest additions’ in the VM.
+If a folder is already shared and a new folder is wanted to be shared as well, perform only step 16, 17 and 18.</p>
+<ol class="simple">
+<li><p>Open the terminal app</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code></p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">upgrade</span></code>. Type ‘Y’ if the terminal asks if software needs to be installed. Restart the system.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">dkms</span> <span class="pre">linux-headers-$(uname</span> <span class="pre">-r)</span></code></p></li>
+<li><p>Click  the ‘devices’ tab in the top of the window. Click ‘Insert Guest Additions CD Image’ and run the installer. Power off the VM when done.</p></li>
+<li><p>In VB click ‘settings’ (yellow gear symbol) and go to the ‘General’ tab; ‘Advanced’. Set both ‘shared clipboard’ and ‘drag n drop’ to bidirectional and click ‘ok’</p></li>
+<li><p>In VB click ‘settings’ again (yellow gear symbol) and go to the ‘Shared Folders’. Add path to a folder that is going to be used as shared folder. Set ‘Auto Mount’ and click ‘Ok’</p></li>
+<li><p>Start the VM and check if the shared folder is present (either on the desktop, the files folder or in the media folder).</p></li>
+<li><p>To be able to access the folder, special permission needs to be given. For this open the Terminal app.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">adduser</span> <span class="pre">[username]</span> <span class="pre">vboxsf</span></code> (where [username] should be replaced with your actual username of the VM).</p></li>
+<li><p>To check, enter <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">[username]</span></code>. This should give a list that needs to include ‘vboxsf’</p></li>
+<li><p>Restart the VM.</p></li>
+<li><p>To automatically resize the screen of the virtual machine, go to the ‘view’ tab in the top of the screen and select ‘Auto-resize guest display’.</p></li>
+</ol>
+<p>In order to run java based programs in Linux, Java needs to be installed.
+There are several ways of installing Java, but one of the simplest ways is using the command line with the following commands:</p>
+<ol class="simple">
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-s</span></code> (enter password if requisted)</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">openjdf-11-jre</span></code>. (If this version of java is not found, check which versions are available by entering <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">openjdf</span></code> followed by a double tab. This should give a list of all available installations. It also gives you the opportunity to install the jdk (Java Developer Kit) instead of the jre (Java Runtime Environment), but if you don’t plan to develop software in Java, the jre, what is used here, is good enough).</p></li>
+<li><p>Restart the terminal. Check the installation by entering <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-version</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="fastqc-windows-or-linux">
+<h3>2. Fastqc (Windows or Linux)<a class="headerlink" href="#fastqc-windows-or-linux" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">https://www.bioinformatics.babraham.ac.uk/projects/fastqc/</span></p>
+<p>Fastqc is used for quality checking.
+To install Fastqc in Linux, open the bash and go to the fastqc folder in the bash.
+Type in the command <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">fastqc</span></code> (this might require a password).
+To run interactively, click the ‘run-fastqc’ batch file.
+To run non-interactively, enter in ‘fastqc’ in the command line.</p>
+</div>
+<div class="section" id="a-trimmomatic-0-39-windows-or-linux">
+<h3>3a. Trimmomatic-0.39 (Windows or Linux)<a class="headerlink" href="#a-trimmomatic-0-39-windows-or-linux" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">http://www.usadellab.org/cms/?page=trimmomatic</span></p>
+<p>Trimmomatic is used for trimming fastq files.
+It is java based and therefore does not need to be installed.
+To run, enter ‘trimmomatic-0.39’ in the command line.
+The adapters folder contains some adapters that can be used during trimming if desired.</p>
+<div class="section" id="fastq-v1-1-windows-optional">
+<h4>123Fastq-v1.1 (Windows) (optional)<a class="headerlink" href="#fastq-v1-1-windows-optional" title="Permalink to this headline">¶</a></h4>
+<p><span class="xref myst">https://sourceforge.net/projects/project-123ngs/</span></p>
+<p>123Fastq is Fastqc and Trimmomatic combined in one interactive program.
+It is java based and therefore does not need to be installed.
+Click the 123fastq executable jar file to run the program.</p>
+</div>
+</div>
+<div class="section" id="b-bbduk-38-84-windows-or-linux">
+<h3>3b. BBDuk-38.84 (Windows or Linux)<a class="headerlink" href="#b-bbduk-38-84-windows-or-linux" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">https://jgi.doe.gov/data-and-tools/bbtools/</span></p>
+<p>BBDuk is an alternative for Trimmomatic for trimming of fastq files.
+It java based and therefore does not need to be installed.
+It is part of the bbtools packages (named the bbmap when downloaded).
+Once downloaded, unpack the .tar.gz package.
+Run the bbduk.sh executable in the bbmap directory.
+The adapter.fa file is included and located in the /resources directory.</p>
+</div>
+<div class="section" id="bwa-linux">
+<h3>4. BWA (Linux)<a class="headerlink" href="#bwa-linux" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">http://bio-bwa.sourceforge.net/</span></p>
+<p>BWA is used for aligning the reads to a reference genome and to index the reference sequence.
+After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bunzip2</span> <span class="n">bwa</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mf">17.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">bwa</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mf">17.</span><span class="n">tar</span>
+<span class="n">cd</span> <span class="n">bwa</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">17</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">bwa</span>
+</pre></div>
+</div>
+<p>To run, enter <code class="docutils literal notranslate"><span class="pre">bwa</span></code> in the terminal.</p>
+</div>
+<div class="section" id="samtools-and-bcftools-linux">
+<h3>5. SAMTools and bcftools (Linux)<a class="headerlink" href="#samtools-and-bcftools-linux" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">http://www.htslib.org/</span></p>
+<p>Samtools is used for processing after alignment, for example for converting SAM files to BAM files.
+After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bunzip2</span> <span class="n">samtools</span><span class="o">-</span><span class="mf">1.10</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">samtools</span><span class="o">-</span><span class="mf">1.10</span><span class="o">.</span><span class="n">tar</span>
+<span class="n">cd</span> <span class="n">samtools</span><span class="o">-</span><span class="mf">1.10</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">samtools</span>
+</pre></div>
+</div>
+<p>To run, enter <code class="docutils literal notranslate"><span class="pre">samtools</span></code> in the terminal.
+Do the same protocol for bcftools.</p>
+</div>
+<div class="section" id="sambamba-linux">
+<h3>6. Sambamba (Linux)<a class="headerlink" href="#sambamba-linux" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">https://lomereiter.github.io/sambamba/</span></p>
+<p>Sambamba is used for processing after alignment, for example for sorting and indexing the BAM files.
+After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gunzip</span> <span class="n">sambamba</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">static</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">sambamba</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">static</span>
+<span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">sambamba</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">static</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span>
+</pre></div>
+</div>
+<p>(where in the last line <code class="docutils literal notranslate"><span class="pre">/path/to/</span></code> needs to be replaced with the actual path.)
+To run, enter <code class="docutils literal notranslate"><span class="pre">sambamba</span></code> in the terminal.</p>
+</div>
+<div class="section" id="igv-windows-optional">
+<h3>7. IGV (Windows) (optional)<a class="headerlink" href="#igv-windows-optional" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">https://software.broadinstitute.org/software/igv/</span></p>
+<p>IGV (Integrative Genomic Viewer) is used for visually check the results.
+Click the IGV_Win_2.8.0-installer and run the install process.</p>
+</div>
+<div class="section" id="matlab-transposon-count-windows">
+<h3>8. Matlab Transposon count (Windows)<a class="headerlink" href="#matlab-transposon-count-windows" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">https://sites.google.com/site/satayusers/complete-protocol/bioinformatics-analysis</span></p>
+<p>This code relates the number of reads and transposon counts to the genes.
+This code is provided from the Kornmann-Lab.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "leilaicruz/SATAY-jupyter-book",
+            ref: "gh-pages",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "Intro"
+        }
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gregory van Beek<br/>
+        
+            &copy; Copyright GPL License 3.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
