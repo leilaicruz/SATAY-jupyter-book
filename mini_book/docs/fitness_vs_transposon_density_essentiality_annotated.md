@@ -22,9 +22,9 @@ This is also done for any potential aliases the genes might have.
 
 This code is a part from 'fitness_vs_transposon_density.py' created by Leila.
 
-```
 
-```{code-cell} ipython3
+```{code-cell} ipython3 
+
 import numpy as np
 import scipy.io
 import seaborn as sns
