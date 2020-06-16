@@ -405,11 +405,11 @@ The adapter.fa file is included and located in the /resources directory.</p>
 <p><span class="xref myst">http://bio-bwa.sourceforge.net/</span></p>
 <p>BWA is used for aligning the reads to a reference genome and to index the reference sequence.
 After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bunzip2</span> <span class="n">bwa</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mf">17.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
-<span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">bwa</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mf">17.</span><span class="n">tar</span>
-<span class="n">cd</span> <span class="n">bwa</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">17</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">bwa</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bunzip2 bwa-0.7.17.tar.bz2
+tar -xvf bwa-0.7.17.tar
+<span class="nb">cd</span> bwa-0.7.17
+sudo apt-get update
+sudo apt-get install bwa
 </pre></div>
 </div>
 <p>To run, enter <code class="docutils literal notranslate"><span class="pre">bwa</span></code> in the terminal.</p>
@@ -419,11 +419,11 @@ After downloading the software in the VM, install it by entering the following c
 <p><span class="xref myst">http://www.htslib.org/</span></p>
 <p>Samtools is used for processing after alignment, for example for converting SAM files to BAM files.
 After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bunzip2</span> <span class="n">samtools</span><span class="o">-</span><span class="mf">1.10</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
-<span class="n">tar</span> <span class="o">-</span><span class="n">xvf</span> <span class="n">samtools</span><span class="o">-</span><span class="mf">1.10</span><span class="o">.</span><span class="n">tar</span>
-<span class="n">cd</span> <span class="n">samtools</span><span class="o">-</span><span class="mf">1.10</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">samtools</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bunzip2 samtools-1.10.tar.bz2
+tar -xvf samtools-1.10.tar
+<span class="nb">cd</span> samtools-1.10
+sudo apt-get update
+sudo apt-get install samtools
 </pre></div>
 </div>
 <p>To run, enter <code class="docutils literal notranslate"><span class="pre">samtools</span></code> in the terminal.
@@ -434,9 +434,9 @@ Do the same protocol for bcftools.</p>
 <p><span class="xref myst">https://lomereiter.github.io/sambamba/</span></p>
 <p>Sambamba is used for processing after alignment, for example for sorting and indexing the BAM files.
 After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gunzip</span> <span class="n">sambamba</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">static</span><span class="o">.</span><span class="n">gz</span>
-<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">sambamba</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">static</span>
-<span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">sambamba</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">static</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gunzip sambamba-0.7.1-linux-static.gz
+chmod +x sambamba-0.7.1-linux-static
+sudo ln -s /path/to/sambamba-0.7.1-linux-static /usr/local/bin
 </pre></div>
 </div>
 <p>(where in the last line <code class="docutils literal notranslate"><span class="pre">/path/to/</span></code> needs to be replaced with the actual path.)
