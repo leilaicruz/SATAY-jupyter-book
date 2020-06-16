@@ -14,6 +14,7 @@
 - header: Postprocessing scripts
 - file: gene_reads
 - file: statistics_pergene
+- file: statistics_perchromosome_Compare
 # - file: fitness_vs_transposon_density_essentiality_annotated
 
 
