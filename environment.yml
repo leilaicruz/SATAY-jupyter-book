@@ -13,6 +13,7 @@ dependencies:
   - scipy
   - xlrd
   - scikit-learn
+  - tabulate 
   - pip:
     - quantecon
     - jupyter-book>=0.7.0b
