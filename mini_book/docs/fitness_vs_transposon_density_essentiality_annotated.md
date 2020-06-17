@@ -54,7 +54,7 @@ from Python_scripts.python_modules.gene_names import gene_aliases
 ```{code-cell} ipython3 
 
 
-transposon_density_file=os.path.join(file_dirname,'Python_scripts','Data_Files','transposon-density-per-gene-benoit.xlsx')
+transposon_density_file=os.path.join(file_dirname,'Python_scripts','transposon-density-per-gene-benoit.xlsx')
 essential_list_1= os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_1.txt')
 essential_list_2= os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_2.txt')
 yeast_protein_names_list=os.path.join(file_dirname,'Python_scripts','Data_Files','Yeast_Protein_Names.txt')
