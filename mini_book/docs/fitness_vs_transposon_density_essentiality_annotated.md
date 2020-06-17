@@ -62,34 +62,26 @@ yeast_protein_names_list=os.path.join(file_dirname,'Python_scripts','Data_Files'
 
 
 data_transposon=pd.read_excel(transposon_density_file,header=0)
-
-```
-
-```{code-cell} ipython3
-
 data_transposon=data_transposon.drop(['Unnamed: 0'],axis=1)
 data_transposon=data_transposon.apply(lambda x: x.astype(str).str.lower()) # make everything lowercase
 
 ```
 
 
+
 ## Transform back these columns into float variables
 
 ```{code-cell} ipython3
-- data_transposon['Transposon_density_per_gene']=data_transposon['Transposon_density_per_gene'].apply(lambda x: (float(x)))
-- data_transposon['Read_density_per_gene']=data_transposon['Read_density_per_gene'].apply(lambda x: (float(x)))
+data_transposon['Transposon_density_per_gene']=data_transposon['Transposon_density_per_gene'].apply(lambda x: (float(x)))
+data_transposon['Read_density_per_gene']=data_transposon['Read_density_per_gene'].apply(lambda x: (float(x)))
 ```
 
-
-```{code-cell} ipython3
-df_transposon_fitness=defaultdict(dict)
-```
 
 
 ## How transposon density varies with the reads per gene 
 
 ```{code-cell} ipython3
-sns.jointplot("Transposon_density_per_gene", "Read_density_per_gene", data=data_transposon,hue='Essential_gene', height=6, ratio=3, color='purple',ylim=[0,150],kind='scatter',alpha=0.3)
+sns.pairplot(data=data_transposon,hue='Essential_gene',diag_kind='kde',kind='reg',palette='colorblind')
 ```
 
 ## USE FUNCTIONS TO GET NAMES OF ESSENTIAL GENES. FILES USED ARE:
