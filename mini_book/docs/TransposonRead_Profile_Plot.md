@@ -46,17 +46,17 @@ import matplotlib.pyplot as plt
 
 file_dirname = os.path.dirname(os.path.abspath('__file__'))
 sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
-from chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic, gene_position
-from essential_genes_names import list_known_essentials
-from gene_names import gene_aliases
-from chromosome_names_in_files import chromosome_name_bedfile, chromosome_name_wigfile
+from Python_scripts.python_modules.chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic, gene_position
+from Python_scripts.python_modules.essential_genes_names import list_known_essentials
+from Python_scripts.python_modules.gene_names import gene_aliases
+from Python_scripts.python_modules.chromosome_names_in_files import chromosome_name_bedfile, chromosome_name_wigfile
 
 chrom='VI'
 bar_width=None
 ```
 
 ```{code-cell} ipython3
-bed_file = os.path.join(file_dirname,'..','satay_analysis_testdata','Output_Processing','Cerevisiae_WT2_Michel2017_trimmed1.bam.bed') #CHANGE THIS TO ANY .BED FILE YOU WANT TO ANALYSE.
+bed_file = os.path.join(file_dirname,'satay_analysis_testdata','Output_Processing','Cerevisiae_WT2_Michel2017_trimmed1.bam.bed') #CHANGE THIS TO ANY .BED FILE YOU WANT TO ANALYSE.
 ```
 
 ### Loading additional files
@@ -64,10 +64,10 @@ Next additional files are loaded. Change these to your local paths leading to th
 Also two lists of essential genes are loaded. Some essential genes are present only in a single file, hence both files are used simultenously.
 
 ```{code-cell} ipython3
-gff_file = os.path.join(file_dirname,'Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
-essential_genes_files = [os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
-                        os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
-gene_information_file = os.path.join(file_dirname,'Data_Files','Yeast_Protein_Names.txt')
+gff_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
+essential_genes_files = [os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
+                        os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
+gene_information_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Yeast_Protein_Names.txt')
 ```
 
 ### Get genes in chromosome
