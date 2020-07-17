@@ -32,7 +32,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 file_dirname = os.path.dirname('__file__')
-sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
+# sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
 from Python_scripts.python_modules.chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic, gene_position
 from Python_scripts.python_modules.essential_genes_names import list_known_essentials
 from Python_scripts.python_modules.gene_names import gene_aliases
@@ -73,6 +73,10 @@ Also two lists of essential genes are loaded. Some essential genes are present o
 
 ```{code-cell} ipython3
 gff_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
+```
+
+```{code-cell} ipython3
+
 essential_genes_files = [os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
                         os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
 gene_information_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Yeast_Protein_Names.txt')
@@ -83,7 +87,6 @@ gene_information_file = os.path.join(file_dirname,'Python_scripts','Data_Files',
 Determine the length and position of all chromosomes and get a list of all genes, all essential genes and the aliases of all the genes.
 
 ```{code-cell} ipython3
-:tags: []
 
 chr_length_dict, chr_start_pos_dict, chr_end_pos_dict = chromosome_position(gff_file)
 

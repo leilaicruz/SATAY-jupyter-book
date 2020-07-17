@@ -45,7 +45,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 file_dirname = os.path.dirname('__file__')
-sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
+# sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
 from Python_scripts.python_modules.chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic, gene_position
 from Python_scripts.python_modules.essential_genes_names import list_known_essentials
 from Python_scripts.python_modules.gene_names import gene_aliases
