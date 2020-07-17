@@ -28,8 +28,6 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script async="async" src="../_static/thebelab.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/Greg.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -68,36 +66,68 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../Intro.html">1. To reproduce an example of  Jupyter book, and you are a Windows user:</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Get started</p>
-</li>
-  <li class="active">
-    <a href="">2. All what you need to know from SATAY</a>
-  </li>
-  <li class="">
-    <a href="data-analysis-workflow.html">3. Data analysis steps</a>
-  </li>
-  <li class="">
-    <a href="../MysT_Notebooks.html">4. Notebooks written entirely in markdown</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Postprocessing scripts</p>
-</li>
-  <li class="">
-    <a href="../gene_reads.html">5. Gene reads script</a>
-  </li>
-  <li class="">
-    <a href="../statistics_pergene.html">6. Statistics per gene</a>
-  </li>
-  <li class="">
-    <a href="../statistics_perchromosome_Compare.html">7. Statistics_Perchromosome_Compare</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Intro.html">
+   To reproduce an example of  Jupyter book, and you are a Windows user:
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   All what you need to know from SATAY
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-workflow.html">
+   Data analysis steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-workflow.html#step-1-data-analysis-from-raw-data-to-essential-protein-overview">
+   Step 1 data analysis; From raw data to essential protein overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-workflow.html#bibliography">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MysT_Notebooks.html">
+   Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Postprocessing scripts
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gene_reads.html">
+   Gene reads script
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../statistics_pergene.html">
+   Statistics per gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../statistics_perchromosome_Compare.html">
+   Statistics_Perchromosome_Compare
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -120,129 +150,167 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                <a class="dropdown-buttons" href="../_sources/Intro/satay_analysis_notes.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../_sources/Intro/satay_analysis_notes.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/Intro/satay_analysis_notes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Intro/satay_analysis_notes.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
         <!-- Source interaction buttons -->
-        
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-            <div class="dropdown-buttons sourcebuttons">
-                <a class="repository-button" href="https://github.com/leilaicruz/SATAY-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
-                <a class="issues-button" href="https://github.com/leilaicruz/SATAY-jupyter-book/issues/new?title=Issue%20on%20page%20%2FIntro/satay_analysis_notes.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-                
-            </div>
-        </div>
-        
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-        
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-            <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org//v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=lab/tree/Intro/satay_analysis_notes.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
-                
-                
-                <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
-                
-            </div>
-        </div>
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/leilaicruz/SATAY-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/leilaicruz/SATAY-jupyter-book/issues/new?title=Issue%20on%20page%20%2FIntro/satay_analysis_notes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
 </div>
 
-<nav id="bd-toc-nav">
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org//v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=lab/tree/Intro/satay_analysis_notes.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebelabSBT()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gene-essentiality">
+   Gene Essentiality
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-transposon-counts-reads">
+   Interpreting Transposon Counts &amp; Reads
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods-and-file-types">
+     Methods and File types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimental-method">
+     Experimental method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experimental-process">
+     Experimental Process
+    </a>
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#gene-essentiality" class="nav-link">Gene Essentiality</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#interpreting-transposon-counts-reads" class="nav-link">Interpreting Transposon Counts & Reads</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#methods-and-file-types" class="nav-link">Methods and File types</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#experimental-method" class="nav-link">Experimental method</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#experimental-process" class="nav-link">Experimental Process</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#sequence-alignment" class="nav-link">Sequence alignment</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#fastq-files-and-fasta-files" class="nav-link">FASTQ files and FASTA files</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#sam-and-bam-files" class="nav-link">SAM and BAM files</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#readme-for-the-sam-file" class="nav-link">Readme for the SAM file</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#determine-essentiality-based-on-transposon-counts" class="nav-link">Determine essentiality based on transposon counts</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes" class="nav-link">Distribution number of insertions and reads compared with essential and non-essential genes</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#profile-plot-for-number-of-reads" class="nav-link">Profile plot for number of reads</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#profile-plot-number-of-reads-per-individual-genes" class="nav-link">Profile plot number of reads per individual genes</a>
-        </li>
-    
-            </ul>
-        </li>
-    
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sequence-alignment">
+       Sequence alignment
+      </a>
+     </li>
     </ul>
-</nav>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fastq-files-and-fasta-files">
+   FASTQ files and FASTA files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sam-and-bam-files">
+     SAM and BAM files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readme-for-the-sam-file">
+     Readme for the SAM file
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#determine-essentiality-based-on-transposon-counts">
+       Determine essentiality based on transposon counts
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes">
+       Distribution number of insertions and reads compared with essential and non-essential genes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#profile-plot-for-number-of-reads">
+       Profile plot for number of reads
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#profile-plot-number-of-reads-per-individual-genes">
+     Profile plot number of reads per individual genes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -641,24 +709,6 @@ This is chosen because if now a bar is empty in a gene than this is not a coinci
 </div>
 </div>
 
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "leilaicruz/SATAY-jupyter-book",
-            ref: "gh-pages",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "Intro"
-        }
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
 
               </div>
               
