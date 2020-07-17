@@ -69,10 +69,11 @@ savefigure_name=None
 
 ### Loading additional files
 Next additional files are loaded. Change these to your local paths leading to the gff-file (for example downloaded from SGD [https://www.yeastgenome.org/] or get a copy from the docs folder on Github [https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis]) and yeast_protein_Names file.
-Also two lists of essential genes are loaded. Some essential genes are present only in a single file, hence both files are used simultenously.
+Also two lists of essential genes are loaded. Some essential genes are present only in a single file, hence both files are used simultaneously.
 
 ```{code-cell} ipython3
 gff_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
+
 essential_genes_files = [os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
                         os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
 gene_information_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Yeast_Protein_Names.txt')
