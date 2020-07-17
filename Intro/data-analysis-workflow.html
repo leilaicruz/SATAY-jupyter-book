@@ -90,16 +90,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview">
-   Step 1 data analysis; From raw data to essential protein overview
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#bibliography">
-   Bibliography
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../MysT_Notebooks.html">
    Notebooks written entirely in markdown
   </a>
@@ -234,7 +224,68 @@
             <i class="fas fa-list"></i> On this page
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview">
+   Step 1 data analysis; From raw data to essential protein overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workflow">
+   Workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initializing">
+     Initializing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quality-checking-of-the-sequencing-reads-fastqc-0-11-9">
+     1. Quality checking of the sequencing reads; FASTQC (0.11.9)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trimming-of-the-sequencing-reads">
+     2. Trimming of the sequencing reads
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-trimming-of-the-sequencing-reads-trimmomatic-0-39">
+       2a. Trimming of the sequencing reads; Trimmomatic (0.39)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-trimming-of-the-sequencing-reads-bbduk-38-84">
+       2b. Trimming of the sequencing reads; BBDuk (38.84)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequence-alignment-and-reference-sequence-indexing-bwa-0-7-17-linux">
+     3. Sequence alignment and Reference sequence indexing; BWA (0.7.17) (Linux)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#converting-sam-file-to-bam-file-samtools-1-7-and-sambamba-0-7-1-linux">
+     4. Converting SAM file to BAM file; SAMtools (1.7) and sambamba (0.7.1) (Linux)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determining-transposon-insertions-matlab-code-from-benoit-michel-et-al-2017">
+     5. Determining transposon insertions: Matlab (Code from Benoit [Michel et. al. 2017])
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliography">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -261,15 +312,15 @@ interactions.</p></li>
 <li><p>Use these relations to obtain training for machine learning.</p></li>
 </ol>
 <p>First, the main focus will be step 1 of the analysis (see next section).</p>
-</div>
 <div class="section" id="step-1-data-analysis-from-raw-data-to-essential-protein-overview">
-<h1>Step 1 data analysis; From raw data to essential protein overview<a class="headerlink" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview" title="Permalink to this headline">¶</a></h1>
+<h2>Step 1 data analysis; From raw data to essential protein overview<a class="headerlink" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview" title="Permalink to this headline">¶</a></h2>
 <p>SATAY experiments need to be sequenced which results in a FASTQ file.
 The sequence reads from this file needs to be aligned to create a SAM file (and/or the compressed binary equivalent BAM file).
 Using the BAM file, the number of transposons can be determined for each insertion location.</p>
 <p>For guides and manuals of the software discussed below, see the folder</p>
 <p><code class="docutils literal notranslate"><span class="pre">M:\\tnw\\bn\\ll\\Shared\\Gregory\\Software\\Guides</span> <span class="pre">&amp;</span> <span class="pre">Manuals</span></code>.</p>
 <p>Raw data (.FASTQ file) discussed in the paper of Michel et.al. 2017 can be found at [<a class="reference external" href="https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/">https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/</a>].</p>
+</div>
 <div class="section" id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <p>The results from the sequencing is typically represented in FASTA or FASTQ format.
@@ -999,9 +1050,8 @@ read count is the actual count (and thus not used the equation
 100+transposon_count*20 as is done in the .bed file).</p>
 </div>
 </div>
-</div>
 <div class="section" id="bibliography">
-<h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h1>
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <p>Chen, P., Wang, D., Chen, H., Zhou, Z., &amp; He, X. (2016). The nonessentiality of essential genes in yeast provides therapeutic insights into a human disease. Genome research, 26(10), 1355-1362.</p>
 <p>Del Fabbro, C., Scalabrin, S., Morgante, M., &amp; Giorgi, F. M. (2013). An extensive evaluation of read trimming effects on Illumina NGS data analysis. PloS one, 8(12).</p>
 <p>Delhomme, N., Mähler, N., Schiffthaler, B., Sundell, D., Mannepperuma, C., &amp; Hvidsten, T. R. (2014). Guidelines for RNA-Seq data analysis. Epigenesys protocol, 67, 1-24.</p>
@@ -1016,6 +1066,7 @@ read count is the actual count (and thus not used the equation
 <li><p>J.R.R. Tolkien</p></li>
 </ul>
 </div></blockquote>
+</div>
 </div>
 
 
