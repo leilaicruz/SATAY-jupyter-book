@@ -31,7 +31,7 @@ For data analysis, the following steps need to be taken:
 
 First, the main focus will be step 1 of the analysis (see next section).
 
-# Step 1 data analysis; From raw data to essential protein overview
+## Step 1 data analysis; From raw data to essential protein overview
 
 SATAY experiments need to be sequenced which results in a FASTQ file.
 The sequence reads from this file needs to be aligned to create a SAM file (and/or the compressed binary equivalent BAM file).
@@ -954,7 +954,7 @@ information is similar to that found in the .bed file, but here the
 read count is the actual count (and thus not used the equation
 100+transposon_count*20 as is done in the .bed file).
 
-# Bibliography
+## Bibliography
 
 Chen, P., Wang, D., Chen, H., Zhou, Z., & He, X. (2016). The nonessentiality of essential genes in yeast provides therapeutic insights into a human disease. Genome research, 26(10), 1355-1362.
 
