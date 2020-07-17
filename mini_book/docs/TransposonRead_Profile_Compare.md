@@ -32,7 +32,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 file_dirname = os.path.dirname(os.path.abspath('__file__'))
-sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
+# sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
 from Python_scripts.python_modules.chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic, gene_position
 from Python_scripts.python_modules.essential_genes_names import list_known_essentials
 from Python_scripts.python_modules.gene_names import gene_aliases
@@ -77,6 +77,7 @@ gff_file = os.path.join(file_dirname,'Data_Files','Saccharomyces_cerevisiae.R64-
 essential_genes_files = [os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
                         os.path.join(file_dirname,'Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
 gene_information_file = os.path.join(file_dirname,'Data_Files','Yeast_Protein_Names.txt')
+print(gff_file)
 ```
 
 ### Get chromosome length and essential genes
