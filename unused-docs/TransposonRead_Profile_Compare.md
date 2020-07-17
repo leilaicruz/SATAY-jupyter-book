@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# TransposonRead_Profile_Compare.py
+# Transposition Reads Profile Comparison
 
 +++
 
@@ -31,7 +31,7 @@ import os, sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-file_dirname = os.path.dirname(os.path.abspath('__file__'))
+file_dirname = os.path.dirname('__file__')
 # sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
 from Python_scripts.python_modules.chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic, gene_position
 from Python_scripts.python_modules.essential_genes_names import list_known_essentials
@@ -69,15 +69,17 @@ savefigure_name=None
 
 ### Loading additional files
 Next additional files are loaded. Change these to your local paths leading to the gff-file (for example downloaded from SGD [https://www.yeastgenome.org/] or get a copy from the docs folder on Github [https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis]) and yeast_protein_Names file.
-Also two lists of essential genes are loaded. Some essential genes are present only in a single file, hence both files are used simultaneously.
+Also two lists of essential genes are loaded. Some essential genes are present only in a single file, hence both files are used simultenously.
 
 ```{code-cell} ipython3
 gff_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
+```
+
+```{code-cell} ipython3
 
 essential_genes_files = [os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_1.txt'),
                         os.path.join(file_dirname,'Python_scripts','Data_Files','Cervisiae_EssentialGenes_List_2.txt')]
 gene_information_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Yeast_Protein_Names.txt')
-print(gff_file)
 ```
 
 ### Get chromosome length and essential genes
@@ -85,9 +87,10 @@ print(gff_file)
 Determine the length and position of all chromosomes and get a list of all genes, all essential genes and the aliases of all the genes.
 
 ```{code-cell} ipython3
-chr_length_dict, chr_start_pos_dict, chr_end_pos_dict = chromosome_position(gff_file)
 
-gene_pos_dict = gene_position(gff_file)
+chr_length_dict, chr_start_pos_dict, chr_end_pos_dict = chromosome_position()
+
+gene_pos_dict = gene_position()
 genes_essential_list = list_known_essentials(essential_genes_files)
 gene_alias_list = gene_aliases(gene_information_file)[0]
 ```
