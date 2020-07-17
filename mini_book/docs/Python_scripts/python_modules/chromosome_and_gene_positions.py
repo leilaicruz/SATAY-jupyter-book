@@ -17,8 +17,9 @@ def chromosome_position(gff_file = None):
 
     if gff_file == None:
         import os
-        file_dirname = os.path.dirname(os.path.abspath('__file__'))
-        gff_file = os.path.join(file_dirname,'..','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
+        #file_dirname = os.path.dirname(os.path.abspath('__file__'))
+        file_dirname = os.path.dirname('__file__')
+        gff_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
 
 
 
@@ -100,8 +101,11 @@ def gene_position(gff_file = None):
 
     if gff_file == None:
         import os
-        file_dirname = os.path.dirname(os.path.abspath('__file__'))
-        gff_file = os.path.join(file_dirname,'..','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
+        # file_dirname = os.path.dirname(os.path.abspath('__file__'))
+        file_dirname = os.path.dirname('__file__')
+        gff_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
+
+        
 
     gene_pos_dict = {}
     with open(gff_file) as f:

@@ -77,13 +77,13 @@ Secondly, all the genes are stored in the `gene_pos_dict` variable in the form o
 Finally all known aliases of the genes are stored to make sure that most genes can be found later in the code.
 
 ```{code-cell} ipython3
-chr_length_dict, chr_start_pos_dict, chr_end_pos_dict = chromosome_position(gff_file)
+chr_length_dict, chr_start_pos_dict, chr_end_pos_dict = chromosome_position()
 
 print('Chromosome length: ',chr_length_dict.get(chrom))
 if bar_width == None:
     bar_width = int(chr_length_dict.get(chrom)/500)
 
-gene_pos_dict = gene_position(gff_file)
+gene_pos_dict = gene_position()
 genes_currentchrom_pos_list = [k for k, v in gene_pos_dict.items() if chrom in v]
 genes_essential_list = list_known_essentials(essential_genes_files)
 gene_alias_list = gene_aliases(gene_information_file)[0]

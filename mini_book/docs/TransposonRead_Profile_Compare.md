@@ -88,9 +88,9 @@ Determine the length and position of all chromosomes and get a list of all genes
 
 ```{code-cell} ipython3
 
-chr_length_dict, chr_start_pos_dict, chr_end_pos_dict = chromosome_position(gff_file)
+chr_length_dict, chr_start_pos_dict, chr_end_pos_dict = chromosome_position()
 
-gene_pos_dict = gene_position(gff_file)
+gene_pos_dict = gene_position()
 genes_essential_list = list_known_essentials(essential_genes_files)
 gene_alias_list = gene_aliases(gene_information_file)[0]
 ```
