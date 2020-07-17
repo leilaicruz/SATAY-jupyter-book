@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# TransposonRead_Profile_Plot.py
+# TransposonRead_Profile_Plot 
 
 +++
 
@@ -45,7 +45,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 file_dirname = os.path.dirname(os.path.abspath('__file__'))
-sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
+# sys.path.insert(1,os.path.join(file_dirname,'python_modules'))
 from Python_scripts.python_modules.chromosome_and_gene_positions import chromosome_position, chromosomename_roman_to_arabic, gene_position
 from Python_scripts.python_modules.essential_genes_names import list_known_essentials
 from Python_scripts.python_modules.gene_names import gene_aliases
@@ -56,12 +56,12 @@ bar_width=None
 ```
 
 ```{code-cell} ipython3
-bed_file = os.path.join(file_dirname,'satay_analysis_testdata','Output_Processing','Cerevisiae_WT2_Michel2017_trimmed1.bam.bed') #CHANGE THIS TO ANY .BED FILE YOU WANT TO ANALYSE.
+bed_file = os.path.join(file_dirname,'satay_analysis_testdata','Output_Processing','Cerevisiae_WT2_Michel2017_trimmed1.bam.bed') # CHANGE THIS TO ANY .BED FILE YOU WANT TO ANALYSE.
 ```
 
 ### Loading additional files
 Next additional files are loaded. Change these to your local paths leading to the gff-file (for example downloaded from SGD [https://www.yeastgenome.org/] or get a copy from the docs folder on Github [https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis]) and yeast_protein_Names file.
-Also two lists of essential genes are loaded. Some essential genes are present only in a single file, hence both files are used simultenously.
+Also two lists of essential genes are loaded. Some essential genes are present only in a single file, hence both files are used simultaneously.
 
 ```{code-cell} ipython3
 gff_file = os.path.join(file_dirname,'Python_scripts','Data_Files','Saccharomyces_cerevisiae.R64-1-1.99.gff3')
