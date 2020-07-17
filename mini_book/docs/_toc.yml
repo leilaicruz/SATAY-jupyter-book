@@ -16,6 +16,7 @@
 - file: statistics_pergene
 - file: statistics_perchromosome_Compare
 - file: TransposonRead_Profile_Compare
+- file: TransposonRead_Profile_Plot
 
 
 
