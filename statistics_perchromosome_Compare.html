@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Comparison of the statistics per chromosome &#8212; SATAY DATA ANALYSIS</title>
+    <title>3. Comparison of the statistics per chromosome &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
@@ -29,10 +30,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/Greg.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Statistics per gene" href="statistics_pergene.html" />
+    <link rel="prev" title="2. Statistics per gene" href="statistics_pergene.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -54,7 +62,7 @@
   <img src="_static/Greg.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS</h1>
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
   
 </a>
 </div>
@@ -67,7 +75,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="Intro.html">
+  <a class="reference internal" href="Introduction.html">
    To reproduce an example of  Jupyter book, and you are a Windows user:
   </a>
  </li>
@@ -80,17 +88,29 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/satay_analysis_notes.html">
-   All what you need to know from SATAY
+   1. All what you need to know from SATAY
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/data-analysis-workflow.html">
-   Data analysis steps
+   2. Data analysis steps
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="MysT_Notebooks.html">
-   Notebooks written entirely in markdown
+   3. Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Transposon reads from raw data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pysam_test.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
   </a>
  </li>
 </ul>
@@ -102,17 +122,17 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="gene_reads.html">
-   Gene reads script
+   1. Gene reads script
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="statistics_pergene.html">
-   Statistics per gene
+   2. Statistics per gene
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Comparison of the statistics per chromosome
+   3. Comparison of the statistics per chromosome
   </a>
  </li>
 </ul>
@@ -208,9 +228,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebelabSBT()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -220,70 +237,70 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   3.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-python-script">
-   The python script
+   3.2. The python script
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#input">
-     Input
+     3.2.1. Input
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#loading-files">
-     Loading files
+     3.2.2. Loading files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#set-name-of-text-file-and-create-header">
-     Set name of text file and create header
+     3.2.3. Set name of text file and create header
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#get-chromosome-information">
-     Get chromosome information
+     3.2.4. Get chromosome information
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-lists-for-the-variables">
-     Create lists for the variables
+     3.2.5. Create lists for the variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#determine-statistics">
-     Determine statistics
+     3.2.6. Determine statistics
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-text-file">
-     Creating text file
+     3.2.7. Creating text file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#printing-result">
-     Printing result
+     3.2.8. Printing result
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interpretation">
-   Interpretation
+   3.3. Interpretation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
+   3.4. Bibliography
   </a>
  </li>
 </ul>
@@ -297,14 +314,14 @@
               <div>
                 
   <div class="section" id="comparison-of-the-statistics-per-chromosome">
-<h1>Comparison of the statistics per chromosome<a class="headerlink" href="#comparison-of-the-statistics-per-chromosome" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Comparison of the statistics per chromosome<a class="headerlink" href="#comparison-of-the-statistics-per-chromosome" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This script gives a numerical overview of the two datasets in the form of a textfile.
 This can be used for comparing statistical values of two datasets.</p>
 </div>
 <div class="section" id="the-python-script">
-<h2>The python script<a class="headerlink" href="#the-python-script" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>The python script<a class="headerlink" href="#the-python-script" title="Permalink to this headline">¶</a></h2>
 <p>The script inputs two .bed files in a list that were generated using the Matlab code provided by the Kornmann lab and the path and name of a text file where the results will be written.
 Currently 11 different statistical values are determined, but this can be easily extended (see explainatory text between the codes below).</p>
 <ol class="simple">
@@ -321,7 +338,7 @@ Currently 11 different statistical values are determined, but this can be easily
 <li><p>75th percentile reads per transposon</p></li>
 </ol>
 <div class="section" id="input">
-<h3>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1. </span>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
 <p>The function inputs either a gene name (<code class="docutils literal notranslate"><span class="pre">gene_name</span></code>, type=string) or a region (<code class="docutils literal notranslate"><span class="pre">region</span></code>, type=list) specified as a list with three entries (chromosome number as a roman numeral, start position of the region and the end position respectively).
 The variable <code class="docutils literal notranslate"><span class="pre">gene_name</span></code> can be set to any gene name or <code class="docutils literal notranslate"><span class="pre">holocus</span></code> or <code class="docutils literal notranslate"><span class="pre">ho-locus</span></code>.
 Next it requires the bed-file (<code class="docutils literal notranslate"><span class="pre">bed_file</span></code>, type=string) which is created by the Matlab code provided from <a class="reference external" href="https://sites.google.com/site/satayusers/complete-protocol/bioinformatics-analysis/matlab-script">the Kornman lab</a>.
@@ -363,7 +380,7 @@ True
 </div>
 </div>
 <div class="section" id="loading-files">
-<h3>Loading files<a class="headerlink" href="#loading-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2. </span>Loading files<a class="headerlink" href="#loading-files" title="Permalink to this headline">¶</a></h3>
 <p>Next additional files are loaded. Change this to your local paths leading to the gff-file (for example downloaded from SGD [https://www.yeastgenome.org/] or get a copy from the docs folder on Github [https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis]).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -374,7 +391,7 @@ True
 </div>
 </div>
 <div class="section" id="set-name-of-text-file-and-create-header">
-<h3>Set name of text file and create header<a class="headerlink" href="#set-name-of-text-file-and-create-header" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3. </span>Set name of text file and create header<a class="headerlink" href="#set-name-of-text-file-and-create-header" title="Permalink to this headline">¶</a></h3>
 <p>The path and name that are given as input for saving the text file is extended with ‘DataCompare.txt’ to make sure the file is recognizable and have the right extension.</p>
 <p>Secondly, the header for the text file is created here.</p>
 <div class="cell docutils container">
@@ -395,7 +412,7 @@ True
 </div>
 </div>
 <div class="section" id="get-chromosome-information">
-<h3>Get chromosome information<a class="headerlink" href="#get-chromosome-information" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.4. </span>Get chromosome information<a class="headerlink" href="#get-chromosome-information" title="Permalink to this headline">¶</a></h3>
 <p>Determine the lengths and position of the different chromosomes and get a list of the chromosome names in terms of roman numerals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -411,7 +428,7 @@ True
 </div>
 </div>
 <div class="section" id="create-lists-for-the-variables">
-<h3>Create lists for the variables<a class="headerlink" href="#create-lists-for-the-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.5. </span>Create lists for the variables<a class="headerlink" href="#create-lists-for-the-variables" title="Permalink to this headline">¶</a></h3>
 <p>All the variables that are determined are put in individual lists.
 When new statistics needs to be determined, add a new list for each new value.</p>
 <div class="cell docutils container">
@@ -433,7 +450,7 @@ When new statistics needs to be determined, add a new list for each new value.</
 </div>
 </div>
 <div class="section" id="determine-statistics">
-<h3>Determine statistics<a class="headerlink" href="#determine-statistics" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.6. </span>Determine statistics<a class="headerlink" href="#determine-statistics" title="Permalink to this headline">¶</a></h3>
 <p>For each chromosome in each .bed file the statistical values are determined and stored in the respective lists.
 The values are also determined for the entire genome.</p>
 <p>First a for loop is done over all bed files and for each bed file the names of the chromosomes as they are stored in the bed files are determined.
@@ -552,16 +569,16 @@ After all chromosomes the statistics are determined for the entire genome as wel
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Print information chromosome I with length 230218
 Print information chromosome II with length 813184
 Print information chromosome III with length 316620
-Print information chromosome IV with length 1531933
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Print information chromosome V with length 576874
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Print information chromosome IV with length 1531933
+Print information chromosome V with length 576874
 Print information chromosome VI with length 270161
 Print information chromosome VII with length 1090940
-Print information chromosome VIII with length 562643
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Print information chromosome IX with length 439888
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Print information chromosome VIII with length 562643
+Print information chromosome IX with length 439888
 Print information chromosome X with length 745751
 Print information chromosome XI with length 666816
 </pre></div>
@@ -579,7 +596,7 @@ Print information chromosome XVI with length 948066
 </div>
 </div>
 <div class="section" id="creating-text-file">
-<h3>Creating text file<a class="headerlink" href="#creating-text-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.7. </span>Creating text file<a class="headerlink" href="#creating-text-file" title="Permalink to this headline">¶</a></h3>
 <p>Write the stored statistical value to the text file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,7 +628,7 @@ Print information chromosome XVI with length 948066
 </div>
 </div>
 <div class="section" id="printing-result">
-<h3>Printing result<a class="headerlink" href="#printing-result" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.8. </span>Printing result<a class="headerlink" href="#printing-result" title="Permalink to this headline">¶</a></h3>
 <p>Showing part of the text file to give an example of the created text file.
 (This is just for showing the result in this notebook and is not important for the code itself.
 Can be removed).</p>
@@ -671,7 +688,7 @@ Can be removed).</p>
 </div>
 </div>
 <div class="section" id="interpretation">
-<h2>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h2>
 <p>The statistical values that are determined here for two datasets give an indication of some of the properties of the datasets.
 Together with the TransposonRead_Profile_Compare.py script, this can be helpful when comparing two datasets with each other to possibly improve the preprocessing steps.
 This script can relatively easy be extended with more statistical values in the future.</p>
@@ -682,13 +699,32 @@ The largest distance between subsequent transposons is displayed as the largest 
 The values regarding the number of reads are directly extracted from the bed files.</p>
 </div>
 <div class="section" id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Michel, A. H., Hatakeyama, R., Kimmig, P., Arter, M., Peter, M., Matos, J., … &amp; Kornmann, B. (2017). Functional mapping of yeast genomes by saturated transposition. Elife, 6, e23570.</p></li>
 </ul>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -698,7 +734,7 @@ The values regarding the number of reads are directly extracted from the bed fil
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="statistics_pergene.html" title="previous page">Statistics per gene</a>
+    <a class='left-prev' id="prev-link" href="statistics_pergene.html" title="previous page"><span class="section-number">2. </span>Statistics per gene</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

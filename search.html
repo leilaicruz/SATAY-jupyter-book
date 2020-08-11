@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Search &#8212; SATAY DATA ANALYSIS</title>
+    <title>Search &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -30,6 +31,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script src="_static/searchtools.js"></script>
     <link rel="shortcut icon" href="_static/Greg.png"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -58,7 +66,7 @@
   <img src="_static/Greg.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS</h1>
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
   
 </a>
 </div>
@@ -71,7 +79,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="Intro.html">
+  <a class="reference internal" href="Introduction.html">
    To reproduce an example of  Jupyter book, and you are a Windows user:
   </a>
  </li>
@@ -84,17 +92,29 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/satay_analysis_notes.html">
-   All what you need to know from SATAY
+   1. All what you need to know from SATAY
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/data-analysis-workflow.html">
-   Data analysis steps
+   2. Data analysis steps
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="MysT_Notebooks.html">
-   Notebooks written entirely in markdown
+   3. Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Transposon reads from raw data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pysam_test.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
   </a>
  </li>
 </ul>
@@ -106,17 +126,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="gene_reads.html">
-   Gene reads script
+   1. Gene reads script
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="statistics_pergene.html">
-   Statistics per gene
+   2. Statistics per gene
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="statistics_perchromosome_Compare.html">
-   Comparison of the statistics per chromosome
+   3. Comparison of the statistics per chromosome
   </a>
  </li>
 </ul>

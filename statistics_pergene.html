@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Statistics per gene &#8212; SATAY DATA ANALYSIS</title>
+    <title>2. Statistics per gene &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
@@ -29,11 +30,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/Greg.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Comparison of the statistics per chromosome" href="statistics_perchromosome_Compare.html" />
-    <link rel="prev" title="Gene reads script" href="gene_reads.html" />
+    <link rel="next" title="3. Comparison of the statistics per chromosome" href="statistics_perchromosome_Compare.html" />
+    <link rel="prev" title="1. Gene reads script" href="gene_reads.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -55,7 +63,7 @@
   <img src="_static/Greg.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS</h1>
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
   
 </a>
 </div>
@@ -68,7 +76,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="Intro.html">
+  <a class="reference internal" href="Introduction.html">
    To reproduce an example of  Jupyter book, and you are a Windows user:
   </a>
  </li>
@@ -81,17 +89,29 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/satay_analysis_notes.html">
-   All what you need to know from SATAY
+   1. All what you need to know from SATAY
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/data-analysis-workflow.html">
-   Data analysis steps
+   2. Data analysis steps
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="MysT_Notebooks.html">
-   Notebooks written entirely in markdown
+   3. Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Transposon reads from raw data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pysam_test.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
   </a>
  </li>
 </ul>
@@ -103,17 +123,17 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="gene_reads.html">
-   Gene reads script
+   1. Gene reads script
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Statistics per gene
+   2. Statistics per gene
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="statistics_perchromosome_Compare.html">
-   Comparison of the statistics per chromosome
+   3. Comparison of the statistics per chromosome
   </a>
  </li>
 </ul>
@@ -209,9 +229,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebelabSBT()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -221,65 +238,65 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-python-script">
-   The python script
+   2.1. The python script
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#input">
-     Input
+     2.1.1. Input
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-list-of-all-essential-genes">
-     Create list of all essential genes
+     2.1.2. Create list of all essential genes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-dictionary-with-length-all-genes">
-     Create a dictionary with length all genes
+     2.1.3. Create a dictionary with length all genes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-lists-with-information-to-be-plotted">
-     Create lists with information to be plotted
+     2.1.4. Create lists with information to be plotted
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-dataframe">
-     Create dataframe
+     2.1.5. Create dataframe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#print-statistics">
-     Print statistics
+     2.1.6. Print statistics
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-histogram">
-     Create a histogram
+     2.1.7. Create a histogram
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-violin-plot">
-     Create a violin plot
+     2.1.8. Create a violin plot
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interpretation">
-   Interpretation
+   2.2. Interpretation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
+   2.3. Bibliography
   </a>
  </li>
 </ul>
@@ -293,9 +310,9 @@
               <div>
                 
   <div class="section" id="statistics-per-gene">
-<h1>Statistics per gene<a class="headerlink" href="#statistics-per-gene" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Statistics per gene<a class="headerlink" href="#statistics-per-gene" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="the-python-script">
-<h2>The python script<a class="headerlink" href="#the-python-script" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>The python script<a class="headerlink" href="#the-python-script" title="Permalink to this headline">¶</a></h2>
 <p>This code determines statistics based on the results obtained in the _pergene.txt file by the Matlab code provided by the Kornmann lab.
 The _pergene.txt file consists of three columns.
 The rows in the first column contains all genes of * S.Cerevisiae*, the corresponding transposon count is stored in the second column and the third column contains the reads.</p>
@@ -304,7 +321,7 @@ This is determined using two files that contains all known essential genes.</p>
 <p>The data is represented as a violinplot where both the essential and non-essential genes are shown.</p>
 <p>Some basic statistics are determined here, but this can be extended with more if needed.</p>
 <div class="section" id="input">
-<h3>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
 <p>Data that needs to be loaded:</p>
 <ol class="simple">
 <li><p>filepath: Path to the output text file the Matlab code of Benoit that includes the read and transposon count per gene (with extension _pergene.txt)</p></li>
@@ -345,7 +362,7 @@ This is determined using two files that contains all known essential genes.</p>
 </div>
 </div>
 <div class="section" id="create-list-of-all-essential-genes">
-<h3>Create list of all essential genes<a class="headerlink" href="#create-list-of-all-essential-genes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.2. </span>Create list of all essential genes<a class="headerlink" href="#create-list-of-all-essential-genes" title="Permalink to this headline">¶</a></h3>
 <p>This can be input from multiple files given in the <code class="docutils literal notranslate"><span class="pre">essential_genes_files</span></code> variable that are merged in one list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -363,7 +380,7 @@ This is determined using two files that contains all known essential genes.</p>
 </div>
 </div>
 <div class="section" id="create-a-dictionary-with-length-all-genes">
-<h3>Create a dictionary with length all genes<a class="headerlink" href="#create-a-dictionary-with-length-all-genes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3. </span>Create a dictionary with length all genes<a class="headerlink" href="#create-a-dictionary-with-length-all-genes" title="Permalink to this headline">¶</a></h3>
 <p>Dictionary consists of keys which are all genes (including all their potential aliasses and different naming conventions) and of values which are the length in terms of base pairs.
 The number of base pairs is calculated by multiplying the number of amino acids by 3.</p>
 <div class="cell docutils container">
@@ -403,7 +420,7 @@ The number of base pairs is calculated by multiplying the number of amino acids 
 </div>
 </div>
 <div class="section" id="create-lists-with-information-to-be-plotted">
-<h3>Create lists with information to be plotted<a class="headerlink" href="#create-lists-with-information-to-be-plotted" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4. </span>Create lists with information to be plotted<a class="headerlink" href="#create-lists-with-information-to-be-plotted" title="Permalink to this headline">¶</a></h3>
 <p>Lists are made for</p>
 <ol class="simple">
 <li><p>Gene names</p></li>
@@ -497,7 +514,7 @@ Genes not found:  [&#39;COX26&#39;, &#39;ARG5&#39;, &#39;COM2&#39;, &#39;ADE5&#3
 </div>
 </div>
 <div class="section" id="create-dataframe">
-<h3>Create dataframe<a class="headerlink" href="#create-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.5. </span>Create dataframe<a class="headerlink" href="#create-dataframe" title="Permalink to this headline">¶</a></h3>
 <p>This puts the data in the form of a dataframe (part of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package). This is necessary for plotting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,7 +538,7 @@ Genes not found:  [&#39;COX26&#39;, &#39;ARG5&#39;, &#39;COM2&#39;, &#39;ADE5&#3
 </div>
 </div>
 <div class="section" id="print-statistics">
-<h3>Print statistics<a class="headerlink" href="#print-statistics" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.6. </span>Print statistics<a class="headerlink" href="#print-statistics" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average number of reads all genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">))</span>
@@ -613,7 +630,7 @@ Minimum number of transposons of nonessential genes: 0
 </div>
 </div>
 <div class="section" id="create-a-histogram">
-<h3>Create a histogram<a class="headerlink" href="#create-a-histogram" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.7. </span>Create a histogram<a class="headerlink" href="#create-a-histogram" title="Permalink to this headline">¶</a></h3>
 <p>A histogram is plotted where the number of reads and number of transposons are shown for essential and non-essential genes together.
 This shows the distribution of the number of reads and insertions for the complete dataset.</p>
 <div class="cell docutils container">
@@ -648,7 +665,7 @@ This shows the distribution of the number of reads and insertions for the comple
 </div>
 </div>
 <div class="section" id="create-a-violin-plot">
-<h3>Create a violin plot<a class="headerlink" href="#create-a-violin-plot" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.8. </span>Create a violin plot<a class="headerlink" href="#create-a-violin-plot" title="Permalink to this headline">¶</a></h3>
 <p>This shows the distribution for the reads and insertions for the dataset separated by annotated essentiality.</p>
 <p>When <code class="docutils literal notranslate"><span class="pre">normalization</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plots represent read- and transposon densities. Otherwise the plots show the actual counts.</p>
 <div class="cell docutils container">
@@ -688,7 +705,7 @@ This shows the distribution of the number of reads and insertions for the comple
 </div>
 </div>
 <div class="section" id="interpretation">
-<h2>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this headline">¶</a></h2>
 <p>Initially it is expected that the number of reads and the number of insertions are higher for the non-essential genes as these are more tolerant to transposons than the essential genes.
 Note that ‘essential’ means ‘annotated essential’ here, and not ‘essential based on the data’.
 It might occur that genes are annotated as (non-)essential, but that this does not agree with the data.
@@ -699,7 +716,7 @@ This means that if a high transposon count occurs, the gene is probably nonessen
 But if a low transposon count is present, typically no definite conclusion can be drawn about its essentiality.</p>
 </div>
 <div class="section" id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Michel, A. H., Hatakeyama, R., Kimmig, P., Arter, M., Peter, M., Matos, J., … &amp; Kornmann, B. (2017). Functional mapping of yeast genomes by saturated transposition. Elife, 6, e23570.</p></li>
 <li><p>Segal, E. S., Gritsenko, V., Levitan, A., Yadav, B., Dror, N., Steenwyk, J. L., … &amp; Kunze, R. (2018). Gene essentiality analyzed by in vivo transposon mutagenesis and machine learning in a stable haploid isolate of Candida albicans. MBio, 9(5), e02048-18.</p></li>
@@ -707,6 +724,25 @@ But if a low transposon count is present, typically no definite conclusion can b
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -716,8 +752,8 @@ But if a low transposon count is present, typically no definite conclusion can b
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="gene_reads.html" title="previous page">Gene reads script</a>
-    <a class='right-next' id="next-link" href="statistics_perchromosome_Compare.html" title="next page">Comparison of the statistics per chromosome</a>
+    <a class='left-prev' id="prev-link" href="gene_reads.html" title="previous page"><span class="section-number">1. </span>Gene reads script</a>
+    <a class='right-next' id="next-link" href="statistics_perchromosome_Compare.html" title="next page"><span class="section-number">3. </span>Comparison of the statistics per chromosome</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
