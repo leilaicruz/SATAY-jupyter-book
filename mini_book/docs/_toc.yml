@@ -13,6 +13,7 @@
 # - header: Git Bash Preprocessing of the Sequencing data
 - part: Transposon reads from raw data 
 - file: pysam_test
+- file: transposonmapping_satay
 - part: Postprocessing scripts
 - file: gene_reads
 - file: statistics_pergene

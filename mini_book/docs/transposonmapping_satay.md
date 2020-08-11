@@ -13,9 +13,9 @@ kernelspec:
 
 This is a tool developed for analysing transposon insertions for experiments using SAturated Transposon Analysis in Yeast (SATAY).
 This python code contains one function called transposonmapper().
-For more information about this code and the project, see github.com/Gregory94/LaanLab-SATAY-DataAnalysis
+For more information about this code and the project, see [HERE](github.com/Gregory94/LaanLab-SATAY-DataAnalysis)
 
-This code is based on the Matlab code created by the Kornmann lab which is available at: sites.google.com/site/satayusers/
+This code is based on the Matlab code created by the Kornmann lab which is available at [HERE](sites.google.com/site/satayusers/) 
 
 ``` bash
 __Author__ = Gregory van Beek. LaanLab, department of Bionanoscience, Delft University of Technology
