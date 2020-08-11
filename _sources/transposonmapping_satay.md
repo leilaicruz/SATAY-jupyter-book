@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-## Python Translation of the Matlab code from Kornmann Lab 
+## Transposon insertions mapping
 
 This is a tool developed for analysing transposon insertions for experiments using SAturated Transposon Analysis in Yeast (SATAY).
 This python code contains one function called transposonmapper().
@@ -26,10 +26,10 @@ __Date last update__ = 2020-08-09
 
 
 ```{admonition} Version history:
-- 1.1; Added code for creating two text files for storing insertion locations per gene and per essential gene [2020-07-27]
-- 1.2; Improved searching algorithm for essential genes [2020-08-06]
-- 1.3; Load file containing all essential genes so that a search for essential genes in multiple file is not needed anymore. This file is created using Create_EssentialGenes_list.py located in the same directory as this code [2020-08-07]
-- 1.4; Fixed bug where the gene position and transposon insertion location did not start at zero for each chromosome, causing confusing values to be stored in the _pergene_insertions.txt and _peressential_insertions.txt files [2020-08-09]
+    1.1; Added code for creating two text files for storing insertion locations per gene and per essential gene [2020-07-27]
+    1.2; Improved searching algorithm for essential genes [2020-08-06]
+    1.3; Load file containing all essential genes so that a search for essential genes in multiple file is not needed anymore. This file is created using Create_EssentialGenes_list.py located in the same directory as this code [2020-08-07]
+    1.4; Fixed bug where the gene position and transposon insertion location did not start at zero for each chromosome, causing confusing values to be stored in the _pergene_insertions.txt and _peressential_insertions.txt files [2020-08-09]
 ``` 
 
 ``` python
