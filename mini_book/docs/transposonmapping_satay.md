@@ -49,8 +49,6 @@ bam_arg = sys.argv[1]
 ```
 
 ```{admonition} Description of the function
-
-
 This function is created for analysis of SATAY data using the species Saccharomyces Cerevisiae.
 It outputs the following files that store information regarding the location of all insertions:
     - .bed-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Browser Extensible Data (bed) format.
