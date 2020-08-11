@@ -46,40 +46,38 @@ from gene_names import gene_aliases
 
 
 bam_arg = sys.argv[1]
+```
 
+```{admonition} Description of the function
+This function is created for analysis of SATAY data using the species Saccharomyces Cerevisiae.
+It outputs the following files that store information regarding the location of all insertions:
+    - .bed-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Browser Extensible Data (bed) format.
+                A distinction is made between reads that had a different reading orientation during sequencing. The number of reads are stored using the equation #reads*20+100 (e.g. 2 reads is stored as 140).
+    - .wig-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Wiggle (wig) format.
+                In this file no distinction is made between reads that had a different reading orientation during sequencing. The number of reads are stored as the absolute count.
+    - _pergene.txt-file: Includes all genes (currently 6600) with the total number of insertions and number of reads within the genomic region of the gene.
+    - _peressential.txt-file: Includes all annotated essential genes (currently 1186) with the total number of insertions and number of reads within the genomic region of the gene.
+    - _pergene_insertions.txt-file: Includes all genes with their genomic location (i.e. chromosome number, start and end position) and the locations of all insertions within the gene location. It also include the number number of reads per insertions.
+    - _peressential_insertions.txt-file: Includes all essential genes with their genomic location (i.e. chromosome number, start and end position) and the locations of all insertions within the gene location. It also include the number number of reads per insertions.
+        (note that in the latter two files, the genomic locations are continous, for example chromosome II does not start at 0, but at 'length chromosome I + 1' etc.).
+The output files are saved at the location of the input file using the same name as the input file, but with the corresponding extension.
+
+The function assumes that the reads are already aligned to a reference genome.
+
+The input data should be a .bam-file and the location where the .bam-file is stored should also contain an index file (.bam.bai-file, which for example can be created using sambamba).
+This function takes the following inputs:
+    - bamfile [required]: Path to the bamfile. This location should also contain the .bam.bai index file (does not need to be input in this function).
+    - gfffile [optional]: Path to a .gff-file including all gene information (e.g. downloaded from SGD). Default file is 'Saccharomyces_cerevisiae.R64-1-1.99.gff3'.
+    - essentialfiles [optional]: Path to a .txt file containing a list all essential genes. Every line should consist of a single essential gene and the file should have one header line. Ideally this file is created using 'Create_EssentialGenes_list.py'. Default file is 'Cerevisiae_AllEssentialGenes_List.txt'.
+    - genenamesfile [optional]: Path to text file that includes aliases for all genes. Default file is 'Yeast_Protein_Names.txt'.
+When the arguments for the optional files are not given, the files are used that are stored at the following location:
+    "path_current_pythonscript/../data_files"
+The function uses the pysam package for handling bam files (see pysam.readthedocs.io/en/latest/index.html) and therefore this function only runs on Linux systems with SAMTools installed.
 ```
 
 ```python
 def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenamesfile=None):
-    '''
-    This function is created for analysis of SATAY data using the species Saccharomyces Cerevisiae.
-    It outputs the following files that store information regarding the location of all insertions:
-        - .bed-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Browser Extensible Data (bed) format.
-                    A distinction is made between reads that had a different reading orientation during sequencing. The number of reads are stored using the equation #reads*20+100 (e.g. 2 reads is stored as 140).
-        - .wig-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Wiggle (wig) format.
-                    In this file no distinction is made between reads that had a different reading orientation during sequencing. The number of reads are stored as the absolute count.
-        - _pergene.txt-file: Includes all genes (currently 6600) with the total number of insertions and number of reads within the genomic region of the gene.
-        - _peressential.txt-file: Includes all annotated essential genes (currently 1186) with the total number of insertions and number of reads within the genomic region of the gene.
-        - _pergene_insertions.txt-file: Includes all genes with their genomic location (i.e. chromosome number, start and end position) and the locations of all insertions within the gene location. It also include the number number of reads per insertions.
-        - _peressential_insertions.txt-file: Includes all essential genes with their genomic location (i.e. chromosome number, start and end position) and the locations of all insertions within the gene location. It also include the number number of reads per insertions.
-          (note that in the latter two files, the genomic locations are continous, for example chromosome II does not start at 0, but at 'length chromosome I + 1' etc.).
-    The output files are saved at the location of the input file using the same name as the input file, but with the corresponding extension.
-    
-    The function assumes that the reads are already aligned to a reference genome.
-    The input data should be a .bam-file and the location where the .bam-file is stored should also contain an index file (.bam.bai-file, which for example can be created using sambamba).
-    This function takes the following inputs:
-        - bamfile [required]: Path to the bamfile. This location should also contain the .bam.bai index file (does not need to be input in this function).
-        - gfffile [optional]: Path to a .gff-file including all gene information (e.g. downloaded from SGD). Default file is 'Saccharomyces_cerevisiae.R64-1-1.99.gff3'.
-        - essentialfiles [optional]: Path to a .txt file containing a list all essential genes. Every line should consist of a single essential gene and the file should have one header line. Ideally this file is created using 'Create_EssentialGenes_list.py'. Default file is 'Cerevisiae_AllEssentialGenes_List.txt'.
-        - genenamesfile [optional]: Path to text file that includes aliases for all genes. Default file is 'Yeast_Protein_Names.txt'.
-    When the arguments for the optional files are not given, the files are used that are stored at the following location:
-        "path_current_pythonscript/../data_files"
-    The function uses the pysam package for handling bam files (see pysam.readthedocs.io/en/latest/index.html) and therefore this function only runs on Linux systems with SAMTools installed.
-    '''
-```
-
-```python
-:title: LOADING BAM FILE
+'''title: LOADING BAM FILE'''
 
     if bamfile is None:
         path = os.path.join('/home', 'gregoryvanbeek', 'Documents', 'data_processing')
@@ -96,10 +94,7 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
     else:
         raise ValueError('Bam file not found at: ', bamfile)
 
-```
-
-```python
-:title: LOADING ADDITIONAL FILES
+'''title: LOADING ADDITIONAL FILES'''
 
     files_path = os.path.join(dirname,'..','..','data_files')
 
@@ -122,17 +117,13 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
     if not os.path.isfile(genenamesfile):
         raise ValueError('Following path does not exist: ' + genenamesfile)
 
-```
 
-```python
-:title: READ BAM FILE
+'''title: READ BAM FILE'''
 
     bam = pysam.AlignmentFile(bamfile, 'rb') #open bam formatted file for reading
 
-```
 
-```python
-:title: GET NAMES OF ALL CHROMOSOMES AS STORED IN THE BAM FILE
+'''title: GET NAMES OF ALL CHROMOSOMES AS STORED IN THE BAM FILE'''
 
     ref_tid_dict = {} # 'I' | 0, 'II' | 1, ...
     ref_name_list = [] # 'I', 'II', ...
@@ -145,10 +136,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
     del (ref_name, i)
 
-```
 
-```python
-:title: CONVERT CHROMOSOME NAMES IN DATA FILE TO ROMAN NUMERALS
+'''title: CONVERT CHROMOSOME NAMES IN DATA FILE TO ROMAN NUMERALS'''
 
     ref_romannums = chromosomename_roman_to_arabic()[0]
     ref_tid_roman_dict = {}
@@ -159,10 +148,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
     del (key, val, ref_romannums)
 
-```
 
-```python
-:title: GET SEQUENCE LENGTHS OF ALL CHROMOSOMES
+'''title: GET SEQUENCE LENGTHS OF ALL CHROMOSOMES'''
 
     chr_length_dict = {} # 'I' | 230218, 'II' | 813184, ...
     chr_summedlength_dict = {} # 'I' | 0, 'II' | 230218, 'III' |  1043402, ...
@@ -177,10 +164,7 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
     del (key, ref_length, ref_summedlength)
 
-```
-
-```python
-:title: GET NUMBER OF MAPPED, UNMAPPED AND TOTAL AMOUNT OF READS PER CHROMOSOME
+'''title: GET NUMBER OF MAPPED, UNMAPPED AND TOTAL AMOUNT OF READS PER CHROMOSOME'''
 
     # total_reads = bam.mapped
     stats = bam.get_index_statistics()
@@ -194,10 +178,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
     del (stat, stats)
 
-```
 
-```python
-:title: GET ALL READS WITHIN A SPECIFIED GENOMIC REGION
+'''title: GET ALL READS WITHIN A SPECIFIED GENOMIC REGION'''
 
     tnnumber_dict = {}
     ll = 0 #Number of unique insertions in entire genome
@@ -294,10 +276,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
     tncoordinatescopy_array = np.array(tncoordinates_array, copy=True)
 
 
-```
 
-```python
-:title: GET LIST OF ALL GENES AND ALL ESSENTIAL GENES
+'''title: GET LIST OF ALL GENES AND ALL ESSENTIAL GENES'''
 
     print('Getting coordinates of all genes ...')
 
@@ -325,11 +305,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
     del (gff_path, gene, genes, name, essential_path)
 
-```
 
-```python
-:title: CONCATENATE ALL CHROMOSOMES
-
+'''title: CONCATENATE ALL CHROMOSOMES'''
 
     #FOR EACH INSERTION LOCATION, ADD THE LENGTH OF ALL PREVIOUS CHROMOSOMES.
     ll = 0
@@ -358,10 +335,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
     del (ii, ll, aa, key, gene_chrom)
 
-```
 
-```python
-:title: GET NUMBER OF TRANSPOSONS AND READS PER GENE
+'''title: GET NUMBER OF TRANSPOSONS AND READS PER GENE'''
 
     print('Get number of insertions and reads per gene ...')
     
@@ -402,10 +377,7 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
     del (xx, gene)
 
-```
-
-```python
-:title: CREATE BED FILE
+''':title: CREATE BED FILE'''
 
     bedfile = bamfile+'.bed'
     print('Writing bed file at: ', bedfile)
@@ -427,10 +399,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
 
     del (bedfile, coordinates_counter, refname)
-```
 
-```python
-:title: CREATE TEXT FILE WITH TRANSPOSONS AND READS PER GENE
+'''title: CREATE TEXT FILE WITH TRANSPOSONS AND READS PER GENE'''
 
     pergenefile = bamfile+'_pergene.txt'
     print('Writing pergene.txt file at: ', pergenefile)
@@ -452,10 +422,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
 
     del (pergenefile, gene, gene_alias, tnpergene, readpergene)
-```
 
-```python
-:title: CREATE TEXT FILE TRANSPOSONS AND READS PER ESSENTIAL GENE
+'''title: CREATE TEXT FILE TRANSPOSONS AND READS PER ESSENTIAL GENE'''
 
     peressentialfile = bamfile+'_peressential.txt'
     print('Writing peressential.txt file at: ',peressentialfile)
@@ -477,10 +445,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
 
     del (peressentialfile, essential, essential_alias, tnperessential, readperessential)
-```
 
-```python
-:title: CREATE TEXT FILE WITH LOCATION OF INSERTIONS AND READS PER GENE
+'''title: CREATE TEXT FILE WITH LOCATION OF INSERTIONS AND READS PER GENE'''
 
     pergeneinsertionsfile = bamfile+'_pergene_insertions.txt'
     print('Witing pergene_insertions.txt file at: ',pergeneinsertionsfile)
@@ -504,10 +470,8 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
 
     del (gene, gene_chrom, tncoordinates, gene_alias, pergeneinsertionsfile)
-```
 
-```python
-:title: CREATE TEXT FILE WITH LOCATION OF INSERTIONS AND READS PER ESSENTIAL GENE
+'''title: CREATE TEXT FILE WITH LOCATION OF INSERTIONS AND READS PER ESSENTIAL GENE'''
 
     peressentialinsertionsfile = bamfile+'_peressential_insertions.txt'
     print('Writing peressential_insertions.txt file at: ', peressentialinsertionsfile)
@@ -531,13 +495,11 @@ def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenam
 
 
     del (essential, gene_chrom, tncoordinates, essential_alias, peressentialinsertionsfile)
-```
 
-```python
----
-title: ADD INSERTIONS AT SAME LOCATION BUT WITH DIFFERENT ORIENTATIONS TOGETHER (FOR
-  STORING IN WIG-FILE)
----
+
+'''title: ADD INSERTIONS AT SAME LOCATION BUT WITH DIFFERENT ORIENTATIONS TOGETHER (FOR  STORING IN WIG-FILE)'''
+
+
     wigfile = bamfile+'.wig'
     print('Writing wig file at: ', wigfile)
     print('')
@@ -587,9 +549,8 @@ title: ADD INSERTIONS AT SAME LOCATION BUT WITH DIFFERENT ORIENTATIONS TOGETHER 
 
 
     del (ll, ii, jj, N_uniques_perchr_list, index_last_unique, duplicate_list, readnumbwig_array)
-```
 
-```python
+
 :title: CREATING WIG FILE
 
     with  open(wigfile, 'w') as f:
