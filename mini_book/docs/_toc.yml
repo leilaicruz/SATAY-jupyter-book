@@ -1,11 +1,12 @@
 # - file: README
 
-- part: Introduction
 - file: Introduction
+  numbered: true
 - part: Get started
-- file: Intro/satay_analysis_notes
-- file: Intro/data-analysis-workflow
-- file: MysT_Notebooks
+  chapters:
+  - file: Intro/satay_analysis_notes
+  - file: Intro/data-analysis-workflow
+  - file: MysT_Notebooks
 # - header : SATAY general Documentation
 # - file: MysT_Notebooks
 # - file : General-satay-description-files/Installation_Guide_SATAY_Analysis_Software
@@ -13,12 +14,14 @@
 # - file: General-satay-description-files/
 # - header: Git Bash Preprocessing of the Sequencing data
 - part: Transposon reads from raw data 
-- file: pysam_test
-- file: transposonmapping_satay
+  chapters:
+  - file: pysam_test
+  - file: transposonmapping_satay
 - part: Postprocessing scripts
-- file: gene_reads
-- file: statistics_pergene
-- file: statistics_perchromosome_Compare
+  chapters:
+  - file: gene_reads
+  - file: statistics_pergene
+  - file: statistics_perchromosome_Compare
 # - file: transposonRead_Profile_Compare
 # - file: transposonRead_Profile_Plot
 
