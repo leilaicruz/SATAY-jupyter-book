@@ -1,0 +1,881 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;no title&gt; &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/Greg.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Gene reads script" href="gene_reads.html" />
+    <link rel="prev" title="1. Python Translation of the Matlab code from Kornmann Lab" href="pysam_test.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Greg.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   To reproduce an example of  Jupyter book, and you are a Windows user:
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro/satay_analysis_notes.html">
+   1. All what you need to know from SATAY
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro/data-analysis-workflow.html">
+   2. Data analysis steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MysT_Notebooks.html">
+   3. Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Transposon reads from raw data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pysam_test.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Postprocessing scripts
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="gene_reads.html">
+   1. Gene reads script
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics_pergene.html">
+   2. Statistics per gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics_perchromosome_Compare.html">
+   3. Comparison of the statistics per chromosome
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/transposonmapping_satay.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/transposonmapping_satay.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/leilaicruz/SATAY-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/leilaicruz/SATAY-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftransposonmapping_satay.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org//v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=lab/tree/transposonmapping_satay.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>This is a tool developed for analysing transposon insertions for experiments using SAturated Transposon Analysis in Yeast (SATAY).
+This python code contains one function called transposonmapper().
+For more information about this code and the project, see <span class="xref myst">HERE</span></p>
+<p>This code is based on the Matlab code created by the Kornmann lab which is available at <span class="xref myst">HERE</span></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">__Author__</span> <span class="o">=</span> Gregory van Beek. LaanLab, department of Bionanoscience, Delft University of Technology
+<span class="nv">__version__</span> <span class="o">=</span> <span class="m">1</span>.4
+__Date last <span class="nv">update__</span> <span class="o">=</span> <span class="m">2020</span>-08-09
+</pre></div>
+</div>
+<div class="admonition-version-history admonition">
+<p class="admonition-title">Version history:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.1; Added code for creating two text files for storing insertion locations per gene and per essential gene [2020-07-27]
+1.2; Improved searching algorithm for essential genes [2020-08-06]
+1.3; Load file containing all essential genes so that a search for essential genes in multiple file is not needed anymore. This file is created using Create_EssentialGenes_list.py located in the same directory as this code [2020-08-07]
+1.4; Fixed bug where the gene position and transposon insertion location did not start at zero for each chromosome, causing confusing values to be stored in the _pergene_insertions.txt and _peressential_insertions.txt files [2020-08-09]
+</pre></div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">timeit</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pysam</span>
+
+<span class="n">dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;__file__&#39;</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span><span class="s1">&#39;python_modules&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">chromosome_and_gene_positions</span> <span class="kn">import</span> <span class="n">chromosomename_roman_to_arabic</span><span class="p">,</span> <span class="n">gene_position</span>
+<span class="kn">from</span> <span class="nn">gene_names</span> <span class="kn">import</span> <span class="n">gene_aliases</span>
+
+
+<span class="n">bam_arg</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transposonmapper</span><span class="p">(</span><span class="n">bamfile</span><span class="o">=</span><span class="n">bam_arg</span><span class="p">,</span> <span class="n">gfffile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">essentialfiles</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">genenamesfile</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function is created for analysis of SATAY data using the species Saccharomyces Cerevisiae.</span>
+<span class="sd">    It outputs the following files that store information regarding the location of all insertions:</span>
+<span class="sd">        - .bed-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Browser Extensible Data (bed) format.</span>
+<span class="sd">                    A distinction is made between reads that had a different reading orientation during sequencing. The number of reads are stored using the equation #reads*20+100 (e.g. 2 reads is stored as 140).</span>
+<span class="sd">        - .wig-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Wiggle (wig) format.</span>
+<span class="sd">                    In this file no distinction is made between reads that had a different reading orientation during sequencing. The number of reads are stored as the absolute count.</span>
+<span class="sd">        - _pergene.txt-file: Includes all genes (currently 6600) with the total number of insertions and number of reads within the genomic region of the gene.</span>
+<span class="sd">        - _peressential.txt-file: Includes all annotated essential genes (currently 1186) with the total number of insertions and number of reads within the genomic region of the gene.</span>
+<span class="sd">        - _pergene_insertions.txt-file: Includes all genes with their genomic location (i.e. chromosome number, start and end position) and the locations of all insertions within the gene location. It also include the number number of reads per insertions.</span>
+<span class="sd">        - _peressential_insertions.txt-file: Includes all essential genes with their genomic location (i.e. chromosome number, start and end position) and the locations of all insertions within the gene location. It also include the number number of reads per insertions.</span>
+<span class="sd">          (note that in the latter two files, the genomic locations are continous, for example chromosome II does not start at 0, but at &#39;length chromosome I + 1&#39; etc.).</span>
+<span class="sd">    The output files are saved at the location of the input file using the same name as the input file, but with the corresponding extension.</span>
+<span class="sd">    </span>
+<span class="sd">    The function assumes that the reads are already aligned to a reference genome.</span>
+<span class="sd">    The input data should be a .bam-file and the location where the .bam-file is stored should also contain an index file (.bam.bai-file, which for example can be created using sambamba).</span>
+<span class="sd">    This function takes the following inputs:</span>
+<span class="sd">        - bamfile [required]: Path to the bamfile. This location should also contain the .bam.bai index file (does not need to be input in this function).</span>
+<span class="sd">        - gfffile [optional]: Path to a .gff-file including all gene information (e.g. downloaded from SGD). Default file is &#39;Saccharomyces_cerevisiae.R64-1-1.99.gff3&#39;.</span>
+<span class="sd">        - essentialfiles [optional]: Path to a .txt file containing a list all essential genes. Every line should consist of a single essential gene and the file should have one header line. Ideally this file is created using &#39;Create_EssentialGenes_list.py&#39;. Default file is &#39;Cerevisiae_AllEssentialGenes_List.txt&#39;.</span>
+<span class="sd">        - genenamesfile [optional]: Path to text file that includes aliases for all genes. Default file is &#39;Yeast_Protein_Names.txt&#39;.</span>
+<span class="sd">    When the arguments for the optional files are not given, the files are used that are stored at the following location:</span>
+<span class="sd">        &quot;path_current_pythonscript/../data_files&quot;</span>
+<span class="sd">    The function uses the pysam package for handling bam files (see pysam.readthedocs.io/en/latest/index.html) and therefore this function only runs on Linux systems with SAMTools installed.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">LOADING</span> <span class="n">BAM</span> <span class="n">FILE</span>
+
+    <span class="k">if</span> <span class="n">bamfile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/home&#39;</span><span class="p">,</span> <span class="s1">&#39;gregoryvanbeek&#39;</span><span class="p">,</span> <span class="s1">&#39;Documents&#39;</span><span class="p">,</span> <span class="s1">&#39;data_processing&#39;</span><span class="p">)</span>
+        <span class="c1"># filename = &#39;E-MTAB-4885.WT2.bam&#39;</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;SRR062634.filt_trimmed.sorted.bam&#39;</span>
+        <span class="n">bamfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">bamfile</span><span class="p">)</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">bamfile</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">bamfile</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Running: &#39;</span><span class="p">,</span> <span class="n">bamfile</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Bam file not found at: &#39;</span><span class="p">,</span> <span class="n">bamfile</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">LOADING</span> <span class="n">ADDITIONAL</span> <span class="n">FILES</span>
+
+    <span class="n">files_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;..&#39;</span><span class="p">,</span><span class="s1">&#39;data_files&#39;</span><span class="p">)</span>
+
+    <span class="c1">#LOADING GFF-FILE</span>
+    <span class="k">if</span> <span class="n">gfffile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">gfffile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files_path</span><span class="p">,</span><span class="s1">&#39;Saccharomyces_cerevisiae.R64-1-1.99.gff3&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">gfffile</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Path to GFF-file does not exist.&#39;</span><span class="p">)</span>
+
+    <span class="c1">#LOADING TEXT FILES WITH ESSENTIAL GENES</span>
+    <span class="k">if</span> <span class="n">essentialfiles</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">essentialfiles</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files_path</span><span class="p">,</span><span class="s1">&#39;Cerevisiae_AllEssentialGenes_List.txt&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">essentialfiles</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Following path does not exist: &#39;</span> <span class="o">+</span> <span class="n">essentialfiles</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">essentialfiles</span>
+
+    <span class="c1">#LOADING TEXT FILE WITH GENE NAME ALIASES</span>
+    <span class="k">if</span> <span class="n">genenamesfile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">genenamesfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files_path</span><span class="p">,</span><span class="s1">&#39;Yeast_Protein_Names.txt&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">genenamesfile</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Following path does not exist: &#39;</span> <span class="o">+</span> <span class="n">genenamesfile</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">READ</span> <span class="n">BAM</span> <span class="n">FILE</span>
+
+    <span class="n">bam</span> <span class="o">=</span> <span class="n">pysam</span><span class="o">.</span><span class="n">AlignmentFile</span><span class="p">(</span><span class="n">bamfile</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="c1">#open bam formatted file for reading</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">GET</span> <span class="n">NAMES</span> <span class="n">OF</span> <span class="n">ALL</span> <span class="n">CHROMOSOMES</span> <span class="n">AS</span> <span class="n">STORED</span> <span class="n">IN</span> <span class="n">THE</span> <span class="n">BAM</span> <span class="n">FILE</span>
+
+    <span class="n">ref_tid_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># &#39;I&#39; | 0, &#39;II&#39; | 1, ...</span>
+    <span class="n">ref_name_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># &#39;I&#39;, &#39;II&#39;, ...</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bam</span><span class="o">.</span><span class="n">nreferences</span><span class="p">):</span> <span class="c1">#if bam.nreferences does not work, use range(17) #16 chromosomes and the mitochondrial chromosome</span>
+        <span class="n">ref_name</span> <span class="o">=</span> <span class="n">bam</span><span class="o">.</span><span class="n">get_reference_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">ref_tid_dict</span><span class="p">[</span><span class="n">ref_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">bam</span><span class="o">.</span><span class="n">get_tid</span><span class="p">(</span><span class="n">ref_name</span><span class="p">)</span>
+        <span class="n">ref_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ref_name</span><span class="p">)</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">ref_name</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CONVERT</span> <span class="n">CHROMOSOME</span> <span class="n">NAMES</span> <span class="n">IN</span> <span class="n">DATA</span> <span class="n">FILE</span> <span class="n">TO</span> <span class="n">ROMAN</span> <span class="n">NUMERALS</span>
+
+    <span class="n">ref_romannums</span> <span class="o">=</span> <span class="n">chromosomename_roman_to_arabic</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ref_tid_roman_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">val</span> <span class="ow">in</span> <span class="n">ref_tid_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ref_tid_roman_dict</span><span class="p">[</span><span class="n">ref_romannums</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">key</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">ref_romannums</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">GET</span> <span class="n">SEQUENCE</span> <span class="n">LENGTHS</span> <span class="n">OF</span> <span class="n">ALL</span> <span class="n">CHROMOSOMES</span>
+
+    <span class="n">chr_length_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># &#39;I&#39; | 230218, &#39;II&#39; | 813184, ...</span>
+    <span class="n">chr_summedlength_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># &#39;I&#39; | 0, &#39;II&#39; | 230218, &#39;III&#39; |  1043402, ...</span>
+    <span class="n">ref_summedlength</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ref_tid_dict</span><span class="p">:</span>
+        <span class="n">ref_length</span> <span class="o">=</span> <span class="n">bam</span><span class="o">.</span><span class="n">get_reference_length</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">chr_length_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">ref_length</span>
+        <span class="n">chr_summedlength_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">ref_summedlength</span>
+        <span class="n">ref_summedlength</span> <span class="o">+=</span> <span class="n">ref_length</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">ref_length</span><span class="p">,</span> <span class="n">ref_summedlength</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">GET</span> <span class="n">NUMBER</span> <span class="n">OF</span> <span class="n">MAPPED</span><span class="p">,</span> <span class="n">UNMAPPED</span> <span class="n">AND</span> <span class="n">TOTAL</span> <span class="n">AMOUNT</span> <span class="n">OF</span> <span class="n">READS</span> <span class="n">PER</span> <span class="n">CHROMOSOME</span>
+
+    <span class="c1"># total_reads = bam.mapped</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">bam</span><span class="o">.</span><span class="n">get_index_statistics</span><span class="p">()</span>
+    <span class="n">chr_mappedreads_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># &#39;I&#39; | [mapped, unmapped, total reads]</span>
+    <span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
+        <span class="n">chr_mappedreads_dict</span><span class="p">[</span><span class="n">stat</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="n">stat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">stat</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">stat</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="n">stat</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Unmapped reads found in chromosome &#39;</span> <span class="o">+</span> <span class="n">stat</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">stats</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">GET</span> <span class="n">ALL</span> <span class="n">READS</span> <span class="n">WITHIN</span> <span class="n">A</span> <span class="n">SPECIFIED</span> <span class="n">GENOMIC</span> <span class="n">REGION</span>
+
+    <span class="n">tnnumber_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Number of unique insertions in entire genome</span>
+    <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">ref_name_list</span><span class="p">:</span>
+        <span class="n">timer_start</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+        <span class="n">read_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">N_reads_kk</span> <span class="o">=</span> <span class="n">chr_mappedreads_dict</span><span class="p">[</span><span class="n">kk</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">start_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N_reads_kk</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">flag_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N_reads_kk</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">readlength_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N_reads_kk</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+
+        <span class="c1">#RETREIVING ALL THE READS FROM THE CURRENT CHROMOSOME.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Getting reads for chromosome </span><span class="si">%s</span><span class="s1"> ...&#39;</span> <span class="o">%</span> <span class="n">kk</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">reads</span> <span class="ow">in</span> <span class="n">bam</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">kk</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">chr_length_dict</span><span class="p">[</span><span class="n">kk</span><span class="p">],</span> <span class="n">until_eof</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">read</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">reads</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="n">start_array</span><span class="p">[</span><span class="n">read_counter</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">read</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">flag_array</span><span class="p">[</span><span class="n">read_counter</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">read</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">readlength_array</span><span class="p">[</span><span class="n">read_counter</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">read</span><span class="p">[</span><span class="mi">9</span><span class="p">]))</span>
+
+            <span class="n">read_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+
+        <span class="c1">#CORRECT STARTING POSITION FOR READS WITH REVERSED ORIENTATION</span>
+        <span class="n">flag0coor_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">flag_array</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#coordinates reads 5&#39; -&gt; 3&#39;</span>
+        <span class="n">flag16coor_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">flag_array</span><span class="o">==</span><span class="mi">16</span><span class="p">)</span> <span class="c1"># coordinates reads 3&#39; -&gt; 5&#39;</span>
+
+        <span class="n">startdirect_array</span> <span class="o">=</span> <span class="n">start_array</span><span class="p">[</span><span class="n">flag0coor_array</span><span class="p">]</span>
+        <span class="n">flagdirect_array</span> <span class="o">=</span> <span class="n">flag_array</span><span class="p">[</span><span class="n">flag0coor_array</span><span class="p">]</span>
+
+        <span class="n">startindirect_array</span> <span class="o">=</span> <span class="n">start_array</span><span class="p">[</span><span class="n">flag16coor_array</span><span class="p">]</span> <span class="o">+</span> <span class="n">readlength_array</span><span class="p">[</span><span class="n">flag16coor_array</span><span class="p">]</span>
+        <span class="n">flagindirect_array</span> <span class="o">=</span> <span class="n">flag_array</span><span class="p">[</span><span class="n">flag16coor_array</span><span class="p">]</span>
+
+        <span class="n">start2_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">startdirect_array</span><span class="p">,</span> <span class="n">startindirect_array</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">flag2_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">flagdirect_array</span><span class="p">,</span> <span class="n">flagindirect_array</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">del</span> <span class="p">(</span><span class="n">flag0coor_array</span><span class="p">,</span> <span class="n">flag16coor_array</span><span class="p">,</span> <span class="n">startdirect_array</span><span class="p">,</span> <span class="n">flagdirect_array</span><span class="p">,</span> <span class="n">startindirect_array</span><span class="p">,</span> <span class="n">flagindirect_array</span><span class="p">)</span>
+
+
+
+        <span class="n">start2_sortindices</span> <span class="o">=</span> <span class="n">start2_array</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;mergesort&#39;</span><span class="p">)</span> <span class="c1">#use mergesort for stable sorting</span>
+        <span class="n">start2_array</span> <span class="o">=</span> <span class="n">start2_array</span><span class="p">[</span><span class="n">start2_sortindices</span><span class="p">]</span>
+        <span class="n">flag2_array</span> <span class="o">=</span> <span class="n">flag2_array</span><span class="p">[</span><span class="n">start2_sortindices</span><span class="p">]</span>
+
+        <span class="k">del</span> <span class="n">start2_sortindices</span>
+
+
+
+        <span class="c1">#CREATE ARRAY OF START POSITION AND FLAGS OF ALL READS IN GENOME</span>
+        <span class="n">ref_tid_kk</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ref_tid_dict</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ll</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">tncoordinates_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+
+        <span class="n">mm</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Number of unique reads per insertion</span>
+        <span class="n">jj</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Number of unique reads in current chromosome (Number of transposons in current chromosome)</span>
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">start2_array</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">start2_array</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">-</span><span class="n">start2_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">flag2_array</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">==</span> <span class="n">flag2_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> <span class="c1">#If two subsequent reads are within two basepairs and have the same orientation, add them together.</span>
+                <span class="n">mm</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">avg_start_pos</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">start2_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="n">mm</span><span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="n">ii</span><span class="p">])))</span>
+                <span class="k">if</span> <span class="n">tncoordinates_array</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">#include first read</span>
+                    <span class="n">tncoordinates_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ref_tid_kk</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">avg_start_pos</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">flag2_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">])])</span>
+                    <span class="n">readnumb_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">mm</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">tncoordinates_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tncoordinates_array</span><span class="p">,</span> <span class="p">[</span><span class="n">ref_tid_kk</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">avg_start_pos</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">flag2_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">])]))</span>    
+                    <span class="n">readnumb_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mm</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">mm</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">jj</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">ll</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="n">ii</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">start2_array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#include last read</span>
+                <span class="n">avg_start_pos</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">start2_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="n">mm</span><span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="n">ii</span><span class="p">])))</span>
+                <span class="n">tncoordinates_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">tncoordinates_array</span><span class="p">,</span> <span class="p">[</span><span class="n">ref_tid_kk</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">avg_start_pos</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">flag2_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">])]))</span>
+                <span class="n">readnumb_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mm</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">tnnumber_dict</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span> <span class="o">=</span> <span class="n">jj</span>
+
+        <span class="k">del</span> <span class="p">(</span><span class="n">jj</span><span class="p">,</span> <span class="n">start_array</span><span class="p">,</span> <span class="n">flag_array</span><span class="p">,</span> <span class="n">readlength_array</span><span class="p">,</span> <span class="n">flag2_array</span><span class="p">,</span> <span class="n">start2_array</span><span class="p">,</span> <span class="n">ref_tid_kk</span><span class="p">)</span>
+
+
+
+        <span class="n">timer_end</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chromosome </span><span class="si">%s</span><span class="s1"> completed in </span><span class="si">%.3f</span><span class="s1"> seconds&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">kk</span><span class="p">,</span> <span class="p">(</span><span class="n">timer_end</span> <span class="o">-</span> <span class="n">timer_start</span><span class="p">)))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+
+    <span class="n">readnumb_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">readnumb_list</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">readnumb_list</span>
+
+    <span class="n">tncoordinatescopy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tncoordinates_array</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">GET</span> <span class="n">LIST</span> <span class="n">OF</span> <span class="n">ALL</span> <span class="n">GENES</span> <span class="n">AND</span> <span class="n">ALL</span> <span class="n">ESSENTIAL</span> <span class="n">GENES</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Getting coordinates of all genes ...&#39;</span><span class="p">)</span>
+
+    <span class="c1"># GET POSITION GENES</span>
+    <span class="n">gff_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files_path</span><span class="p">,</span><span class="s1">&#39;Saccharomyces_cerevisiae.R64-1-1.99.gff3&#39;</span><span class="p">)</span>
+    <span class="n">genecoordinates_dict</span> <span class="o">=</span> <span class="n">gene_position</span><span class="p">(</span><span class="n">gff_path</span><span class="p">)</span> <span class="c1">#&#39;YAL069W&#39; | [&#39;I&#39;, 335, 649], ...</span>
+
+
+
+    <span class="c1"># GET ALL ANNOTATED ESSENTIAL GENES</span>
+    <span class="n">essential_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files_path</span><span class="p">,</span><span class="s1">&#39;Cerevisiae_AllEssentialGenes_List.txt&#39;</span><span class="p">)</span>
+    <span class="n">essentialcoordinates_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">essential_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">genes</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">genes</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">gene</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">essentialcoordinates_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+
+    <span class="c1"># GET ALIASES OF ALL GENES</span>
+    <span class="n">names_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">files_path</span><span class="p">,</span><span class="s1">&#39;Yeast_Protein_Names.txt&#39;</span><span class="p">)</span>
+    <span class="n">aliases_designation_dict</span> <span class="o">=</span> <span class="n">gene_aliases</span><span class="p">(</span><span class="n">names_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#&#39;YMR056C&#39; \ [&#39;AAC1&#39;], ...</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">gff_path</span><span class="p">,</span> <span class="n">gene</span><span class="p">,</span> <span class="n">genes</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">essential_path</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CONCATENATE</span> <span class="n">ALL</span> <span class="n">CHROMOSOMES</span>
+
+
+    <span class="c1">#FOR EACH INSERTION LOCATION, ADD THE LENGTH OF ALL PREVIOUS CHROMOSOMES.</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">ref_name_list</span><span class="p">)):</span>
+        <span class="n">ll</span> <span class="o">+=</span> <span class="n">chr_length_dict</span><span class="p">[</span><span class="n">ref_name_list</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="n">aa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tncoordinatescopy_array</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ii</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">tncoordinatescopy_array</span><span class="p">[</span><span class="n">aa</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">tncoordinatescopy_array</span><span class="p">[</span><span class="n">aa</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ll</span>
+
+
+
+    <span class="c1">#FOR EACH GENE LOCATION, ADD THE LENGTH OF ALL PREVIOUS CHROMOSOMES.</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">genecoordinates_dict</span><span class="p">:</span>
+        <span class="n">gene_chrom</span> <span class="o">=</span> <span class="n">ref_tid_roman_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">genecoordinates_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">)</span>
+        <span class="n">genecoordinates_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">)</span>
+
+
+
+    <span class="c1">#FOR EACH ESSENTIAL GENE LOCATION, ADD THE LENGTH OF ALL PREVIOUS CHROMOSOMES.</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">essentialcoordinates_dict</span><span class="p">:</span>
+        <span class="n">gene_chrom</span> <span class="o">=</span> <span class="n">ref_tid_roman_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">essentialcoordinates_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">)</span>
+        <span class="n">essentialcoordinates_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">)</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">ii</span><span class="p">,</span> <span class="n">ll</span><span class="p">,</span> <span class="n">aa</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">gene_chrom</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">GET</span> <span class="n">NUMBER</span> <span class="n">OF</span> <span class="n">TRANSPOSONS</span> <span class="n">AND</span> <span class="n">READS</span> <span class="n">PER</span> <span class="n">GENE</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Get number of insertions and reads per gene ...&#39;</span><span class="p">)</span>
+    
+    <span class="c1">#ALL GENES</span>
+    <span class="n">tnpergene_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">readpergene_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">tncoordinates_pergene_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># readpergenecrude_dict = {}</span>
+    <span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">genecoordinates_dict</span><span class="p">:</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">tncoordinatescopy_array</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tncoordinatescopy_array</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">2</span><span class="p">]))</span> <span class="c1">#get all insertions within range of current gene</span>
+        <span class="n">tnpergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+        <span class="n">readpergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">readnumb_array</span><span class="p">[</span><span class="n">xx</span><span class="p">])</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="n">readnumb_array</span><span class="p">[</span><span class="n">xx</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#REMOVE LARGEST VALUE TO REDUCE NOISE</span>
+        <span class="c1"># readpergenecrude_dict[gene] = sum(readnumb_array[xx])</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">tncoordinates_pergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">list</span><span class="p">(</span><span class="n">tncoordinatescopy_array</span><span class="p">[</span><span class="n">xx</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span><span class="n">xx</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="nb">list</span><span class="p">(</span><span class="n">readnumb_array</span><span class="p">[</span><span class="n">xx</span><span class="p">])]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tncoordinates_pergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[]]</span>
+
+
+    <span class="c1">#ONLY ESSENTIAL GENES</span>
+    <span class="n">tnperessential_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">readperessential_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">tncoordinates_peressential_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># readperessentialcrude_dict = {}</span>
+    <span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">essentialcoordinates_dict</span><span class="p">:</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">tncoordinatescopy_array</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tncoordinatescopy_array</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="n">tnperessential_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+        <span class="n">readperessential_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">readnumb_array</span><span class="p">[</span><span class="n">xx</span><span class="p">])</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="n">readnumb_array</span><span class="p">[</span><span class="n">xx</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># readperessentialcrude_dict[gene] = sum(readnumb_array[xx])</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">tncoordinates_peressential_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">list</span><span class="p">(</span><span class="n">tncoordinatescopy_array</span><span class="p">[</span><span class="n">xx</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span><span class="n">xx</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="nb">list</span><span class="p">(</span><span class="n">readnumb_array</span><span class="p">[</span><span class="n">xx</span><span class="p">])]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tncoordinates_peressential_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">essentialcoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[]]</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">gene</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CREATE</span> <span class="n">BED</span> <span class="n">FILE</span>
+
+    <span class="n">bedfile</span> <span class="o">=</span> <span class="n">bamfile</span><span class="o">+</span><span class="s1">&#39;.bed&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Writing bed file at: &#39;</span><span class="p">,</span> <span class="n">bedfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">bedfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;track name=&#39;</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39; useScore=1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+        <span class="n">coordinates_counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">tn</span> <span class="ow">in</span> <span class="n">tncoordinates_array</span><span class="p">:</span>
+            <span class="n">refname</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">ref_tid_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="n">tn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">refname</span> <span class="o">==</span> <span class="s1">&#39;Mito&#39;</span><span class="p">:</span>
+                <span class="n">refname</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;chr&#39;</span> <span class="o">+</span> <span class="n">refname</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tn</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; . &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">+</span><span class="n">readnumb_array</span><span class="p">[</span><span class="n">coordinates_counter</span><span class="p">]</span><span class="o">*</span><span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">coordinates_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">bedfile</span><span class="p">,</span> <span class="n">coordinates_counter</span><span class="p">,</span> <span class="n">refname</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CREATE</span> <span class="n">TEXT</span> <span class="n">FILE</span> <span class="n">WITH</span> <span class="n">TRANSPOSONS</span> <span class="n">AND</span> <span class="n">READS</span> <span class="n">PER</span> <span class="n">GENE</span>
+
+    <span class="n">pergenefile</span> <span class="o">=</span> <span class="n">bamfile</span><span class="o">+</span><span class="s1">&#39;_pergene.txt&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Writing pergene.txt file at: &#39;</span><span class="p">,</span> <span class="n">pergenefile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pergenefile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Gene name</span><span class="se">\t</span><span class="s1">Number of transposons per gene</span><span class="se">\t</span><span class="s1">Number of reads per gene</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">tnpergene_dict</span><span class="p">:</span>
+            <span class="n">tnpergene</span> <span class="o">=</span> <span class="n">tnpergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span>
+            <span class="n">readpergene</span> <span class="o">=</span> <span class="n">readpergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">aliases_designation_dict</span><span class="p">:</span>
+                <span class="n">gene_alias</span> <span class="o">=</span> <span class="n">aliases_designation_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">gene_alias</span> <span class="o">=</span> <span class="n">gene</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">gene_alias</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tnpergene</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">readpergene</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">pergenefile</span><span class="p">,</span> <span class="n">gene</span><span class="p">,</span> <span class="n">gene_alias</span><span class="p">,</span> <span class="n">tnpergene</span><span class="p">,</span> <span class="n">readpergene</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CREATE</span> <span class="n">TEXT</span> <span class="n">FILE</span> <span class="n">TRANSPOSONS</span> <span class="n">AND</span> <span class="n">READS</span> <span class="n">PER</span> <span class="n">ESSENTIAL</span> <span class="n">GENE</span>
+
+    <span class="n">peressentialfile</span> <span class="o">=</span> <span class="n">bamfile</span><span class="o">+</span><span class="s1">&#39;_peressential.txt&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Writing peressential.txt file at: &#39;</span><span class="p">,</span><span class="n">peressentialfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">peressentialfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Gene name</span><span class="se">\t</span><span class="s1">Number of transposons per gene</span><span class="se">\t</span><span class="s1">Number of reads per gene</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">essential</span> <span class="ow">in</span> <span class="n">tnperessential_dict</span><span class="p">:</span>
+            <span class="n">tnperessential</span> <span class="o">=</span> <span class="n">tnperessential_dict</span><span class="p">[</span><span class="n">essential</span><span class="p">]</span>
+            <span class="n">readperessential</span> <span class="o">=</span> <span class="n">readperessential_dict</span><span class="p">[</span><span class="n">essential</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">essential</span> <span class="ow">in</span> <span class="n">aliases_designation_dict</span><span class="p">:</span>
+                <span class="n">essential_alias</span> <span class="o">=</span> <span class="n">aliases_designation_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">essential</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">essential_alias</span> <span class="o">=</span> <span class="n">essential</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">essential_alias</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tnperessential</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">readperessential</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">peressentialfile</span><span class="p">,</span> <span class="n">essential</span><span class="p">,</span> <span class="n">essential_alias</span><span class="p">,</span> <span class="n">tnperessential</span><span class="p">,</span> <span class="n">readperessential</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CREATE</span> <span class="n">TEXT</span> <span class="n">FILE</span> <span class="n">WITH</span> <span class="n">LOCATION</span> <span class="n">OF</span> <span class="n">INSERTIONS</span> <span class="n">AND</span> <span class="n">READS</span> <span class="n">PER</span> <span class="n">GENE</span>
+
+    <span class="n">pergeneinsertionsfile</span> <span class="o">=</span> <span class="n">bamfile</span><span class="o">+</span><span class="s1">&#39;_pergene_insertions.txt&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Witing pergene_insertions.txt file at: &#39;</span><span class="p">,</span><span class="n">pergeneinsertionsfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pergeneinsertionsfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Gene name</span><span class="se">\t</span><span class="s1">Chromosome</span><span class="se">\t</span><span class="s1">Start location</span><span class="se">\t</span><span class="s1">End location</span><span class="se">\t</span><span class="s1">Insertion locations</span><span class="se">\t</span><span class="s1">Reads per insertion location</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">tncoordinates_pergene_dict</span><span class="p">:</span>
+            <span class="n">gene_chrom</span> <span class="o">=</span> <span class="n">ref_tid_roman_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">tncoordinates</span> <span class="o">=</span> <span class="p">[</span><span class="n">ins</span> <span class="o">-</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">)</span> <span class="k">for</span> <span class="n">ins</span> <span class="ow">in</span> <span class="n">tncoordinates_pergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">][</span><span class="mi">3</span><span class="p">]]</span>
+
+            <span class="k">if</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">aliases_designation_dict</span><span class="p">:</span>
+                <span class="n">gene_alias</span> <span class="o">=</span> <span class="n">aliases_designation_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">gene_alias</span> <span class="o">=</span> <span class="n">gene</span>
+
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">gene_alias</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_pergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_pergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_pergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_pergene_dict</span><span class="p">[</span><span class="n">gene</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">gene</span><span class="p">,</span> <span class="n">gene_chrom</span><span class="p">,</span> <span class="n">tncoordinates</span><span class="p">,</span> <span class="n">gene_alias</span><span class="p">,</span> <span class="n">pergeneinsertionsfile</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CREATE</span> <span class="n">TEXT</span> <span class="n">FILE</span> <span class="n">WITH</span> <span class="n">LOCATION</span> <span class="n">OF</span> <span class="n">INSERTIONS</span> <span class="n">AND</span> <span class="n">READS</span> <span class="n">PER</span> <span class="n">ESSENTIAL</span> <span class="n">GENE</span>
+
+    <span class="n">peressentialinsertionsfile</span> <span class="o">=</span> <span class="n">bamfile</span><span class="o">+</span><span class="s1">&#39;_peressential_insertions.txt&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Writing peressential_insertions.txt file at: &#39;</span><span class="p">,</span> <span class="n">peressentialinsertionsfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">peressentialinsertionsfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Essential gene name</span><span class="se">\t</span><span class="s1">Chromosome</span><span class="se">\t</span><span class="s1">Start location</span><span class="se">\t</span><span class="s1">End location</span><span class="se">\t</span><span class="s1">Insertion locations</span><span class="se">\t</span><span class="s1">Reads per insertion location</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">essential</span> <span class="ow">in</span> <span class="n">tncoordinates_peressential_dict</span><span class="p">:</span>
+            <span class="n">gene_chrom</span> <span class="o">=</span> <span class="n">ref_tid_roman_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">genecoordinates_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">essential</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">tncoordinates</span> <span class="o">=</span> <span class="p">[</span><span class="n">ins</span> <span class="o">-</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">)</span> <span class="k">for</span> <span class="n">ins</span> <span class="ow">in</span> <span class="n">tncoordinates_peressential_dict</span><span class="p">[</span><span class="n">essential</span><span class="p">][</span><span class="mi">3</span><span class="p">]]</span>
+
+            <span class="k">if</span> <span class="n">essential</span> <span class="ow">in</span> <span class="n">aliases_designation_dict</span><span class="p">:</span>
+                <span class="n">essential_alias</span> <span class="o">=</span> <span class="n">aliases_designation_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">essential</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">essential_alias</span> <span class="o">=</span> <span class="n">essential</span>
+
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">essential_alias</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_peressential_dict</span><span class="p">[</span><span class="n">essential</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_peressential_dict</span><span class="p">[</span><span class="n">essential</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_peressential_dict</span><span class="p">[</span><span class="n">essential</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">chr_summedlength_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_chrom</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tncoordinates_peressential_dict</span><span class="p">[</span><span class="n">essential</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">essential</span><span class="p">,</span> <span class="n">gene_chrom</span><span class="p">,</span> <span class="n">tncoordinates</span><span class="p">,</span> <span class="n">essential_alias</span><span class="p">,</span> <span class="n">peressentialinsertionsfile</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">title</span><span class="p">:</span> <span class="n">ADD</span> <span class="n">INSERTIONS</span> <span class="n">AT</span> <span class="n">SAME</span> <span class="n">LOCATION</span> <span class="n">BUT</span> <span class="n">WITH</span> <span class="n">DIFFERENT</span> <span class="n">ORIENTATIONS</span> <span class="n">TOGETHER</span> <span class="p">(</span><span class="n">FOR</span>
+  <span class="n">STORING</span> <span class="n">IN</span> <span class="n">WIG</span><span class="o">-</span><span class="n">FILE</span><span class="p">)</span>
+<span class="o">---</span>
+    <span class="n">wigfile</span> <span class="o">=</span> <span class="n">bamfile</span><span class="o">+</span><span class="s1">&#39;.wig&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Writing wig file at: &#39;</span><span class="p">,</span> <span class="n">wigfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+    <span class="n">readnumbwig_array</span> <span class="o">=</span> <span class="n">readnumb_array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+
+
+    <span class="n">unique_index_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="c1">#=cc</span>
+    <span class="n">N_uniques_perchr_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">ref_name_list</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tncoordinates_array</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">ref_tid_dict</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#get indices for current chromosome.</span>
+        <span class="n">unique_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">tncoordinates_array</span><span class="p">[</span><span class="n">index</span><span class="p">][:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#get all insertion locations (in tncoordinates, all rows, column 1)</span>
+
+        <span class="n">unique_index_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">unique_index_array</span><span class="p">,</span> <span class="p">(</span><span class="n">unique_index</span><span class="o">+</span><span class="n">ll</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">ll</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">tncoordinates_array</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">ref_tid_dict</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">N_uniques_perchr_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span> <span class="c1">#total amount unique indices found untill current chromosome</span>
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">ll</span><span class="p">,</span> <span class="n">kk</span><span class="p">,</span> <span class="n">unique_index</span><span class="p">)</span>
+
+
+
+    <span class="n">duplicate_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#=dd</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">index_last_unique_previous_chromosome</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">N_uniques_perchr_list</span><span class="p">:</span>
+        <span class="n">index_last_unique</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">unique_index_array</span> <span class="o">&lt;=</span> <span class="n">ii</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ll</span><span class="p">,</span><span class="n">ii</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_index_array</span><span class="p">[</span><span class="n">index_last_unique_previous_chromosome</span><span class="p">:</span><span class="n">index_last_unique</span><span class="p">]:</span>
+                <span class="n">duplicate_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
+        <span class="n">index_last_unique_previous_chromosome</span> <span class="o">=</span> <span class="n">index_last_unique</span>
+        <span class="n">ll</span> <span class="o">=</span> <span class="n">ii</span>
+
+    <span class="c1">#SUM READNUMB VALUES AT INDEX IN DUPLICATE_LIST AND DUPLICATE_LIST-1    </span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">duplicate_list</span><span class="p">:</span>
+        <span class="n">readnumbwig_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">readnumbwig_array</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">readnumbwig_array</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span>
+    
+    <span class="n">tncoordinateswig_duplicatesremoved_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">tncoordinates_array</span><span class="p">,</span> <span class="n">duplicate_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">readnumbwig_duplicatesremoved_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">readnumbwig_array</span><span class="p">,</span> <span class="n">duplicate_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">ll</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">,</span> <span class="n">N_uniques_perchr_list</span><span class="p">,</span> <span class="n">index_last_unique</span><span class="p">,</span> <span class="n">duplicate_list</span><span class="p">,</span> <span class="n">readnumbwig_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">title</span><span class="p">:</span> <span class="n">CREATING</span> <span class="n">WIG</span> <span class="n">FILE</span>
+
+    <span class="k">with</span>  <span class="nb">open</span><span class="p">(</span><span class="n">wigfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;track type=wiggle_0 ,maxheightPixels=60 name=&#39;</span><span class="o">+</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">ref_name_list</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;VariableStep chrom=chr&#39;</span> <span class="o">+</span> <span class="n">kk</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tncoordinateswig_duplicatesremoved_array</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">ref_tid_dict</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#get indices for current chromosome.</span>
+            <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tncoordinateswig_duplicatesremoved_array</span><span class="p">[</span><span class="n">ii</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">readnumbwig_duplicatesremoved_array</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+    <span class="k">del</span> <span class="p">(</span><span class="n">wigfile</span><span class="p">,</span> <span class="n">kk</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">transposonmapper</span><span class="p">()</span>
+
+</pre></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="pysam_test.html" title="previous page"><span class="section-number">1. </span>Python Translation of the Matlab code from Kornmann Lab</a>
+    <a class='right-next' id="next-link" href="gene_reads.html" title="next page"><span class="section-number">1. </span>Gene reads script</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gregory van Beek<br/>
+        
+            &copy; Copyright GPL License 3.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

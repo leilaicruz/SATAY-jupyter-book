@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>To reproduce an example of Jupyter book, and you are a Windows user: &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/Greg.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. All what you need to know from SATAY" href="Intro/satay_analysis_notes.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/Greg.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="#">
+   To reproduce an example of  Jupyter book, and you are a Windows user:
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro/satay_analysis_notes.html">
+   1. All what you need to know from SATAY
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro/data-analysis-workflow.html">
+   2. Data analysis steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="MysT_Notebooks.html">
+   3. Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Transposon reads from raw data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pysam_test.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Postprocessing scripts
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="gene_reads.html">
+   1. Gene reads script
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics_pergene.html">
+   2. Statistics per gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics_perchromosome_Compare.html">
+   3. Comparison of the statistics per chromosome
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Introduction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/leilaicruz/SATAY-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/leilaicruz/SATAY-jupyter-book/issues/new?title=Issue%20on%20page%20%2FIntroduction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Hello there 😄 Welcome to this Jupyter Book instance to document mainly a data analysis workflow for analysing data from the technique : <strong>S</strong>aturated <strong>T</strong>ransposition <strong>A</strong>nalysis in <strong>Y</strong>east.</p>
+<p>Bellow some guidelines to get started using this tool in your own project 👇</p>
+<div class="section" id="to-reproduce-an-example-of-jupyter-book-and-you-are-a-windows-user">
+<h1>To reproduce an example of  Jupyter book, and you are a Windows user:<a class="headerlink" href="#to-reproduce-an-example-of-jupyter-book-and-you-are-a-windows-user" title="Permalink to this headline">¶</a></h1>
+<div class="toggle docutils container">
+<p>The following workflow should succeed using a miniconda powershell terminal on Windows 10:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Anaconda</span> <span class="pre">Power</span> <span class="pre">Shell</span> <span class="pre">Promt</span></code></p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">eoas_ubc</span> <span class="pre">runjb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">git</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/eoas-ubc/quantecon-mini-example.git</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">quantecon-mini-example</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">windows</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment_win.yml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">wintest</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">mini_book</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">runjb</span> <span class="pre">docs</span></code></p></li>
+</ol>
+<p>After the build, view the html with (local deployment):</p>
+<p><code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">docs\_build\html\index.html</span></code></p>
+</div>
+<ul class="simple">
+<li><p>For your own jupyter book just respect the same folder structure of the example, but with your own content!</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-deploy-your-book-online">
+<h1>How to deploy your book online?<a class="headerlink" href="#how-to-deploy-your-book-online" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Add a folder in the root of the repo called : <code class="docutils literal notranslate"><span class="pre">.github</span></code></p>
+<ul>
+<li><p>Add a subfolder called : <code class="docutils literal notranslate"><span class="pre">workflows</span></code></p></li>
+<li><p>Create a file called : <code class="docutils literal notranslate"><span class="pre">build.yml</span></code> where the instructions to GitHub to deploy your book are given. The following <code class="docutils literal notranslate"><span class="pre">build.yml</span></code> is generic as long as your <strong>deploy Key</strong> is called : <code class="docutils literal notranslate"><span class="pre">DEPLOY_KEY</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Test Build</span>
+<span class="nt">on</span><span class="p">:</span>
+  <span class="nt">push</span><span class="p">:</span>
+    <span class="nt">branches-ignore</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="nt">jobs</span><span class="p">:</span>
+  <span class="nt">build</span><span class="p">:</span>
+    <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+    <span class="nt">steps</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Checkout 🛎️</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">persist-credentials</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Setup Miniconda</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">goanpeca/setup-miniconda@v1</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">auto-update-conda</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+          <span class="nt">auto-activate-base</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+          <span class="nt">miniconda-version</span><span class="p">:</span> <span class="s">&#39;latest&#39;</span>
+          <span class="nt">python-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.7</span>
+          <span class="nt">environment-file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">environment_win.yml</span>
+          <span class="nt">activate-environment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wintest</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install jupyter_book</span>
+        <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash -l {0}</span>
+        <span class="nt">run</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">pip install jupyter-book --pre</span> 
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build Jupyter Book</span>
+        <span class="nt">shell</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bash -l {0}</span>
+        <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jb build  mini_book/docs/</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install SSH Client 🔑</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">webfactory/ssh-agent@v0.2.0</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">ssh-private-key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.DEPLOY_KEY }}</span>
+        
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deploy 🚀</span>
+        <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">JamesIves/github-pages-deploy-action@releases/v3</span>
+        <span class="nt">with</span><span class="p">:</span>
+          <span class="nt">SSH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+          <span class="nt">BRANCH</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
+          <span class="nt">FOLDER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mini_book/docs/_build/html/</span>
+          
+</pre></div>
+</div>
+<ul>
+<li><p>Create a new branch called : ‘gh-pages’</p></li>
+<li><p>A public and private key just dedicated to this Jupyter Book repo</p></li>
+<li><p>The content of the private key should be copied to the <code class="docutils literal notranslate"><span class="pre">Secrets</span></code> tab in the Settings of the repo.</p>
+<ul class="simple">
+<li><p>Create an SSH key with sufficient access privileges. For security reasons, don’t use your personal SSH key but set up a dedicated one for use in GitHub Actions. Instructions 👇</p></li>
+<li><p>Steps:</p></li>
+</ul>
+<ol class="simple">
+<li><p>Open Git Bash.</p></li>
+<li><p>Insert in bash <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">rsa</span> <span class="pre">-b</span> <span class="pre">4096</span> <span class="pre">-C</span> <span class="pre">&quot;your_email&#64;example.com&quot;</span></code> This creates a new ssh key, using the provided email as a label.</p></li>
+</ol>
+<blockquote>
+<div><p>Generating public/private rsa key pair.
+When you’re prompted to “Enter a file in which to save the key,” press Enter. This accepts the default file location.
+Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+At the prompt, type a secure passphrase. For more information, see “Working with SSH key passphrases”.
+Enter passphrase (empty for no passphrase): [Press enter]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Make sure you don’t have a passphrase set on the private key.</p></li>
+</ul>
+<blockquote>
+<div><p>Enter same passphrase again: [Press enter again]</p>
+</div></blockquote>
+</li>
+<li><p>In your repository, go to the Settings &gt; Secrets menu and create a new secret. In this example, we’ll call it SSH_PRIVATE_KEY. Put the contents of the private SSH key file into the contents field.</p></li>
+<li><p>This key should start with <code class="docutils literal notranslate"><span class="pre">-----BEGIN</span> <span class="pre">...</span> <span class="pre">PRIVATE</span> <span class="pre">KEY-----</span></code>, consist of many lines and ends with <code class="docutils literal notranslate"><span class="pre">-----END</span> <span class="pre">...</span> <span class="pre">PRIVATE</span> <span class="pre">KEY-----</span></code>.</p></li>
+<li><p>SSH private key format</p>
+<ul class="simple">
+<li><p>If the private key is not in the PEM format, you will see an Error loading key <code class="docutils literal notranslate"><span class="pre">&quot;(stdin)&quot;:</span> <span class="pre">invalid</span> <span class="pre">format</span> <span class="pre">message</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">path/to/your/key</span> <span class="pre">-m</span> <span class="pre">pem</span></code> to convert your key file to PEM, but be sure to make a backup of the file first</p></li>
+</ul>
+</li>
+<li><p>Add an empty file <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> to the root of the repo to prevent github on deploying a jekyll website.</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='right-next' id="next-link" href="Intro/satay_analysis_notes.html" title="next page"><span class="section-number">1. </span>All what you need to know from SATAY</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gregory van Beek<br/>
+        
+            &copy; Copyright GPL License 3.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

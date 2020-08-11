@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Notebooks written entirely in markdown &#8212; SATAY DATA ANALYSIS</title>
+    <title>3. Notebooks written entirely in markdown &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
@@ -29,11 +30,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/Greg.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Gene reads script" href="gene_reads.html" />
-    <link rel="prev" title="Data analysis steps" href="Intro/data-analysis-workflow.html" />
+    <link rel="next" title="1. Python Translation of the Matlab code from Kornmann Lab" href="pysam_test.html" />
+    <link rel="prev" title="2. Data analysis steps" href="Intro/data-analysis-workflow.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -55,7 +63,7 @@
   <img src="_static/Greg.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS</h1>
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
   
 </a>
 </div>
@@ -68,7 +76,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="Intro.html">
+  <a class="reference internal" href="Introduction.html">
    To reproduce an example of  Jupyter book, and you are a Windows user:
   </a>
  </li>
@@ -81,17 +89,29 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/satay_analysis_notes.html">
-   All what you need to know from SATAY
+   1. All what you need to know from SATAY
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Intro/data-analysis-workflow.html">
-   Data analysis steps
+   2. Data analysis steps
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Notebooks written entirely in markdown
+   3. Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Transposon reads from raw data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pysam_test.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
   </a>
  </li>
 </ul>
@@ -103,17 +123,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="gene_reads.html">
-   Gene reads script
+   1. Gene reads script
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="statistics_pergene.html">
-   Statistics per gene
+   2. Statistics per gene
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="statistics_perchromosome_Compare.html">
-   Comparison of the statistics per chromosome
+   3. Comparison of the statistics per chromosome
   </a>
  </li>
 </ul>
@@ -209,9 +229,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebelabSBT()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -221,40 +238,40 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-myst-notebook-with-jupytext">
-   Create a MyST notebook with Jupytext
+   3.1. Create a MyST notebook with Jupytext
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#convert-a-markdown-file-into-jupytext-myst-markdown">
-     Convert a markdown file into Jupytext MyST markdown
+     3.1.1. Convert a markdown file into Jupytext MyST markdown
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#structure-of-myst-notebooks">
-   Structure of MyST notebooks
+   3.2. Structure of MyST notebooks
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#front-matter-yaml">
-     Front-matter YAML
+     3.2.1. Front-matter YAML
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#code-cells">
-     Code cells
+     3.2.2. Code cells
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#markdown-content">
-     Markdown content
+     3.2.3. Markdown content
     </a>
    </li>
   </ul>
@@ -270,7 +287,7 @@
               <div>
                 
   <div class="section" id="notebooks-written-entirely-in-markdown">
-<h1>Notebooks written entirely in markdown<a class="headerlink" href="#notebooks-written-entirely-in-markdown" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Notebooks written entirely in markdown<a class="headerlink" href="#notebooks-written-entirely-in-markdown" title="Permalink to this headline">¶</a></h1>
 <p>It is possible to store Jupyter Notebooks in pure markdown. This allows you
 to define a notebook structure entirely using MyST Markdown. For more information
 about MyST Markdown, see <span class="xref std std-doc">../content/myst</span>.</p>
@@ -288,7 +305,7 @@ See its documentation for more information.</p>
 <a class="reference external" href="https://github.com/executablebooks/jupyter-book/tree/master/docs">many of the pages of this documentation</a>.
 For example, see <code class="xref download docutils literal notranslate"><span class="pre">../interactive/hiding.md</span></code> and <code class="xref download docutils literal notranslate"><span class="pre">../content/layout.md</span></code>.</p>
 <div class="section" id="create-a-myst-notebook-with-jupytext">
-<h2>Create a MyST notebook with Jupytext<a class="headerlink" href="#create-a-myst-notebook-with-jupytext" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Create a MyST notebook with Jupytext<a class="headerlink" href="#create-a-myst-notebook-with-jupytext" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to create a MyST notebook is to use <a class="reference external" href="https://jupytext.readthedocs.io/">Jupytext</a>, a tool
 that allows for two-way conversion between <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and a variety of text files.</p>
 <p>You can convert an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file to a MyST notebook with the following command:</p>
@@ -306,7 +323,7 @@ and follow the <a class="reference external" href="https://jupytext.readthedocs.
 the <code class="docutils literal notranslate"><span class="pre">.md</span></code> file will take precedence!</p>
 </div>
 <div class="section" id="convert-a-markdown-file-into-jupytext-myst-markdown">
-<h3>Convert a markdown file into Jupytext MyST markdown<a class="headerlink" href="#convert-a-markdown-file-into-jupytext-myst-markdown" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>Convert a markdown file into Jupytext MyST markdown<a class="headerlink" href="#convert-a-markdown-file-into-jupytext-myst-markdown" title="Permalink to this headline">¶</a></h3>
 <p>Jupyter Book has a small CLI to provide common functionality for manipulating and
 creating MyST markdown files that synchronize with Jupytext. To add Jupytext syntax
 to a markdown file (that will tell Jupytext it is a MyST markdown file), run the
@@ -320,7 +337,7 @@ manually.</p>
 </div>
 </div>
 <div class="section" id="structure-of-myst-notebooks">
-<h2>Structure of MyST notebooks<a class="headerlink" href="#structure-of-myst-notebooks" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Structure of MyST notebooks<a class="headerlink" href="#structure-of-myst-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>Let’s take a look at the structure that Jupytext creates, which you may also use
 to create a MyST notebook from scratch. First, let’s take a look at a simple MyST notebook:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>---
@@ -354,7 +371,7 @@ And some more markdown...
 </div>
 <p>There are three main sections to notice:</p>
 <div class="section" id="front-matter-yaml">
-<h3>Front-matter YAML<a class="headerlink" href="#front-matter-yaml" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1. </span>Front-matter YAML<a class="headerlink" href="#front-matter-yaml" title="Permalink to this headline">¶</a></h3>
 <p>MyST notebooks need special front-matter YAML to tell Jupytext that they
 can be converted to <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files. The front-matter YAML block above:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
@@ -380,7 +397,7 @@ be run with a Python3 kernel.</p>
 </div>
 </div>
 <div class="section" id="code-cells">
-<h3>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2. </span>Code cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">¶</a></h3>
 <p>Code blocks in MyST Notebooks are defined with the following MyST directive:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{code-cell}
 your-code
@@ -406,7 +423,7 @@ your-code
 <p>However, remember that there is only one kernel allowed per page.</p>
 </div>
 <div class="section" id="markdown-content">
-<h3>Markdown content<a class="headerlink" href="#markdown-content" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3. </span>Markdown content<a class="headerlink" href="#markdown-content" title="Permalink to this headline">¶</a></h3>
 <p>Everything in-between your code cells is parsed as markdown content using the
 <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST Markdown parser</a>. See <span class="xref std std-doc">../content/myst</span> for
 more information about MyST markdown.</p>
@@ -436,6 +453,25 @@ Content in another markdown cell
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -445,8 +481,8 @@ Content in another markdown cell
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="Intro/data-analysis-workflow.html" title="previous page">Data analysis steps</a>
-    <a class='right-next' id="next-link" href="gene_reads.html" title="next page">Gene reads script</a>
+    <a class='left-prev' id="prev-link" href="Intro/data-analysis-workflow.html" title="previous page"><span class="section-number">2. </span>Data analysis steps</a>
+    <a class='right-next' id="next-link" href="pysam_test.html" title="next page"><span class="section-number">1. </span>Python Translation of the Matlab code from Kornmann Lab</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

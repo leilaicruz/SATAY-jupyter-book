@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>All what you need to know from SATAY &#8212; SATAY DATA ANALYSIS</title>
+    <title>1. All what you need to know from SATAY &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
@@ -29,11 +30,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/Greg.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data analysis steps" href="data-analysis-workflow.html" />
-    <link rel="prev" title="To reproduce an example of Jupyter book, and you are a Windows user:" href="../Intro.html" />
+    <link rel="next" title="2. Data analysis steps" href="data-analysis-workflow.html" />
+    <link rel="prev" title="To reproduce an example of Jupyter book, and you are a Windows user:" href="../Introduction.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -55,7 +63,7 @@
   <img src="../_static/Greg.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS</h1>
+  <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
   
 </a>
 </div>
@@ -68,7 +76,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Intro.html">
+  <a class="reference internal" href="../Introduction.html">
    To reproduce an example of  Jupyter book, and you are a Windows user:
   </a>
  </li>
@@ -81,17 +89,29 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   All what you need to know from SATAY
+   1. All what you need to know from SATAY
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="data-analysis-workflow.html">
-   Data analysis steps
+   2. Data analysis steps
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../MysT_Notebooks.html">
-   Notebooks written entirely in markdown
+   3. Notebooks written entirely in markdown
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Transposon reads from raw data
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pysam_test.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
   </a>
  </li>
 </ul>
@@ -103,17 +123,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../gene_reads.html">
-   Gene reads script
+   1. Gene reads script
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../statistics_pergene.html">
-   Statistics per gene
+   2. Statistics per gene
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../statistics_perchromosome_Compare.html">
-   Comparison of the statistics per chromosome
+   3. Comparison of the statistics per chromosome
   </a>
  </li>
 </ul>
@@ -209,9 +229,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebelabSBT()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -221,38 +238,38 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gene-essentiality">
-   Gene Essentiality
+   1.1. Gene Essentiality
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interpreting-transposon-counts-reads">
-   Interpreting Transposon Counts &amp; Reads
+   1.2. Interpreting Transposon Counts &amp; Reads
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#methods-and-file-types">
-     Methods and File types
+     1.2.1. Methods and File types
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#experimental-method">
-     Experimental method
+     1.2.2. Experimental method
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#experimental-process">
-     Experimental Process
+     1.2.3. Experimental Process
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#sequence-alignment">
-       Sequence alignment
+       1.2.3.1. Sequence alignment
       </a>
      </li>
     </ul>
@@ -261,39 +278,39 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fastq-files-and-fasta-files">
-   FASTQ files and FASTA files
+   1.3. FASTQ files and FASTA files
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sam-and-bam-files">
-     SAM and BAM files
+     1.3.1. SAM and BAM files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#readme-for-the-sam-file">
-     Readme for the SAM file
+     1.3.2. Readme for the SAM file
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#determine-essentiality-based-on-transposon-counts">
-       Determine essentiality based on transposon counts
+       1.3.2.1. Determine essentiality based on transposon counts
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes">
-       Distribution number of insertions and reads compared with essential and non-essential genes
+       1.3.2.2. Distribution number of insertions and reads compared with essential and non-essential genes
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#profile-plot-for-number-of-reads">
-       Profile plot for number of reads
+       1.3.2.3. Profile plot for number of reads
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#profile-plot-number-of-reads-per-individual-genes">
-     Profile plot number of reads per individual genes
+     1.3.3. Profile plot number of reads per individual genes
     </a>
    </li>
   </ul>
@@ -309,7 +326,7 @@
               <div>
                 
   <div class="section" id="all-what-you-need-to-know-from-satay">
-<h1>All what you need to know from SATAY<a class="headerlink" href="#all-what-you-need-to-know-from-satay" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>All what you need to know from SATAY<a class="headerlink" href="#all-what-you-need-to-know-from-satay" title="Permalink to this headline">¶</a></h1>
 <p>This file discusses the general outline of the experiments and interpretation of experiments using SAturated Transposon Analysis in Yeast (SATAY).
 The introduction explains the purpose of the experiments and what kind of results we expect and how to interpret these results.
 The Methods and File types section explains the different kind of files used during processing and analysis and how to read and use them.
@@ -357,7 +374,7 @@ The genome of all cells (called the library) is saturated when all possible inse
 And the website for the library generation can be found <a class="reference external" href="https://sites.google.com/site/satayusers/complete-protocol/library-generation">HERE</a></p>
 </div>
 <div class="section" id="gene-essentiality">
-<h2>Gene Essentiality<a class="headerlink" href="#gene-essentiality" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Gene Essentiality<a class="headerlink" href="#gene-essentiality" title="Permalink to this headline">¶</a></h2>
 <p>Essentiality of genes are defined as its deletion is detrimental to cell in the form that either the cell cannot grow anymore and dies, or the cell cannot give rise to offspring. Essentiality can be grouped in two categories, namely type I and type II [Chen et.al. 2016].</p>
 <ul class="simple">
 <li><p>Type I essential genes are genes, when inhibited, show a loss-of-function that can only be rescued (or masked) when the lost function is recovered by a gain-of-function mechanism.</p></li>
@@ -403,7 +420,7 @@ With this we aim to eventually be able to predict the synthetic lethality of mul
 </div>
 </div>
 <div class="section" id="interpreting-transposon-counts-reads">
-<h2>Interpreting Transposon Counts &amp; Reads<a class="headerlink" href="#interpreting-transposon-counts-reads" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Interpreting Transposon Counts &amp; Reads<a class="headerlink" href="#interpreting-transposon-counts-reads" title="Permalink to this headline">¶</a></h2>
 <p>Once cells have a transposon inserted somewhere in the DNA, the cells are let to grow so they can potentially generate a few new generations.
 A cell with a transposon inserted in an essential part of its DNA grows very slowly or might not grow at all (due to its decreased fitness).
 Since the sequencing starts only at the location of a transposon insertion (see experimental methods section), it can be concluded that roughly each read from the sequencing corresponds with a transposon insertion (roughly mainly because transposon inserted in essential genes can generate no reads).
@@ -448,13 +465,13 @@ Additionally, it must hold that <span class="math notranslate nohighlight">\(0.1
 Instead, a gene with little reads <em>might</em> be essential, but to be sure the results from other experiments need to be implemented as well, for example where the cells were grown in a different growth conditions.
 Therefore, SATAY analysis only says something about the relative fitness of cells where a specific gene is inhibited in the current growth conditions.</p>
 <div class="section" id="methods-and-file-types">
-<h3>Methods and File types<a class="headerlink" href="#methods-and-file-types" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.1. </span>Methods and File types<a class="headerlink" href="#methods-and-file-types" title="Permalink to this headline">¶</a></h3>
 <p>Many essential genes in wild type cells are already known and published.
 The results from our SATAY experiments we can verify using the known essential genes and check how well they fit with the number of reads in each gene.
 Also, we can use a similar approach as was performed by the Kornmann lab [Michel et.al. 2017] using wild type cells.</p>
 </div>
 <div class="section" id="experimental-method">
-<h3>Experimental method<a class="headerlink" href="#experimental-method" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.2. </span>Experimental method<a class="headerlink" href="#experimental-method" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-goal admonition">
 <p class="admonition-title">Goal</p>
 <p>Automatically converts the raw sequencing data to a list of the number of transposons and reads for each gene, and potentially list some of their properties (e.g. essentiality, GO-terms, interactions etc.).</p>
@@ -465,7 +482,7 @@ Also, we can use a similar approach as was performed by the Kornmann lab [Michel
 </div>
 </div>
 <div class="section" id="experimental-process">
-<h3>Experimental Process<a class="headerlink" href="#experimental-process" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.2.3. </span>Experimental Process<a class="headerlink" href="#experimental-process" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The process of SATAY starts with inserting a plasmid in the cells that contains a transposase (TPase) and the transposon (MiniDs) flanked on both sides by adenine (ADE).
 The transposon has a specific, known, sequence that codes for the transposase that cuts the transposon from the plasmid (or DNA) to (another part of) the DNA.</p></li>
@@ -486,7 +503,7 @@ The transposon has a specific, known, sequence that codes for the transposase th
 </ul>
 <p><img alt="Schematic overview of transposon insertion experiments." src="../_images/satay_experiment_overview.png" /></p>
 <div class="section" id="sequence-alignment">
-<h4>Sequence alignment<a class="headerlink" href="#sequence-alignment" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.2.3.1. </span>Sequence alignment<a class="headerlink" href="#sequence-alignment" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>To get the order of nucleotides in a genome, shotgun sequencing is used where the genome is cut is small pieces called reads (typically tens to a few hundred basepairs long).</p></li>
 <li><p>The reads have overlapping regions that can be used to identify their location with respect to a reference genome and other reads (i.e. mapping of the reads).</p></li>
@@ -536,7 +553,7 @@ But, by the end of the read, only two out of five copies have the correct bp (i.
 </div>
 </div>
 <div class="section" id="fastq-files-and-fasta-files">
-<h2>FASTQ files and FASTA files<a class="headerlink" href="#fastq-files-and-fasta-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>FASTQ files and FASTA files<a class="headerlink" href="#fastq-files-and-fasta-files" title="Permalink to this headline">¶</a></h2>
 <p>The output of sequencing is typically a FASTQ file.
 This file contains the sequences of all reads (typically 75 to 100 bp long).
 Each read is represented by four lines:</p>
@@ -564,7 +581,7 @@ The result of sequence alignment is a SAM file.</p>
 These are similar to FASTQ files, but do not include the quality string and therefore FASTA files can be created from FASTQ files by removing line 3 and 4 from each read.
 Depending on the sequencing method, FASTA files may be directly given.</p>
 <div class="section" id="sam-and-bam-files">
-<h3>SAM and BAM files<a class="headerlink" href="#sam-and-bam-files" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.3.1. </span>SAM and BAM files<a class="headerlink" href="#sam-and-bam-files" title="Permalink to this headline">¶</a></h3>
 <p>The FASTQ (or FASTA) files contain all the reads in a random order.
 To determine where each belong relative to a reference sequence, the reads
 need to be aligned.
@@ -587,7 +604,7 @@ input data.</p></li>
 </ol>
 </div>
 <div class="section" id="readme-for-the-sam-file">
-<h3>Readme for the SAM file<a class="headerlink" href="#readme-for-the-sam-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.3.2. </span>Readme for the SAM file<a class="headerlink" href="#readme-for-the-sam-file" title="Permalink to this headline">¶</a></h3>
 <p><strong>The body of the SAM file contains the aligned data.</strong></p>
 <ul class="simple">
 <li><p>Every row contains one read.</p></li>
@@ -643,13 +660,13 @@ There are 42 scores, each of which are related to a specific error.
 See for example <a class="reference external" href="https://drive5.com/usearch/manual/quality_score.html">phred score conversion table</a> for a conversion table.</p></li>
 </ol>
 <div class="section" id="determine-essentiality-based-on-transposon-counts">
-<h4>Determine essentiality based on transposon counts<a class="headerlink" href="#determine-essentiality-based-on-transposon-counts" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.3.2.1. </span>Determine essentiality based on transposon counts<a class="headerlink" href="#determine-essentiality-based-on-transposon-counts" title="Permalink to this headline">¶</a></h4>
 <p>Using the number of transposons and reads, it can be determined which genes are potentially essential and which are not.
 To check this method, the transposon count for wild type cells are determined.
 Currently, genes that are taken as essential are the annotated essentials based on previous research.</p>
 </div>
 <div class="section" id="distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes">
-<h4>Distribution number of insertions and reads compared with essential and non-essential genes<a class="headerlink" href="#distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.3.2.2. </span>Distribution number of insertions and reads compared with essential and non-essential genes<a class="headerlink" href="#distribution-number-of-insertions-and-reads-compared-with-essential-and-non-essential-genes" title="Permalink to this headline">¶</a></h4>
 <p>See <a class="reference internal" href="../statistics_pergene.html"><span class="doc std std-doc">this script to visualize the implementation</span></a></p>
 <p>Ideally, the number of transposon insertions of all essential genes are small and the number of insertions in non-essential genes are is large so that there is a clear distinction can be made.
 However, this is not always so clear.
@@ -666,7 +683,7 @@ Significant attention needs to be given to the postprocessing of the data.</p>
 <p><img alt="Reads and transposon density after processing." src="../_images/Tn_Reads_Pergene_MyAnalysis.png" /></p>
 </div>
 <div class="section" id="profile-plot-for-number-of-reads">
-<h4>Profile plot for number of reads<a class="headerlink" href="#profile-plot-for-number-of-reads" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.3.2.3. </span>Profile plot for number of reads<a class="headerlink" href="#profile-plot-for-number-of-reads" title="Permalink to this headline">¶</a></h4>
 <p>(<em>See <code class="docutils literal notranslate"><span class="pre">TransposonRead_Profile_Plot.py</span></code></em>)</p>
 <p>To create a visual overview where the insertions are and how many reads there are for each insertion, a profile plot is created for each chromosome.</p>
 <p><img alt="Read profile plot for chromosome XV (note the y-axis is in logarithmic scale)." src="../_images/Read_ProfilePlot_chrxv.png" /></p>
@@ -682,7 +699,7 @@ Also an alternative version of this plot is made (<code class="docutils literal 
 </div>
 </div>
 <div class="section" id="profile-plot-number-of-reads-per-individual-genes">
-<h3>Profile plot number of reads per individual genes<a class="headerlink" href="#profile-plot-number-of-reads-per-individual-genes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.3.3. </span>Profile plot number of reads per individual genes<a class="headerlink" href="#profile-plot-number-of-reads-per-individual-genes" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference internal" href="../gene_reads.html"><span class="doc std std-doc">this script to visualize the implementation</span></a>, which is <span class="xref std std-doc">../gene_reads.md</span></p>
 <p>Instead of plotting the number of reads for an entire chromosome, it is also useful to plot the read profile for individual genes to see how the insertion sites and reads are distributed within a gene.
 For this a bar plot is made where the number of reads per transposon are determined.
@@ -699,6 +716,25 @@ This is chosen because if now a bar is empty in a gene than this is not a coinci
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -708,8 +744,8 @@ This is chosen because if now a bar is empty in a gene than this is not a coinci
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../Intro.html" title="previous page">To reproduce an example of  Jupyter book, and you are a Windows user:</a>
-    <a class='right-next' id="next-link" href="data-analysis-workflow.html" title="next page">Data analysis steps</a>
+    <a class='left-prev' id="prev-link" href="../Introduction.html" title="previous page">To reproduce an example of  Jupyter book, and you are a Windows user:</a>
+    <a class='right-next' id="next-link" href="data-analysis-workflow.html" title="next page"><span class="section-number">2. </span>Data analysis steps</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
