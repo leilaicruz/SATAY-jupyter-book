@@ -1,7 +1,7 @@
 # - file: README
 
 - file: Intro
-- header: Get started
+- part: Get started
 - file: Intro/satay_analysis_notes
 - file: Intro/data-analysis-workflow
 - file: MysT_Notebooks
@@ -11,9 +11,9 @@
 # - file : General-satay-description-files/satay_analysis_notes
 # - file: General-satay-description-files/
 # - header: Git Bash Preprocessing of the Sequencing data
-- header: Transposon reads from raw data 
+- part: Transposon reads from raw data 
 - file: pysam_test
-- header: Postprocessing scripts
+- part: Postprocessing scripts
 - file: gene_reads
 - file: statistics_pergene
 - file: statistics_perchromosome_Compare
