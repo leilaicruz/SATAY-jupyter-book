@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2. Transposon insertions mapping &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
+    <title>1. Python Translation of the Matlab code from Kornmann Lab &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Gene reads script" href="gene_reads.html" />
-    <link rel="prev" title="1. Python Translation of the Matlab code from Kornmann Lab" href="pysam_test.html" />
+    <link rel="prev" title="3. Notebooks written entirely in markdown" href="MysT_Notebooks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -109,14 +109,9 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="pysam_test.html">
-   1. Python Translation of the Matlab code from Kornmann Lab
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Transposon insertions mapping
+   1. Python Translation of the Matlab code from Kornmann Lab
   </a>
  </li>
 </ul>
@@ -255,8 +250,8 @@
         
               <div>
                 
-  <div class="section" id="transposon-insertions-mapping">
-<h1><span class="section-number">2. </span>Transposon insertions mapping<a class="headerlink" href="#transposon-insertions-mapping" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="python-translation-of-the-matlab-code-from-kornmann-lab">
+<h1><span class="section-number">1. </span>Python Translation of the Matlab code from Kornmann Lab<a class="headerlink" href="#python-translation-of-the-matlab-code-from-kornmann-lab" title="Permalink to this headline">¶</a></h1>
 <p>This is a tool developed for analysing transposon insertions for experiments using SAturated Transposon Analysis in Yeast (SATAY).
 This python code contains one function called transposonmapper().
 For more information about this code and the project, see <span class="xref myst">HERE</span></p>
@@ -268,12 +263,12 @@ __Date last <span class="nv">update__</span> <span class="o">=</span> <span clas
 </div>
 <div class="admonition-version-history admonition">
 <p class="admonition-title">Version history:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.1; Added code for creating two text files for storing insertion locations per gene and per essential gene [2020-07-27]
-1.2; Improved searching algorithm for essential genes [2020-08-06]
-1.3; Load file containing all essential genes so that a search for essential genes in multiple file is not needed anymore. This file is created using Create_EssentialGenes_list.py located in the same directory as this code [2020-08-07]
-1.4; Fixed bug where the gene position and transposon insertion location did not start at zero for each chromosome, causing confusing values to be stored in the _pergene_insertions.txt and _peressential_insertions.txt files [2020-08-09]
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>1.1; Added code for creating two text files for storing insertion locations per gene and per essential gene [2020-07-27]</p></li>
+<li><p>1.2; Improved searching algorithm for essential genes [2020-08-06]</p></li>
+<li><p>1.3; Load file containing all essential genes so that a search for essential genes in multiple file is not needed anymore. This file is created using Create_EssentialGenes_list.py located in the same directory as this code [2020-08-07]</p></li>
+<li><p>1.4; Fixed bug where the gene position and transposon insertion location did not start at zero for each chromosome, causing confusing values to be stored in the _pergene_insertions.txt and _peressential_insertions.txt files [2020-08-09]</p></li>
+</ul>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -863,7 +858,7 @@ __Date last <span class="nv">update__</span> <span class="o">=</span> <span clas
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="pysam_test.html" title="previous page"><span class="section-number">1. </span>Python Translation of the Matlab code from Kornmann Lab</a>
+    <a class='left-prev' id="prev-link" href="MysT_Notebooks.html" title="previous page"><span class="section-number">3. </span>Notebooks written entirely in markdown</a>
     <a class='right-next' id="next-link" href="gene_reads.html" title="next page"><span class="section-number">1. </span>Gene reads script</a>
 
     </div>
