@@ -1,5 +1,6 @@
 # - file: README
 
+- part: Introduction
 - file: Introduction
 - part: Get started
 - file: Intro/satay_analysis_notes
