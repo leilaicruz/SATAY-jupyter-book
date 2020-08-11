@@ -15,7 +15,6 @@
 # - header: Git Bash Preprocessing of the Sequencing data
 - part: Transposon reads from raw data 
   chapters:
-  - file: pysam_test
   - file: transposonmapping_satay
 - part: Postprocessing scripts
   chapters:
