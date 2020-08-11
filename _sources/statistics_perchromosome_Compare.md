@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# Statistics_Perchromosome_Compare
+# Comparison of the statistics per chromosome
 
 +++
 
