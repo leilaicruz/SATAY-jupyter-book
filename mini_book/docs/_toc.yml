@@ -1,6 +1,6 @@
 # - file: README
 
-- file: Intro
+- file: Introduction
 - part: Get started
 - file: Intro/satay_analysis_notes
 - file: Intro/data-analysis-workflow
