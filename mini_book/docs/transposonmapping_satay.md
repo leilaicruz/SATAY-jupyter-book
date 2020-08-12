@@ -32,6 +32,9 @@ __Date last update__ = 2020-08-09
 - 1.4; Fixed bug where the gene position and transposon insertion location did not start at zero for each chromosome, causing confusing values to be stored in the _pergene_insertions.txt and _peressential_insertions.txt files [2020-08-09]
 ``` 
 
+
+### Importing the needed libraries and functions
+
 ``` python
 import os, sys
 import warnings
@@ -48,9 +51,10 @@ from gene_names import gene_aliases
 bam_arg = sys.argv[1]
 ```
 
-```{admonition} Description of the function
-This function is created for analysis of SATAY data using the species Saccharomyces Cerevisiae.
 
+**This function is created for analysis of SATAY data using the species Saccharomyces Cerevisiae.**
+
+#### Outputs: 
 - It outputs the following files that store information regarding the location of all insertions:
 
     - .bed-file: Includes all individual basepair locations of the whole genome where at least one transposon has been mapped and the number of insertions for each locations (the number of reads) according to the Browser Extensible Data (bed) format.
@@ -74,6 +78,7 @@ This function is created for analysis of SATAY data using the species Saccharomy
 
 - **The function assumes that the reads are already aligned to a reference genome.**
 
+#### Inputs 
 The input data should be a .bam-file and the location where the .bam-file is stored should also contain an index file (.bam.bai-file, which for example can be created using sambamba).
 This function takes the following inputs:
 
@@ -86,11 +91,10 @@ Default file is 'Cerevisiae_AllEssentialGenes_List.txt'.
 
 - genenamesfile [optional]: Path to text file that includes aliases for all genes. Default file is 'Yeast_Protein_Names.txt'.
 
-When the arguments for the optional files are not given, the files are used that are stored at the following location:
-    ```path_current_pythonscript/../data_files```
+When the arguments for the optional files are not given, the files are used that are stored at the following location: ```path_current_pythonscript/../data_files```
     
 The function uses the pysam package for handling bam files (see pysam.readthedocs.io/en/latest/index.html) and therefore this function only runs on Linux systems with SAMTools installed.
-```
+
 
 ```python
 def transposonmapper(bamfile=bam_arg, gfffile=None, essentialfiles=None, genenamesfile=None):
