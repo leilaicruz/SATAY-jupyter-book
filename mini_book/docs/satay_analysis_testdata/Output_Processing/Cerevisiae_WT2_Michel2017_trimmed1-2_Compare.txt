@@ -1,1 +1,0 @@
-Statistical values for datafile: Cerevisiae_WT2_Michel2017_trimmed1.bam.bed and Cerevisiae_WT2_Michel2017_trimmed2.bam.bed

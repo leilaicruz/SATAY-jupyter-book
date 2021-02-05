@@ -1,22 +1,46 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. Statistics per gene &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -24,12 +48,10 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -43,8 +65,8 @@
     <link rel="next" title="3. Comparison of the statistics per chromosome" href="statistics_perchromosome_Compare.html" />
     <link rel="prev" title="1. Gene reads script" href="gene_reads.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -66,46 +88,43 @@
   <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Introduction.html">
    To reproduce an example of  Jupyter book, and you are a Windows user:
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Get started
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
+  <a class="reference internal" href="Intro/flowchart.html">
+   1. Flowchart of the pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Intro/satay_analysis_notes.html">
-   1. All what you need to know from SATAY
+   2. All what you need to know from SATAY
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Intro/data-analysis-workflow.html">
-   2. Data analysis steps
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="MysT_Notebooks.html">
-   3. Notebooks written entirely in markdown
+  <a class="reference internal" href="Intro/Installation_Guide_SATAY_Analysis_Software.html">
+   3. ” Software installation guide for whole genome sequencing and transposon mapping”
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Transposon reads from raw data
+  Data Stats
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -115,7 +134,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Postprocessing scripts
  </span>
@@ -143,9 +162,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -174,17 +191,14 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="_sources/statistics_pergene.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/statistics_pergene.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -193,8 +207,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -216,32 +230,17 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org//v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=lab/tree/statistics_pergene.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -307,6 +306,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -335,93 +335,78 @@ This is determined using two files that contains all known essential genes.</p>
 <li><p>essential_genes_files: List of essential genes. Can be input as multiple files which will be automatically merged.</p></li>
 <li><p>gene_information_file: List of genes with their possible aliasses and lengths in amino acids.</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>import os
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;__file__&#39;</span><span class="p">)</span>
-<span class="c1"># sys.path.insert(1,os.path.join(file_dirname,&#39;python_modules&#39;))</span>
-<span class="c1"># os.chdir(&#39;mini_book/docs/Python_scripts/python_modules/&#39;)</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>
+file_dirname = os.path.dirname(&#39;__file__&#39;)
+# sys.path.insert(1,os.path.join(file_dirname,&#39;python_modules&#39;))
+# os.chdir(&#39;mini_book/docs/Python_scripts/python_modules/&#39;)
 
-<span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;satay_analysis_testdata&#39;</span><span class="p">,</span><span class="s1">&#39;Output_Processing&#39;</span><span class="p">)</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;Cerevisiae_WT2_Michel2017_trimmed1.bam_pergene.txt&quot;</span> <span class="c1"># CHANGE THIS TO ANY FILE YOU WANT TO ANALYSE.</span>
-<span class="n">normalize</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
+filepath = os.path.join(file_dirname,&#39;satay_analysis_testdata&#39;,&#39;Output_Processing&#39;)
+filename = &quot;Cerevisiae_WT2_Michel2017_trimmed1.bam_pergene.txt&quot; # CHANGE THIS TO ANY FILE YOU WANT TO ANALYSE.
+normalize = &#39;True&#39;
 
-<span class="n">essential_genes_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Python_scripts&#39;</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Cervisiae_EssentialGenes_List_1.txt&#39;</span><span class="p">),</span>
-                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Python_scripts&#39;</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Cervisiae_EssentialGenes_List_2.txt&#39;</span><span class="p">)]</span>
+essential_genes_files = [os.path.join(file_dirname,&#39;Python_scripts&#39;,&#39;Data_Files&#39;,&#39;Cervisiae_EssentialGenes_List_1.txt&#39;),
+                        os.path.join(file_dirname,&#39;Python_scripts&#39;,&#39;Data_Files&#39;,&#39;Cervisiae_EssentialGenes_List_2.txt&#39;)]
 
-<span class="n">gene_information_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">file_dirname</span><span class="p">,</span><span class="s1">&#39;Python_scripts&#39;</span><span class="p">,</span><span class="s1">&#39;Data_Files&#39;</span><span class="p">,</span><span class="s1">&#39;Yeast_Protein_Names.txt&#39;</span><span class="p">)</span>
-<span class="c1"># os.chdir(&#39;mini_book/docs/Python_scripts/&#39;)</span>
+gene_information_file = os.path.join(file_dirname,&#39;Python_scripts&#39;,&#39;Data_Files&#39;,&#39;Yeast_Protein_Names.txt&#39;)
+# os.chdir(&#39;mini_book/docs/Python_scripts/&#39;)
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="create-list-of-all-essential-genes">
 <h3><span class="section-number">2.1.2. </span>Create list of all essential genes<a class="headerlink" href="#create-list-of-all-essential-genes" title="Permalink to this headline">¶</a></h3>
 <p>This can be input from multiple files given in the <code class="docutils literal notranslate"><span class="pre">essential_genes_files</span></code> variable that are merged in one list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">known_essential_gene_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>known_essential_gene_list = []
 
-<span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">essential_genes_files</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">header_lines</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-            <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">known_essential_gene_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lines</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+for files in essential_genes_files:
+    with open(files) as f:
+        for header_lines in range(3):
+            next(f)
+        for lines in f:
+            known_essential_gene_list.append(lines.rstrip(&#39;\n&#39;))
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="create-a-dictionary-with-length-all-genes">
 <h3><span class="section-number">2.1.3. </span>Create a dictionary with length all genes<a class="headerlink" href="#create-a-dictionary-with-length-all-genes" title="Permalink to this headline">¶</a></h3>
 <p>Dictionary consists of keys which are all genes (including all their potential aliasses and different naming conventions) and of values which are the length in terms of base pairs.
 The number of base pairs is calculated by multiplying the number of amino acids by 3.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># CREATE A DICTIONARY WITH ALL GENES (BOTH THE COMMON NAME AND THEIR SYSTEMATIC NAME) AND SAVE THEM WITH THEIR RESPECTIVE LENGHTS (IN TERMS OF BP WHICH IS DEFINED AS bp=aa*3)</span>
-<span class="n">gene_length_dict</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">gene_information_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span># CREATE A DICTIONARY WITH ALL GENES (BOTH THE COMMON NAME AND THEIR SYSTEMATIC NAME) AND SAVE THEM WITH THEIR RESPECTIVE LENGHTS (IN TERMS OF BP WHICH IS DEFINED AS bp=aa*3)
+gene_length_dict = {}
+with open(gene_information_file) as f:
+    lines = f.readlines()
 
-<span class="c1"># THE GENES START AT LINE 58 AND STOP 6 LINES BEFORE THE END OF THE FILE.</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">58</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="o">-</span><span class="mi">6</span><span class="p">):</span>
-        <span class="n">n</span><span class="o">=</span><span class="mi">0</span>
-        <span class="n">l</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+# THE GENES START AT LINE 58 AND STOP 6 LINES BEFORE THE END OF THE FILE.
+    for i in range(58,len(lines)-6):
+        n=0
+        l = lines[i]
 
-<span class="c1"># COUNT HOW MANY TIMES &#39;;&#39; OCCURS IN A LINE.</span>
-        <span class="n">extra_columns</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-        <span class="n">l_short</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-        <span class="n">l_list</span> <span class="o">=</span> <span class="n">l_short</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+# COUNT HOW MANY TIMES &#39;;&#39; OCCURS IN A LINE.
+        extra_columns = l.count(&#39;;&#39;)
+        l_short = &#39; &#39;.join(l.split())
+        l_list = l_short.split(&#39; &#39;)
 
-<span class="c1"># IGNORE SEQUENCES THAT ARE NOT NEEDED.</span>
-        <span class="k">if</span> <span class="n">l_list</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">extra_columns</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;GAG&#39;</span> <span class="ow">or</span> <span class="n">l_list</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">extra_columns</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;POL&#39;</span><span class="p">:</span>
-            <span class="n">extra_columns</span> <span class="o">=</span> <span class="n">extra_columns</span> <span class="o">+</span> <span class="mi">1</span>
+# IGNORE SEQUENCES THAT ARE NOT NEEDED.
+        if l_list[1+extra_columns] == &#39;GAG&#39; or l_list[1+extra_columns] == &#39;POL&#39;:
+            extra_columns = extra_columns + 1
 
-<span class="c1"># DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE NAME (e.g. Cdc42)</span>
-        <span class="n">gene_length_dict</span><span class="p">[</span><span class="n">l_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l_list</span><span class="p">[</span><span class="mi">5</span><span class="o">+</span><span class="n">extra_columns</span><span class="p">])</span><span class="o">*</span><span class="mi">3</span>
+# DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE NAME (e.g. Cdc42)
+        gene_length_dict[l_list[0].strip(&#39;;&#39;)] = int(l_list[5+extra_columns])*3
 
-<span class="c1"># DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE SYSTEMATIC NAME (e.g. YLR229C)</span>
-        <span class="n">gene_length_dict</span><span class="p">[</span><span class="n">l_list</span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="n">extra_columns</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l_list</span><span class="p">[</span><span class="mi">5</span><span class="o">+</span><span class="n">extra_columns</span><span class="p">])</span><span class="o">*</span><span class="mi">3</span>
+# DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE SYSTEMATIC NAME (e.g. YLR229C)
+        gene_length_dict[l_list[1+extra_columns]] = int(l_list[5+extra_columns])*3
 
-<span class="c1"># DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE ALIASES (IF PRESENT).</span>
-        <span class="k">if</span> <span class="n">extra_columns</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">extra_columns</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-                <span class="n">gene_length_dict</span><span class="p">[</span><span class="n">l_list</span><span class="p">[</span><span class="mi">0</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l_list</span><span class="p">[</span><span class="mi">5</span><span class="o">+</span><span class="n">extra_columns</span><span class="p">])</span><span class="o">*</span><span class="mi">3</span>
+# DETERMINE GENE LENGTH AND STORE WITH THE CORRESPONDING GENE ALIASES (IF PRESENT).
+        if extra_columns &gt; 0:
+            for n in range(extra_columns+1):
+                gene_length_dict[l_list[0+n].strip(&#39;;&#39;)] = int(l_list[5+extra_columns])*3
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="create-lists-with-information-to-be-plotted">
@@ -436,276 +421,205 @@ The number of base pairs is calculated by multiplying the number of amino acids 
 <li><p>Transposons per gene normalized to the length of each gene in terms of base pairs</p></li>
 </ol>
 <p>The gene_counter counts the number of genes included in the analysis. The fail_counter are the number of genes that are present in the data, but could be found in the list of gene lengths and could therefore not be normalized. These genes are ignored. This should not be much more than 0.5% of the total amount of genes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="n">filename</span><span class="p">)</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>file = os.path.join(filepath,filename)
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+with open(file) as f:
+    lines = f.readlines()
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell tag_outputPrepend docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gene_name_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># LIST OF ALL GENES ANALYZED AND OUTPUT BY THE MATLAB CODE OF BENOIT.</span>
-<span class="n">reads_pergene_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.</span>
-<span class="n">tn_pergene_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.</span>
-<span class="n">gene_essential_boolean_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># WHICH OF THE GENES ANALYZED ARE ESSENTIAL (MARKED AS TRUE) AND NON ESSENTIAL (MARKED AS FALSE)</span>
-<span class="n">reads_pergene_norm_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.</span>
-<span class="n">tn_pergene_norm_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>:tags: [outputPrepend]
 
-<span class="n">gene_counter</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">fail_counter</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">failed_genes_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-    <span class="n">split_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">gene_name</span> <span class="o">=</span> <span class="n">split_line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+gene_name_list = [] # LIST OF ALL GENES ANALYZED AND OUTPUT BY THE MATLAB CODE OF BENOIT.
+reads_pergene_list = [] # NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.
+tn_pergene_list = [] # NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT.
+gene_essential_boolean_list = [] # WHICH OF THE GENES ANALYZED ARE ESSENTIAL (MARKED AS TRUE) AND NON ESSENTIAL (MARKED AS FALSE)
+reads_pergene_norm_list = [] # NUMBER OF READS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.
+tn_pergene_norm_list = [] # NUMBER OF TRANSPOSONS PER GENE AS DETERMINED BY THE MATLAB CODE OF BENOIT NORMALIZED FOR THE LENGTH OF THE GENES IN TERMS OF BASEPAIRS.
+
+gene_counter = 0
+fail_counter = 0
+failed_genes_list = []
+for line in lines[1:]:
+    split_line = line.split(&#39;\t&#39;)
+    gene_name = split_line[0].rstrip()
 
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">tn_pergene</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">tn_pergene</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    if len(split_line) &gt; 1:
+        tn_pergene = int(split_line[1])
+    else:
+        tn_pergene = np.nan
 
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">reads_pergene</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">split_line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">reads_pergene</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    if len(split_line) &gt; 2:
+        reads_pergene = int(split_line[2])
+    else:
+        reads_pergene = np.nan
 
-    <span class="n">reads_pergene_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reads_pergene</span><span class="p">)</span>
-    <span class="n">tn_pergene_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tn_pergene</span><span class="p">)</span>
+    reads_pergene_list.append(reads_pergene)
+    tn_pergene_list.append(tn_pergene)
 
 
-<span class="c1">#!!! GENES WITH ALIASES ARE COUNTED DOUBLE IF ONE OR MORE ALIASES ARE PRESENT IN THE ESSENTIAL GENES LIST !!!</span>
-    <span class="k">if</span> <span class="n">normalize</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">gene_name</span> <span class="ow">in</span> <span class="n">known_essential_gene_list</span><span class="p">:</span>
-            <span class="n">gene_essential_boolean_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> 
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">gene_essential_boolean_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">gene_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gene_name</span><span class="p">)</span>
+#!!! GENES WITH ALIASES ARE COUNTED DOUBLE IF ONE OR MORE ALIASES ARE PRESENT IN THE ESSENTIAL GENES LIST !!!
+    if normalize == False:
+        if gene_name in known_essential_gene_list:
+            gene_essential_boolean_list.append(True) 
+        else:
+            gene_essential_boolean_list.append(False)
+        gene_name_list.append(gene_name)
 
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">gene_length</span> <span class="o">=</span> <span class="n">gene_length_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gene_name</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">reads_pergene_norm_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reads_pergene</span><span class="o">/</span><span class="n">gene_length</span><span class="p">)</span>
-            <span class="n">tn_pergene_norm_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tn_pergene</span><span class="o">/</span><span class="n">gene_length</span><span class="p">)</span>
+    else:
+        gene_length = gene_length_dict.get(gene_name)
+        try:
+            reads_pergene_norm_list.append(reads_pergene/gene_length)
+            tn_pergene_norm_list.append(tn_pergene/gene_length)
 
-            <span class="k">if</span> <span class="n">gene_name</span> <span class="ow">in</span> <span class="n">known_essential_gene_list</span><span class="p">:</span>
-                <span class="n">gene_essential_boolean_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> 
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">gene_essential_boolean_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-            <span class="n">gene_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gene_name</span><span class="p">)</span>
+            if gene_name in known_essential_gene_list:
+                gene_essential_boolean_list.append(True) 
+            else:
+                gene_essential_boolean_list.append(False)
+            gene_name_list.append(gene_name)
 
-            <span class="n">gene_counter</span> <span class="o">=</span> <span class="n">gene_counter</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">fail_counter</span> <span class="o">=</span> <span class="n">fail_counter</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="n">failed_genes_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gene_name</span><span class="p">)</span>
+            gene_counter = gene_counter + 1
+        except:
+            fail_counter = fail_counter + 1
+            failed_genes_list.append(gene_name)
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of genes analyzed: &#39;</span><span class="p">,</span><span class="n">gene_counter</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of genes not found: </span><span class="si">%.0f</span><span class="s1"> (</span><span class="si">%.2f</span><span class="s1"> percent) &#39;</span><span class="o">%</span> <span class="p">(</span><span class="n">fail_counter</span><span class="p">,</span> <span class="n">fail_counter</span><span class="o">/</span><span class="p">(</span><span class="n">gene_counter</span><span class="o">+</span><span class="n">fail_counter</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Genes not found: &#39;</span><span class="p">,</span><span class="n">failed_genes_list</span><span class="p">)</span>
+print(&#39;Number of genes analyzed: &#39;,gene_counter)
+print(&#39;Number of genes not found: %.0f (%.2f percent) &#39;% (fail_counter, fail_counter/(gene_counter+fail_counter)*100))
+print(&#39;Genes not found: &#39;,failed_genes_list)
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Number of genes analyzed:  6586
-Number of genes not found: 17 (0.26 percent) 
-Genes not found:  [&#39;COX26&#39;, &#39;ARG5&#39;, &#39;COM2&#39;, &#39;ADE5&#39;, &#39;MF&#39;, &#39;CIA2&#39;, &#39;KCH1&#39;, &#39;FAT3&#39;, &#39;INA1&#39;, &#39;EPO1&#39;, &#39;ERG29&#39;, &#39;SPR2&#39;, &#39;BIL1&#39;, &#39;TFB6&#39;, &#39;PBI1&#39;, &#39;MF&#39;, &#39;NVJ2&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="create-dataframe">
 <h3><span class="section-number">2.1.5. </span>Create dataframe<a class="headerlink" href="#create-dataframe" title="Permalink to this headline">¶</a></h3>
 <p>This puts the data in the form of a dataframe (part of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package). This is necessary for plotting.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">normalize</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-    <span class="n">genes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">:</span> <span class="n">gene_name_list</span><span class="p">,</span>
-            <span class="s1">&#39;Transposons_per_gene&#39;</span><span class="p">:</span> <span class="n">tn_pergene_list</span><span class="p">,</span>
-            <span class="s1">&#39;Reads_per_gene&#39;</span><span class="p">:</span> <span class="n">reads_pergene_list</span><span class="p">,</span>
-            <span class="s1">&#39;Essential_gene&#39;</span><span class="p">:</span> <span class="n">gene_essential_boolean_list</span>
-            <span class="p">}</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">genes</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">,</span><span class="s1">&#39;Transposons_per_gene&#39;</span><span class="p">,</span><span class="s1">&#39;Reads_per_gene&#39;</span><span class="p">,</span> <span class="s1">&#39;Essential_gene&#39;</span><span class="p">])</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">genes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">:</span> <span class="n">gene_name_list</span><span class="p">,</span>
-            <span class="s1">&#39;Transposon_density_per_gene&#39;</span><span class="p">:</span> <span class="n">tn_pergene_norm_list</span><span class="p">,</span>
-            <span class="s1">&#39;Read_density_per_gene&#39;</span><span class="p">:</span> <span class="n">reads_pergene_norm_list</span><span class="p">,</span>
-            <span class="s1">&#39;Essential_gene&#39;</span><span class="p">:</span> <span class="n">gene_essential_boolean_list</span>
-            <span class="p">}</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">genes</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Gene_name&#39;</span><span class="p">,</span><span class="s1">&#39;Transposon_density_per_gene&#39;</span><span class="p">,</span><span class="s1">&#39;Read_density_per_gene&#39;</span><span class="p">,</span> <span class="s1">&#39;Essential_gene&#39;</span><span class="p">])</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>if normalize == False:
+    genes = {&#39;Gene_name&#39;: gene_name_list,
+            &#39;Transposons_per_gene&#39;: tn_pergene_list,
+            &#39;Reads_per_gene&#39;: reads_pergene_list,
+            &#39;Essential_gene&#39;: gene_essential_boolean_list
+            }
+    df = pd.DataFrame(genes,columns=[&#39;Gene_name&#39;,&#39;Transposons_per_gene&#39;,&#39;Reads_per_gene&#39;, &#39;Essential_gene&#39;])
+else:
+    genes = {&#39;Gene_name&#39;: gene_name_list,
+            &#39;Transposon_density_per_gene&#39;: tn_pergene_norm_list,
+            &#39;Read_density_per_gene&#39;: reads_pergene_norm_list,
+            &#39;Essential_gene&#39;: gene_essential_boolean_list
+            }
+    df = pd.DataFrame(genes,columns=[&#39;Gene_name&#39;,&#39;Transposon_density_per_gene&#39;,&#39;Read_density_per_gene&#39;, &#39;Essential_gene&#39;])
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="print-statistics">
 <h3><span class="section-number">2.1.6. </span>Print statistics<a class="headerlink" href="#print-statistics" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average number of reads all genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median number of reads all genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Standard Deviation number of reads all genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>print(&#39;Average number of reads all genes: %.0f &#39; % np.nanmean(reads_pergene_list))
+print(&#39;Median number of reads all genes: %.0f &#39; % np.nanmedian(reads_pergene_list))
+print(&#39;Standard Deviation number of reads all genes: %.0f &#39; % np.nanstd(reads_pergene_list))
+print(&#39;&#39;)
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average number of transposons all genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">tn_pergene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median number of transposons all genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">tn_pergene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Standard Deviation number of transposons all genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">tn_pergene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+print(&#39;Average number of transposons all genes: %.0f &#39; % np.nanmean(tn_pergene_list))
+print(&#39;Median number of transposons all genes: %.0f &#39; % np.nanmedian(tn_pergene_list))
+print(&#39;Standard Deviation number of transposons all genes: %.0f &#39; % np.nanstd(tn_pergene_list))
+print(&#39;&#39;)
+print(&#39;&#39;)
 
 
 
-<span class="n">indices_essential_genes_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gene_essential_boolean_list</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span>
-<span class="n">reads_peressentialgene_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">reads_pergene_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices_essential_genes_list</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average number of reads of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">reads_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median number of reads of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">reads_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maximum number of reads of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">reads_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum number of reads of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">reads_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+indices_essential_genes_list = [i for i, x in enumerate(gene_essential_boolean_list) if x == True]
+reads_peressentialgene_list = [reads_pergene_list[i] for i in indices_essential_genes_list]
+print(&#39;Average number of reads of essential genes: %.0f &#39; % np.nanmean(reads_peressentialgene_list))
+print(&#39;Median number of reads of essential genes: %.0f &#39; % np.nanmedian(reads_peressentialgene_list))
+print(&#39;Maximum number of reads of essential genes: %.0f &#39; % np.nanmax(reads_peressentialgene_list))
+print(&#39;Minimum number of reads of essential genes: %.0f &#39; % np.nanmin(reads_peressentialgene_list))
+print(&#39;&#39;)
 
-<span class="n">indices_nonessential_genes_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gene_essential_boolean_list</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
-<span class="n">reads_pernonessentialgene_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">reads_pergene_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices_nonessential_genes_list</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average number of reads of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">reads_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median number of reads of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">reads_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maximum number of reads of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">reads_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum number of reads of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">reads_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+indices_nonessential_genes_list = [i for i, x in enumerate(gene_essential_boolean_list) if x == False]
+reads_pernonessentialgene_list = [reads_pergene_list[i] for i in indices_nonessential_genes_list]
+print(&#39;Average number of reads of nonessential genes: %.0f &#39; % np.nanmean(reads_pernonessentialgene_list))
+print(&#39;Median number of reads of nonessential genes: %.0f &#39; % np.nanmedian(reads_pernonessentialgene_list))
+print(&#39;Maximum number of reads of nonessential genes: %.0f &#39; % np.nanmax(reads_pernonessentialgene_list))
+print(&#39;Minimum number of reads of nonessential genes: %.0f &#39; % np.nanmin(reads_pernonessentialgene_list))
+print(&#39;&#39;)
+print(&#39;&#39;)
 
 
 
-<span class="n">tn_peressentialgene_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">tn_pergene_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices_essential_genes_list</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average number of transposons of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">tn_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median number of transposons of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">tn_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Standard deviation number of transposons of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">tn_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maximum number of transposons of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">tn_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum number of transposons of essential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">tn_peressentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+tn_peressentialgene_list = [tn_pergene_list[i] for i in indices_essential_genes_list]
+print(&#39;Average number of transposons of essential genes: %.0f &#39; % np.nanmean(tn_peressentialgene_list))
+print(&#39;Median number of transposons of essential genes: %.0f &#39; % np.nanmedian(tn_peressentialgene_list))
+print(&#39;Standard deviation number of transposons of essential genes: %.0f &#39; % np.nanstd(tn_peressentialgene_list))
+print(&#39;Maximum number of transposons of essential genes: %.0f &#39; % np.nanmax(tn_peressentialgene_list))
+print(&#39;Minimum number of transposons of essential genes: %.0f &#39; % np.nanmin(tn_peressentialgene_list))
+print(&#39;&#39;)
 
-<span class="n">tn_pernonessentialgene_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">tn_pergene_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices_nonessential_genes_list</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average number of transposons of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">tn_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Median number of transposons of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">tn_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Standard deviation number of transposons of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">tn_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maximum number of transposons of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">tn_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum number of transposons of nonessential genes: </span><span class="si">%.0f</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">tn_pernonessentialgene_list</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+tn_pernonessentialgene_list = [tn_pergene_list[i] for i in indices_nonessential_genes_list]
+print(&#39;Average number of transposons of nonessential genes: %.0f &#39; % np.nanmean(tn_pernonessentialgene_list))
+print(&#39;Median number of transposons of nonessential genes: %.0f &#39; % np.nanmedian(tn_pernonessentialgene_list))
+print(&#39;Standard deviation number of transposons of nonessential genes: %.0f &#39; % np.nanstd(tn_pernonessentialgene_list))
+print(&#39;Maximum number of transposons of nonessential genes: %.0f &#39; % np.nanmax(tn_pernonessentialgene_list))
+print(&#39;Minimum number of transposons of nonessential genes: %.0f &#39; % np.nanmin(tn_pernonessentialgene_list))
+print(&#39;&#39;)
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Average number of reads all genes: 2235 
-Median number of reads all genes: 767 
-Standard Deviation number of reads all genes: 7935 
-
-Average number of transposons all genes: 74 
-Median number of transposons all genes: 43 
-Standard Deviation number of transposons all genes: 100 
-
-
-Average number of reads of essential genes: 2747 
-Median number of reads of essential genes: 794 
-Maximum number of reads of essential genes: 158981 
-Minimum number of reads of essential genes: 0 
-
-Average number of reads of nonessential genes: 2125 
-Median number of reads of nonessential genes: 761 
-Maximum number of reads of nonessential genes: 154652 
-Minimum number of reads of nonessential genes: 0 
-
-
-Average number of transposons of essential genes: 82 
-Median number of transposons of essential genes: 46 
-Standard deviation number of transposons of essential genes: 112 
-Maximum number of transposons of essential genes: 867 
-Minimum number of transposons of essential genes: 0 
-
-Average number of transposons of nonessential genes: 73 
-Median number of transposons of nonessential genes: 43 
-Standard deviation number of transposons of nonessential genes: 97 
-Maximum number of transposons of nonessential genes: 1315 
-Minimum number of transposons of nonessential genes: 0 
-
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="create-a-histogram">
 <h3><span class="section-number">2.1.7. </span>Create a histogram<a class="headerlink" href="#create-a-histogram" title="Permalink to this headline">¶</a></h3>
 <p>A histogram is plotted where the number of reads and number of transposons are shown for essential and non-essential genes together.
 This shows the distribution of the number of reads and insertions for the complete dataset.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>plt.figure(figsize=(15,5))
+grid = plt.GridSpec(1, 2, wspace=0.4, hspace=0.3)
 
-<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">n_reads</span><span class="p">,</span><span class="n">bins_reads</span><span class="p">,</span><span class="n">patches_reads</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reads&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">reads_pergene_list</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Median Reads&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50000</span><span class="p">])</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Reads per gene (all genes)&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Occurance&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+ax1 = plt.subplot(grid[0,0])
+n_reads,bins_reads,patches_reads = ax1.hist(reads_pergene_list, density=False, bins=range(min(reads_pergene_list), max(reads_pergene_list) + 1000, 1000), facecolor=&#39;blue&#39;,alpha=0.5, label=&#39;Reads&#39;)
+ax1.axvline(x=np.nanmedian(reads_pergene_list), linestyle=&#39;--&#39;, label=&#39;Median Reads&#39;, color=&#39;k&#39;)
+ax1.set_xlim([0,50000])
+ax1.set_xlabel(&#39;Reads per gene (all genes)&#39;)
+ax1.set_ylabel(&#39;Occurance&#39;)
+ax1.legend()
+ax1.grid()
 
-<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">n_tn</span><span class="p">,</span><span class="n">bins_tn</span><span class="p">,</span><span class="n">patches_tn</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tn_pergene_list</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">tn_pergene_list</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">tn_pergene_list</span><span class="p">)</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transposons&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">tn_pergene_list</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Median Transposons&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">])</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Counts per gene (all genes)&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Occurance&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+ax2 = plt.subplot(grid[0,1])
+n_tn,bins_tn,patches_tn = ax2.hist(tn_pergene_list, density=False, bins=range(min(tn_pergene_list), max(tn_pergene_list) + 50, 50), facecolor=&#39;red&#39;,alpha=0.5, label=&#39;Transposons&#39;)
+ax2.axvline(x=np.nanmedian(tn_pergene_list), linestyle=&#39;--&#39;, label=&#39;Median Transposons&#39;, color=&#39;k&#39;)
+ax2.set_xlim([0,1000])
+ax2.set_xlabel(&#39;Counts per gene (all genes)&#39;)
+ax2.set_ylabel(&#39;Occurance&#39;)
+ax2.legend()
+ax2.grid()
+plt.show()
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/statistics_pergene_17_0.png" src="_images/statistics_pergene_17_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="create-a-violin-plot">
 <h3><span class="section-number">2.1.8. </span>Create a violin plot<a class="headerlink" href="#create-a-violin-plot" title="Permalink to this headline">¶</a></h3>
 <p>This shows the distribution for the reads and insertions for the dataset separated by annotated essentiality.</p>
 <p>When <code class="docutils literal notranslate"><span class="pre">normalization</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plots represent read- and transposon densities. Otherwise the plots show the actual counts.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<div class="highlight-{code-cell}ipython3 notranslate"><div class="highlight"><pre><span></span>plt.figure(figsize=(15,5))
+grid = plt.GridSpec(1, 2, wspace=0.4, hspace=0.3)
 
 
-<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;pastel&#39;</span><span class="p">,</span> <span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Reads&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="k">if</span> <span class="n">normalize</span> <span class="o">==</span> <span class="s1">&#39;False&#39;</span><span class="p">:</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Reads&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;Reads_per_gene&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Essential_gene&#39;</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s1">&#39;quarter&#39;</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="kc">False</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span><span class="s1">&#39;g&#39;</span><span class="p">},</span> <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cut</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Reads&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;Read_density_per_gene&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Essential_gene&#39;</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s1">&#39;quarter&#39;</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="kc">False</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span><span class="s1">&#39;g&#39;</span><span class="p">},</span> <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cut</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">])</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+ax1 = plt.subplot(grid[0,0])
+sns.set(style=&#39;whitegrid&#39;, palette=&#39;pastel&#39;, color_codes=True)
+df[&#39;Reads&#39;] = &#39;&#39;
+if normalize == &#39;False&#39;:
+    sns.violinplot(x=&#39;Reads&#39;,y=&quot;Reads_per_gene&quot;, hue=&#39;Essential_gene&#39;, inner=&#39;quarter&#39;, gridsize=1000, palette={False:&#39;r&#39;, True:&#39;g&#39;}, split=True, cut=0, orient=&#39;v&#39;, data=df, ax=ax1)
+else:
+    sns.violinplot(x=&#39;Reads&#39;,y=&quot;Read_density_per_gene&quot;, hue=&#39;Essential_gene&#39;, inner=&#39;quarter&#39;, gridsize=1000, palette={False:&#39;r&#39;, True:&#39;g&#39;}, split=True, cut=0, orient=&#39;v&#39;, data=df, ax=ax1)
+ax1.set_ylim([0,25])
+ax1.grid()
 
 
-<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Transposons&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="k">if</span> <span class="n">normalize</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Transposons&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;Transposons_per_gene&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Essential_gene&#39;</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s1">&#39;quarter&#39;</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;False&#39;</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;True&#39;</span><span class="p">:</span><span class="s1">&#39;g&#39;</span><span class="p">},</span> <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cut</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Transposons&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;Transposon_density_per_gene&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Essential_gene&#39;</span><span class="p">,</span> <span class="n">inner</span><span class="o">=</span><span class="s1">&#39;quarter&#39;</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="kc">False</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span><span class="s1">&#39;g&#39;</span><span class="p">},</span> <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cut</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+ax2 = plt.subplot(grid[0,1])
+df[&#39;Transposons&#39;] = &#39;&#39;
+if normalize == False:
+    sns.violinplot(x=&#39;Transposons&#39;,y=&quot;Transposons_per_gene&quot;, hue=&#39;Essential_gene&#39;, inner=&#39;quarter&#39;, gridsize=1000, palette={&#39;False&#39;:&#39;r&#39;, &#39;True&#39;:&#39;g&#39;}, split=True, cut=0, orient=&#39;v&#39;, data=df, ax=ax2)
+else:
+    sns.violinplot(x=&#39;Transposons&#39;,y=&quot;Transposon_density_per_gene&quot;, hue=&#39;Essential_gene&#39;, inner=&#39;quarter&#39;, gridsize=1000, palette={False:&#39;r&#39;, True:&#39;g&#39;}, split=True, cut=0, orient=&#39;v&#39;, data=df, ax=ax2)
+ax2.set_ylim([0.0,0.5])
+ax2.grid()
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+plt.show()
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/statistics_pergene_19_0.png" src="_images/statistics_pergene_19_0.png" />
-</div>
 </div>
 </div>
 </div>
@@ -716,7 +630,7 @@ Note that ‘essential’ means ‘annotated essential’ here, and not ‘essen
 It might occur that genes are annotated as (non-)essential, but that this does not agree with the data.
 This might skew the data shown in the graphs, but since it is expected that these situations do not occur frequently these graphs can still give a good indication about the differences in number of reads and insertions per (non-)essential gene.</p>
 <p>Ideally the median values of the essential and nonessential genes are far apart from each other, so that a clear distinction can be made between which genes are essential and which are not based on the transposon counts. If this is not the case or when there is significant overlap between the distribution, no definite conclusion can be drawn about the essentiality.</p>
-<p>Usually, essential genes have little transposon counts, but nonessential genes can have both high or low transposon counts (for an explanation on this effect, see the paper by Michel et.al. 2017).
+<p>Usually, essential genes have little transposon counts, but nonessential genes can have both high or low transposon counts (for an explanation on this effect, see the paper by Michel <a class="reference external" href="http://et.al">et.al</a>. 2017).
 This means that if a high transposon count occurs, the gene is probably nonessential.
 But if a low transposon count is present, typically no definite conclusion can be drawn about its essentiality.</p>
 </div>
@@ -777,7 +691,10 @@ But if a low transposon count is present, typically no definite conclusion can b
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>

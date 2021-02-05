@@ -1,22 +1,46 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. Data analysis steps &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -24,12 +48,10 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -40,11 +62,10 @@
     <link rel="shortcut icon" href="../_static/Greg.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Notebooks written entirely in markdown" href="../MysT_Notebooks.html" />
-    <link rel="prev" title="1. All what you need to know from SATAY" href="satay_analysis_notes.html" />
+    <link rel="prev" title="1. Flowchart of the pipeline" href="flowchart.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -66,30 +87,27 @@
   <h1 class="site-logo" id="site-title">SATAY DATA ANALYSIS LAAN-LAB TU DELFT</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../Introduction.html">
    To reproduce an example of  Jupyter book, and you are a Windows user:
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Get started
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="satay_analysis_notes.html">
-   1. All what you need to know from SATAY
+  <a class="reference internal" href="flowchart.html">
+   1. Flowchart of the pipeline
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -97,55 +115,9 @@
    2. Data analysis steps
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../MysT_Notebooks.html">
-   3. Notebooks written entirely in markdown
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Transposon reads from raw data
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../transposonmapping_satay.html">
-   1. Python Translation of the Matlab code from Kornmann Lab
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Postprocessing scripts
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../gene_reads.html">
-   1. Gene reads script
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../statistics_pergene.html">
-   2. Statistics per gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../statistics_perchromosome_Compare.html">
-   3. Comparison of the statistics per chromosome
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../from-reads-to-essential-genes.html">
-   4. From reads and insertions to essentiality prediction using a Regression Model
-  </a>
- </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -174,17 +146,14 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/Intro/data-analysis-workflow.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/Intro/data-analysis-workflow.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -193,8 +162,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -216,32 +185,17 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org//v2/gh/leilaicruz/SATAY-jupyter-book/gh-pages?urlpath=lab/tree/Intro/data-analysis-workflow.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -309,6 +263,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -328,7 +283,7 @@
 </ul>
 </li>
 <li><p>Obtain the interactions of the different genes to create an
-interaction map (use thecellmap.org)</p></li>
+interaction map (use <a class="reference external" href="http://thecellmap.org">thecellmap.org</a>)</p></li>
 <li><p>Look for possible relations between the genes and their
 interactions.</p></li>
 <li><p>Use these relations to obtain training for machine learning.</p></li>
@@ -337,11 +292,11 @@ interactions.</p></li>
 <div class="section" id="step-1-data-analysis-from-raw-data-to-essential-protein-overview">
 <h2><span class="section-number">2.1. </span>Step 1 data analysis; From raw data to essential protein overview<a class="headerlink" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview" title="Permalink to this headline">¶</a></h2>
 <p>SATAY experiments need to be sequenced which results in a FASTQ file.
-The sequence reads from this file needs to be aligned to create a SAM file (and/or the compressed binary equivalent BAM file).
+The sequence reads from this file needs to be aligned to create a SAM file (and/or the compressed {bash}ary equivalent BAM file).
 Using the BAM file, the number of transposons can be determined for each insertion location.</p>
 <p>For guides and manuals of the software discussed below, see the folder</p>
 <p><code class="docutils literal notranslate"><span class="pre">M:\\tnw\\bn\\ll\\Shared\\Gregory\\Software\\Guides</span> <span class="pre">&amp;</span> <span class="pre">Manuals</span></code>.</p>
-<p>Raw data (.FASTQ file) discussed in the paper of Michel et.al. 2017 can be found at [<a class="reference external" href="https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/">https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/</a>].</p>
+<p>Raw data (.FASTQ file) discussed in the paper of Michel <a class="reference external" href="http://et.al">et.al</a>. 2017 can be found at [<a class="reference external" href="https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/">https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/</a>].</p>
 </div>
 <div class="section" id="workflow">
 <h2><span class="section-number">2.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
@@ -368,7 +323,7 @@ Most of this is done using command line based tools.</p>
 This gives a quality report (see accompanying tutorial) for the sequence reads and can be run non-interactively using the command line.</p></li>
 <li><p>Based on the quality report, the data needs to be trimmed to remove any unwanted sequences.
 This can be done with for example (<a class="reference external" href="http://hannonlab.cshl.edu/fastx_toolkit/index.html"><strong>FASTX</strong></a>) (Linux, Mac) or (<a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic"><strong>Trimmomatic</strong></a>) (Windows,requires Java).
-An easy graphical user interface that combines the FASTQC and Trimmomatic is (<a class="reference external" href="https://sourceforge.net/projects/project-123ngs/"><strong>123FASTQ</strong></a>).
+An easy graphical user interface that com{bash}es the FASTQC and Trimmomatic is (<a class="reference external" href="https://sourceforge.net/projects/project-123ngs/"><strong>123FASTQ</strong></a>).
 Also <strong>BBDuk</strong> can be used for trimming (which belongs to BBMap).</p></li>
 <li><p>The trimmed sequence reads need to be aligned using a reference
 sequence, for example the <em>S. Cerevisiae</em> <a class="reference external" href="https://downloads.yeastgenome.org/sequence/S288C_reference/">S288C Ref64-2-1 reference sequence</a> or the <a class="reference external" href="http://sgd-archive.yeastgenome.org/sequence/strains/W303/W303_SGD_2015_JRIU00000000/">W303 reference sequence</a> from SGD.
@@ -389,9 +344,9 @@ Also (<a class="reference external" href="https://lomereiter.github.io/sambamba/
 <div class="section" id="initializing">
 <h3><span class="section-number">2.2.1. </span>Initializing<a class="headerlink" href="#initializing" title="Permalink to this headline">¶</a></h3>
 <p>The steps discussed in this section are not obligatory, but might help in organizing the data.
-The <strong>bold</strong> printed commands in this and the following sections are put so that they can be copied directly to the bash.
+The <strong>bold</strong> printed commands in this and the following sections are put so that they can be copied directly to the {bash}.
 (Note to modify the respective paths on your own machine in this Initialization step, though).
-If the paths below are correctly defined, the boldface commands defined in the different processing steps below can be literally copied and pasted in the bash.</p>
+If the paths below are correctly defined, the boldface commands defined in the different processing steps below can be literally copied and pasted in the {bash}.</p>
 <p>Since this protocol works mostly in the Linux Virtual Machine, the commands below are defined for Linux.
 First, a possible method for organizing the data is shown, but feel free to change this as you like.</p>
 <ol>
@@ -402,19 +357,16 @@ First, a possible method for organizing the data is shown, but feel free to chan
 <p>B. filename_Trimmed</p>
 <p>C. filename_Aligned</p>
 </li>
-<li><p>When this is done in Windows, copy the datafolder to the shared folder for processing in the Virtual Machine using the commands (using git-bash)</p></li>
+<li><p>When this is done in Windows, copy the datafolder to the shared folder for processing in the Virtual Machine using the commands (using git-{bash})</p></li>
 </ol>
 <p>Considering that :</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">pathwin_sharedfolder='/C/Users/gregoryvanbeek/Documents/</span> <span class="pre">VirtualBox</span> <span class="pre">VMs/</span> <span class="pre">VMSharedFolder_Ubuntu64_1'</span></code></strong></p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">pathwin_data='C:\Users\gregoryvanbeek\Desktop\Cerevisiae_WT2_Seqdata_Michel2017\Cerevisiae_WT2_Seqdata_Michel2017_ProcessingTest'</span></code></strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r <span class="si">${</span><span class="nv">pathwin_data</span><span class="si">}</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pathwin_sharedfolder</span><span class="si">}</span><span class="s2">&quot;</span>
-</pre></div>
-</div>
 <ol>
 <li><p>The main processing is done in the Linux Virtual Machine.
 Since the software tools are mostly commandline based, it might be convenient to be able to define variables, for example for the paths to the difference programs and files so that these do not have te be entered every single time.
-For this start with the command that enables defining variables <strong><code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></strong>.</p></li>
-<li><p>Define the following variables. (copy paste the commands in the bash using <code class="docutils literal notranslate"><span class="pre">shift+Ins</span></code>. Remember to first alter the respective variables given below to the paths and filenames in your computer):</p>
+For this start with the command that enables defining variables <strong><code class="docutils literal notranslate"><span class="pre">#!/{bash}/{bash}</span></code></strong>.</p></li>
+<li><p>Define the following variables. (copy paste the commands in the {bash} using <code class="docutils literal notranslate"><span class="pre">shift+Ins</span></code>. Remember to first alter the respective variables given below to the paths and filenames in your computer):</p>
 <p>A. Path to the shared folder used for communicating with the virtual machine running Linux (<strong><code class="docutils literal notranslate"><span class="pre">path_sf=/media/sf_VMSharedFolder_Ubuntu64_1/</span></code></strong>).</p>
 <p>B. Name of the folder containing the data
 (<strong><code class="docutils literal notranslate"><span class="pre">foldername='Cerevisiae_WT2_Seqdata_</span> <span class="pre">Michel2017_ProcessingTest'</span></code></strong>)</p>
@@ -448,15 +400,15 @@ If this directory does not already exists, create it using the command <code cla
 <li><p><code class="docutils literal notranslate"><span class="pre">echo</span></code>: Print a variable name or some text.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gunzip</span></code>: Unzip a .gz file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bunzip</span></code>: Unzip a .bz file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">${}</span></code>: when using a variable, the name of the variable should be placed between curly brackets and should start with a dollar sign (<code class="docutils literal notranslate"><span class="pre">$</span></code>), otherwise the bash won’t recognize the name as a variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">${}</span></code>: when using a variable, the name of the variable should be placed between curly brackets and should start with a dollar sign (<code class="docutils literal notranslate"><span class="pre">$</span></code>), otherwise the {bash} won’t recognize the name as a variable.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">less</span></code>: open the first few lines of a files that can be read as a text file.</p></li>
-<li><p>When using or defining strings of texts, putting the string between accolades (‘’) tells the bash to take the text within the accolades literally.
-Remember this when using the variables, as <code class="docutils literal notranslate"><span class="pre">'${var}'</span></code> is literally taken as the string <span class="math notranslate nohighlight">\({var} whereas when using `\)</span>{var}` (without accolades) the bash will try implement the variable ‘var’ depending on what you have defined before for this variable.</p></li>
-<li><p>Copying texts in the bash does not work using <code class="docutils literal notranslate"><span class="pre">crtl-v</span></code>, instead use <code class="docutils literal notranslate"><span class="pre">shift-Insert</span></code></p></li>
+<li><p>When using or defining strings of texts, putting the string between accolades (‘’) tells the {bash} to take the text within the accolades literally.
+Remember this when using the variables, as <code class="docutils literal notranslate"><span class="pre">'${var}'</span></code> is literally taken as the string <span class="math notranslate nohighlight">\({var} whereas when using `\)</span>{var}` (without accolades) the {bash} will try implement the variable ‘var’ depending on what you have defined before for this variable.</p></li>
+<li><p>Copying texts in the {bash} does not work using <code class="docutils literal notranslate"><span class="pre">crtl-v</span></code>, instead use <code class="docutils literal notranslate"><span class="pre">shift-Insert</span></code></p></li>
 </ol>
 <p>A suggestion is to put all the commands with the correct paths in a text file and store this text file together with the raw sequencing file (‘Linux_Processing_Commands.txt’ located at the <a class="reference external" href="https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis/blob/dev_Gregory/docs/Linux_Processing_Commands.txt">SATAY github repository</a>).
 The variables containing the paths and names in this file can be changed to point at the right files and directories in your computer.
-Then all the commands can be easily copy-pasted in the bash and all the processing steps can be traced back later using this text file.</p>
+Then all the commands can be easily copy-pasted in the {bash} and all the processing steps can be traced back later using this text file.</p>
 </div>
 <div class="section" id="quality-checking-of-the-sequencing-reads-fastqc-0-11-9">
 <h3><span class="section-number">2.2.2. </span>1. Quality checking of the sequencing reads; FASTQC (0.11.9)<a class="headerlink" href="#quality-checking-of-the-sequencing-reads-fastqc-0-11-9" title="Permalink to this headline">¶</a></h3>
@@ -467,14 +419,11 @@ FASTQC can be ran as an interactive program (i.e. using a GUI) or non-interactiv
 <p>If using interactively, open the ‘run_fastqc.bat’ file in the FASTQC folder and load a file to be checked. Alternatively using the 123FASTQ (version 1.1) program, open this and use the ‘Quality Check’ menu on the right.
 The advantage of using 123FASTQ is that it can also do trimming (using Trimmomatic).</p>
 <p>If using the command line for checking a single file use the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fastqc --outdir <span class="si">${</span><span class="nv">path_fastqc_out</span><span class="si">}</span> <span class="si">${</span><span class="nv">pathdata</span><span class="si">}</span>/<span class="si">${</span><span class="nv">filename</span><span class="si">}</span>
-</pre></div>
-</div>
 <p>(Note that the output directory should already exist, as the program does not create directories).
 In the output directory, a .html file and a (zipped) folder is created, both with the same name as the input file.
 The .html file can be used to quickly see the graphs using a browser.
 Also, a zipped folder is created where the raw data of the quality check is stored.
-For explanation about the different graphs, see the fastqc_manual pdf or [https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/] (or the paper ‘Preprocessing and Quality Control for Whole-Genome’ from Wright et.al. or the ‘Assessing Read Quality’ workshop from the Datacarpentry Genomics workshop).</p>
+For explanation about the different graphs, see the fastqc_manual pdf or [<a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/">https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3 Analysis Modules/</a>] (or the paper ‘Preprocessing and Quality Control for Whole-Genome’ from Wright <a class="reference external" href="http://et.al">et.al</a>. or the ‘Assessing Read Quality’ workshop from the Datacarpentry Genomics workshop).</p>
 <p>For more commands, type <code class="docutils literal notranslate"><span class="pre">fastqc</span> <span class="pre">--help</span></code>.
 Some useful commands might be:</p>
 <ul class="simple">
@@ -550,31 +499,17 @@ Trimmomatic can be ran as an interactive program (for this 123FASTQ needs to be 
 <p>If using interactively, use 123FASTQ (version 1.1) and run the ‘Runner.bat’ file in the 123FASTQ folder.
 Use the ‘Trimmer’ in the ‘Trim Factory’ menu on the right.</p>
 <p>If using non-interactively in the command line use the command:</p>
-<div class="highlight-bin notranslate"><div class="highlight"><pre><span></span>
-java -jar ${path_trimm_software}&#39;trimmomatic-0.39.jar&#39;
-
-</pre></div>
-</div>
 <p>Before running Trimmomatic, a .fasta file needs to be created that allows clipping unwanted sequences in the reads.
 For example, the ‘overrepresented sequences’ as found by Fastqc can be clipped by adding the sequences to the .fasta file.
 Easiest is to copy an existing .fasta file that comes with Trimmomatic and adding extra sequences that needs to be clipped.
 For MiSeq sequencing, it is advised to use the TruSeq3 adapter file that needs to be copied to the data folder (see below for detailed explanation).
 For this use the command:</p>
-<div class="highlight-bin notranslate"><div class="highlight"><pre><span></span> cp ${path_trimm_software}&#39;adapters/&#39;&#39;TruSeq3-SE.fa&#39; ${pathdata}
-</pre></div>
-</div>
 <p>Open the .fa file and copy any sequences in the file using a similar style as the sequences that are already present.
 Typically it is useful to clip overrepresented sequences that start with ‘CATG’ or ‘GATC’ which are the recognition sites for NlaIII and DpnII respectively.
 Note that the trimming is performed in the order in which the steps are given as input.
 Typically the adapter clipping is performed as one of the first steps and removing short sequences as one of the final steps.</p>
 <p>A typical command for trimmomatic looks like this:</p>
-<div class="highlight-bin notranslate"><div class="highlight"><pre><span></span>java -jar ${path_trimm_software}&#39;trimmomatic-0.39.jar&#39; SE -phred33 ${pathdata}${filename} ${path_trimm_out}${filename_trimmed} ILLUMINACLIP:&#39;TruSeq3-SE.fa&#39;:2:30:10 LEADING:14 TRAILING:14 SLIDINGWINDOW:10:14 MINLEN:30
-</pre></div>
-</div>
 <p>Check the quality of the trimmed sequence using the command:</p>
-<div class="highlight-bin notranslate"><div class="highlight"><pre><span></span>${path_fastqc_software}fastqc --outdir ${path_fastqc_out} ${path_trimm_out}${filename_trimmed}
-</pre></div>
-</div>
 <p>The following can be set to be set by typing the following fields after the above command (the fields must be in the given order, the optional fields can be ignored if not needed, see also <a class="reference external" href="http://www.usadellab.org/cms/?page=trimmomatic">http://www.usadellab.org/cms/?page=trimmomatic</a>):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SE</span></code> (Single End) or <code class="docutils literal notranslate"><span class="pre">PE</span></code> (Paired End) [required];</p></li>
@@ -625,13 +560,6 @@ The convention is using field:parameter, where ‘parameter’ is typically a nu
 (To make the (relative long commands) more readable in the command line, use \ and press enter to continue the statement on the next line) (See ‘Datacarpentry workshop &gt; data Wrangling and Processing for Genomics &gt; Trimming and Filtering’ for examples how to run software).
 Trimmomatic can only run a single file at the time.
 If more files need to be trimmed using the same parameters, use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> infile in *.fastq
-  <span class="k">do</span>
-  <span class="nv">base</span><span class="o">=</span><span class="k">$(</span>basename <span class="k">$(</span>infile<span class="k">)</span> .fastq<span class="k">)</span>
-  trimmomatic xxx
-<span class="k">done</span>
-</pre></div>
-</div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> should be replaced with the commands for trimmomatic.</p>
 </div>
 <div class="section" id="b-trimming-of-the-sequencing-reads-bbduk-38-84">
@@ -650,16 +578,7 @@ A .fasta file can be created by simply creating a text file and adding the seque
 <p>Or a .fasta can be copied from either Trimmomatic software package or the BBDuk package, both which are provided with some standard adapter sequences.
 In the case of Trimmomatic it is advised to use the TruSeq3 adapter file when using MiSeq sequencing.
 To copy the .fasta file to the data folder (see below for detailed explanation) use the following command:</p>
-<div class="highlight-bin notranslate"><div class="highlight"><pre><span></span>
- cp ${path_trimm_software}&#39;adapters/&#39;&#39;TruSeq3-SE.fa&#39; ${pathdata}
-
-</pre></div>
-</div>
 <p>When using the adapter file that comes with BBMap, use the command:</p>
-<div class="highlight-bin notranslate"><div class="highlight"><pre><span></span>
-cp ${path_bbduk_software}&#39;resources/adapters.fa&#39; ${pathdata}
-</pre></div>
-</div>
 <p>The adapters.fa file from the BBDuk package includes many different adapter sequences, so it might be good to remove everything that is not relevant.
 One option can be to create a custom fasta file where all the sequences are placed that need to be trimmed and save this file in the bbmap/resources folder.
 To do this, in order to let everything work properly it is best to alter one of the existing .fa files.
@@ -681,7 +600,7 @@ For more details, see <a class="reference external" href="https://jgi.doe.gov/da
 <p>A typical command for BBDuk looks like this:
 <strong><code class="docutils literal notranslate"><span class="pre">${path_bbduk_software}/bbduk.sh</span> <span class="pre">-Xmx1g</span> <span class="pre">in=${pathdata}/${filename}</span> <span class="pre">out=${path_trimm_out}${filename_trimmed}</span> <span class="pre">ref=${path_bbduk_software}</span> <span class="pre">/resources/adapters.fa</span> <span class="pre">ktrim=r</span> <span class="pre">k=23</span> <span class="pre">mink=10</span> <span class="pre">hdist=1</span> <span class="pre">qtrim=r</span> <span class="pre">trimq=14</span> <span class="pre">minlen=30</span></code></strong></p>
 <p>Next an overview is given with some of the most useful options.
-For a full overview use call <code class="docutils literal notranslate"><span class="pre">bbduk.sh</span></code> in the bash without any options.</p>
+For a full overview use call <code class="docutils literal notranslate"><span class="pre">bbduk.sh</span></code> in the {bash} without any options.</p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-Xmx1g</span></code>. This defines the memory usage of the computer, in this case 1Gb (<code class="docutils literal notranslate"><span class="pre">1g</span></code>).
 Setting this too low or too high can result in an error (e.g. ‘Could not reserve enough space for object heap’).
@@ -737,10 +656,6 @@ So when reads are expected to be all 75bp long, this will discard the last basep
 When such extra basepairs are present, it will be noted in FastQC.</p></li>
 </ol>
 <p>Finally, to check the quality of the trimmed sequence using the command:</p>
-<div class="highlight-bin notranslate"><div class="highlight"><pre><span></span>
-fastqc --outdir ${path_fastqc_out} ${path_trimm_out}/${filename_trimmed}
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="sequence-alignment-and-reference-sequence-indexing-bwa-0-7-17-linux">
@@ -755,14 +670,8 @@ These names are used to indicate where each read is mapped to.</p>
 <p>Before use, the reference sequence should be indexed so that the program knows where to find potential alignment sites.
 This only has to be done <em>once</em> for each reference genome.
 Index the reference genome using the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bwa index /path/to/reference/sequence/file.fasta
-</pre></div>
-</div>
 <p>This creates 5 more files in the same folder as the reference genome that BWA uses to speed up the process of alignment.</p>
 <p>The alignment command should be given as</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bwa mem <span class="o">[</span>options<span class="o">]</span> <span class="si">${</span><span class="nv">path_refgenome</span><span class="si">}</span> <span class="si">${</span><span class="nv">path_trimm_out</span><span class="si">}${</span><span class="nv">filename_trimmed</span><span class="si">}</span> &gt; <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}</span> <span class="si">${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.sam&#39;</span>
-</pre></div>
-</div>
 <p>where <code class="docutils literal notranslate"><span class="pre">[options]</span></code> can be different statements as given in the
 documentation. Most importantly are:</p>
 <ul class="simple">
@@ -821,13 +730,7 @@ deletion.</p></li>
 </li>
 </ul>
 <p>Create a .bam file using the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>samtools view –b <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.sam&#39;</span> &gt; <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}</span> <span class="si">${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.bam&#39;</span>
-</pre></div>
-</div>
 <p>Check if everything is ok with the .bam file using</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>samtools quickcheck <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.bam&#39;</span>
-</pre></div>
-</div>
 <ul class="simple">
 <li><p>This checks if the file appears to be intact by checking the header is valid, there are sequences in the beginning of the file and that there is a valid End-Of_File command at the end.</p></li>
 <li><p>It thus check only the beginning and the end of the file and therefore any errors in the middle of the file are not noted.</p></li>
@@ -835,40 +738,22 @@ deletion.</p></li>
 <li><p>If no output is generated, the file is good.</p></li>
 </ul>
 <p>If desired, more information can be obtained using :</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>samtools flagstat <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.bam&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>samtools stats <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.bam&#39;</span>
-</pre></div>
-</div>
 <p>Especially the latter can be a bit overwhelming with data, but this gives a thorough description of the quality of the bam file.
 For more information see <a class="reference external" href="http://www.htslib.org/doc/1.6/samtools.html">this documentation</a>.</p>
 <p>For many downstream tools, the .bam file needs to be sorted.
 This can be done using SAMtools, but this might give problems.
 A faster and more reliable method is using the software sambamba using the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sambamba-0.7.1-linux-static sort –m 500MB <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.bam&#39;</span>
-</pre></div>
-</div>
 <p>(where <code class="docutils literal notranslate"><span class="pre">–m</span></code> allows for specifying the memory usage which is 500MB in this example).
 This creates a file with the extension .sorted.bam, which is the sorted version of the original bam file.
 Also an index is created with the extension .bam.bai.
 If this latter file is not created, it can be made using the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sambamba-0.7.1-linux-static index  <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}${</span><span class="nv">filename_trimmed</span><span class="p">:</span><span class="k">:-</span><span class="nv">6</span><span class="si">}</span><span class="s1">&#39;.bam&#39;</span>
-</pre></div>
-</div>
 <p>Now the reads are aligned to the reference genome and sorted and indexed.
 Further analysis is done in windows, meaning that the sorted .bam files needs to be moved to the shared folder.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv <span class="si">${</span><span class="nv">pathdata</span><span class="si">}</span> <span class="si">${</span><span class="nv">path_sf</span><span class="si">}</span>
-</pre></div>
-</div>
 <p>Next, the data analysis is performed using custom made codes in Matlab in Windows.</p>
 </div>
 <div class="section" id="determining-transposon-insertions-matlab-code-from-benoit-michel-et-al-2017">
 <h3><span class="section-number">2.2.6. </span>5. Determining transposon insertions: Matlab (Code from Benoit [Michel et. al. 2017])<a class="headerlink" href="#determining-transposon-insertions-matlab-code-from-benoit-michel-et-al-2017" title="Permalink to this headline">¶</a></h3>
 <p>Before the data can be used as an input for the Matlab code provided by the Kornmann lab, it needs to be copied from the shared folder to the data folder using the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv <span class="s2">&quot;</span><span class="si">${</span><span class="nv">path_sharedfolder</span><span class="si">}</span><span class="s2">/&quot;</span>* <span class="si">${</span><span class="nv">path_align_out</span><span class="si">}</span>
-</pre></div>
-</div>
 <p>The Matlab code is provided by Benoit (see the <a class="reference external" href="https://sites.google.com/site/satayusers/complete-protocol/bioinformatics-analysis/matlab-script">website</a>) and is based on the <a class="reference external" href="https://elifesciences.org/articles/23570">paper by Michel et. al.</a>.
 Running the code requires the user to select a .bam  or .sorted.bam file (or .ordered.bam which is similar to the .sorted.bam).
 If the .bam file is chosen or there is no .bam.bai (bam index-)file present in the same folder, the script will automatically generate the .sorted.bam and a .bam.bai file.
@@ -1025,7 +910,7 @@ averaging the reads corresponding to the indices in ‘xx’ are summed (the
 value stored in the variable ‘readnumb’). This is repeated for all genes
 and the essential genes using a for-loop. The maximum value is
 subtracted as a feature to suppress noise or unmeaningful data (see a
-more detailed explanation the discussion by Galih in the forum of Benoit [https://groups.google.com/forum/#!category-topic/satayusers/bioinformatics/uaTpKsmgU6Q]).</p>
+more detailed explanation the discussion by Galih in the forum of Benoit [<a class="reference external" href="https://groups.google.com/forum/#%21category-topic/satayusers/bioinformatics/uaTpKsmgU6Q">https://groups.google.com/forum/#!category-topic/satayusers/bioinformatics/uaTpKsmgU6Q</a>]).</p>
 <p>[line226-227] Next all variables in the Matlab workspace are saved
 using the same name as the .bam file, but now with the .mat extension.
 The program so far does not need to be ran all over again but loading
@@ -1119,8 +1004,7 @@ read count is the actual count (and thus not used the equation
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="satay_analysis_notes.html" title="previous page"><span class="section-number">1. </span>All what you need to know from SATAY</a>
-    <a class='right-next' id="next-link" href="../MysT_Notebooks.html" title="next page"><span class="section-number">3. </span>Notebooks written entirely in markdown</a>
+    <a class='left-prev' id="prev-link" href="flowchart.html" title="previous page"><span class="section-number">1. </span>Flowchart of the pipeline</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -1139,7 +1023,10 @@ read count is the actual count (and thus not used the equation
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>
