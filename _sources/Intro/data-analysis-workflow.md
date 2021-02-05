@@ -1,3 +1,16 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.4.1+dev
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Data analysis steps
 
 For data analysis, the following steps need to be taken:
@@ -21,7 +34,7 @@ First, the main focus will be step 1 of the analysis (see next section).
 ## Step 1 data analysis; From raw data to essential protein overview
 
 SATAY experiments need to be sequenced which results in a FASTQ file.
-The sequence reads from this file needs to be aligned to create a SAM file (and/or the compressed {bash}ary equivalent BAM file).
+The sequence reads from this file needs to be aligned to create a SAM file (and/or the compressed binary equivalent BAM file).
 Using the BAM file, the number of transposons can be determined for each insertion location.
 
 For guides and manuals of the software discussed below, see the folder
@@ -61,7 +74,7 @@ An overview of the different steps including some software that can handle this 
 
 2. Based on the quality report, the data needs to be trimmed to remove any unwanted sequences.
     This can be done with for example ([**FASTX**](<http://hannonlab.cshl.edu/fastx_toolkit/index.html>)) (Linux, Mac) or ([**Trimmomatic**](<http://www.usadellab.org/cms/?page=trimmomatic>)) (Windows,requires Java).
-    An easy graphical user interface that com{bash}es the FASTQC and Trimmomatic is ([**123FASTQ**](<https://sourceforge.net/projects/project-123ngs/>)).
+    An easy graphical user interface that combines the FASTQC and Trimmomatic is ([**123FASTQ**](<https://sourceforge.net/projects/project-123ngs/>)).
     Also **BBDuk** can be used for trimming (which belongs to BBMap).
 
 3. The trimmed sequence reads need to be aligned using a reference
@@ -87,9 +100,9 @@ An overview of the different steps including some software that can handle this 
 ### Initializing
 
 The steps discussed in this section are not obligatory, but might help in organizing the data.
-The **bold** printed commands in this and the following sections are put so that they can be copied directly to the {bash}.
+The **bold** printed commands in this and the following sections are put so that they can be copied directly to the bash.
 (Note to modify the respective paths on your own machine in this Initialization step, though).
-If the paths below are correctly defined, the boldface commands defined in the different processing steps below can be literally copied and pasted in the {bash}.
+If the paths below are correctly defined, the boldface commands defined in the different processing steps below can be literally copied and pasted in the bash.
 
 Since this protocol works mostly in the Linux Virtual Machine, the commands below are defined for Linux.
 First, a possible method for organizing the data is shown, but feel free to change this as you like.
@@ -106,24 +119,24 @@ First, a possible method for organizing the data is shown, but feel free to chan
 
     C. filename_Aligned
 
-4. When this is done in Windows, copy the datafolder to the shared folder for processing in the Virtual Machine using the commands (using git-{bash})
+4. When this is done in Windows, copy the datafolder to the shared folder for processing in the Virtual Machine using the commands (using git-bash)
 
 Considering that :
 
 **`pathwin_sharedfolder='/C/Users/gregoryvanbeek/Documents/ VirtualBox VMs/ VMSharedFolder_Ubuntu64_1'`**
 
 **`pathwin_data='C:\Users\gregoryvanbeek\Desktop\Cerevisiae_WT2_Seqdata_Michel2017\Cerevisiae_WT2_Seqdata_Michel2017_ProcessingTest'`**
-
-```{bash}
+```bash
 
 cp -r ${pathwin_data} "${pathwin_sharedfolder}"
+
 ```
 
 5. The main processing is done in the Linux Virtual Machine.
 Since the software tools are mostly commandline based, it might be convenient to be able to define variables, for example for the paths to the difference programs and files so that these do not have te be entered every single time.
-For this start with the command that enables defining variables **`#!/{bash}/{bash}`**.
+For this start with the command that enables defining variables **`#!/bin/bash`**.
 
-6. Define the following variables. (copy paste the commands in the {bash} using `shift+Ins`. Remember to first alter the respective variables given below to the paths and filenames in your computer):
+6. Define the following variables. (copy paste the commands in the bash using `shift+Ins`. Remember to first alter the respective variables given below to the paths and filenames in your computer):
 
     A. Path to the shared folder used for communicating with the virtual machine running Linux (**`path_sf=/media/sf_VMSharedFolder_Ubuntu64_1/`**).
 
@@ -172,18 +185,18 @@ Some useful commands:
 
 3. `bunzip`: Unzip a .bz file.
 
-4. `${}`: when using a variable, the name of the variable should be placed between curly brackets and should start with a dollar sign (`$`), otherwise the {bash} won't recognize the name as a variable.
+4. `${}`: when using a variable, the name of the variable should be placed between curly brackets and should start with a dollar sign (`$`), otherwise the bash won't recognize the name as a variable.
 
 5. `less`: open the first few lines of a files that can be read as a text file.
 
-6. When using or defining strings of texts, putting the string between accolades ('') tells the {bash} to take the text within the accolades literally.
-Remember this when using the variables, as `'${var}'` is literally taken as the string ${var} whereas when using `${var}` (without accolades) the {bash} will try implement the variable 'var' depending on what you have defined before for this variable.
+6. When using or defining strings of texts, putting the string between accolades ('') tells the bash to take the text within the accolades literally.
+Remember this when using the variables, as `'${var}'` is literally taken as the string ${var} whereas when using `${var}` (without accolades) the bash will try implement the variable 'var' depending on what you have defined before for this variable.
 
-7. Copying texts in the {bash} does not work using `crtl-v`, instead use `shift-Insert`
+7. Copying texts in the bash does not work using `crtl-v`, instead use `shift-Insert`
 
 A suggestion is to put all the commands with the correct paths in a text file and store this text file together with the raw sequencing file ('Linux_Processing_Commands.txt' located at the [SATAY github repository](https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis/blob/dev_Gregory/docs/Linux_Processing_Commands.txt)).
 The variables containing the paths and names in this file can be changed to point at the right files and directories in your computer.
-Then all the commands can be easily copy-pasted in the {bash} and all the processing steps can be traced back later using this text file.
+Then all the commands can be easily copy-pasted in the bash and all the processing steps can be traced back later using this text file.
 
 ### 1. Quality checking of the sequencing reads; FASTQC (0.11.9)
 
@@ -197,9 +210,10 @@ The advantage of using 123FASTQ is that it can also do trimming (using Trimmomat
 
 If using the command line for checking a single file use the command:
 
-```{bash}
+```bash
 
 fastqc --outdir ${path_fastqc_out} ${pathdata}/${filename}
+
 ```
 
 (Note that the output directory should already exist, as the program does not create directories).
@@ -301,7 +315,7 @@ Use the ‘Trimmer’ in the ‘Trim Factory’ menu on the right.
 
 If using non-interactively in the command line use the command:
 
-```{bash}
+```bin
 
 java -jar ${path_trimm_software}'trimmomatic-0.39.jar'
 
@@ -313,7 +327,7 @@ Easiest is to copy an existing .fasta file that comes with Trimmomatic and addin
 For MiSeq sequencing, it is advised to use the TruSeq3 adapter file that needs to be copied to the data folder (see below for detailed explanation).
 For this use the command:
 
-```{bash}
+```bin
  cp ${path_trimm_software}'adapters/''TruSeq3-SE.fa' ${pathdata}
 ```
 
@@ -324,13 +338,13 @@ Typically the adapter clipping is performed as one of the first steps and removi
 
 A typical command for trimmomatic looks like this:
 
-```{bash}
+```bin
 java -jar ${path_trimm_software}'trimmomatic-0.39.jar' SE -phred33 ${pathdata}${filename} ${path_trimm_out}${filename_trimmed} ILLUMINACLIP:'TruSeq3-SE.fa':2:30:10 LEADING:14 TRAILING:14 SLIDINGWINDOW:10:14 MINLEN:30
 ```
 
 Check the quality of the trimmed sequence using the command:
 
-```{bash}
+```bin
 ${path_fastqc_software}fastqc --outdir ${path_fastqc_out} ${path_trimm_out}${filename_trimmed}
 ```
 
@@ -396,7 +410,7 @@ The convention is using field:parameter, where ‘parameter’ is typically a nu
 Trimmomatic can only run a single file at the time.
 If more files need to be trimmed using the same parameters, use
 
-```{bash}
+```bash
 for infile in *.fastq
   do
   base=$(basename $(infile) .fastq)
@@ -427,7 +441,7 @@ Or a .fasta can be copied from either Trimmomatic software package or the BBDuk 
 In the case of Trimmomatic it is advised to use the TruSeq3 adapter file when using MiSeq sequencing.
 To copy the .fasta file to the data folder (see below for detailed explanation) use the following command:
 
-```{bash}
+```bin
 
  cp ${path_trimm_software}'adapters/''TruSeq3-SE.fa' ${pathdata}
 
@@ -435,7 +449,7 @@ To copy the .fasta file to the data folder (see below for detailed explanation) 
 
 When using the adapter file that comes with BBMap, use the command:
 
-```{bash}
+```bin
 
 cp ${path_bbduk_software}'resources/adapters.fa' ${pathdata}
 ```
@@ -465,7 +479,7 @@ A typical command for BBDuk looks like this:
 **`${path_bbduk_software}/bbduk.sh -Xmx1g in=${pathdata}/${filename} out=${path_trimm_out}${filename_trimmed} ref=${path_bbduk_software} /resources/adapters.fa ktrim=r k=23 mink=10 hdist=1 qtrim=r trimq=14 minlen=30`**
 
 Next an overview is given with some of the most useful options.
-For a full overview use call `bbduk.sh` in the {bash} without any options.
+For a full overview use call `bbduk.sh` in the bash without any options.
 
 1. `-Xmx1g`. This defines the memory usage of the computer, in this case 1Gb (`1g`).
 Setting this too low or too high can result in an error (e.g. 'Could not reserve enough space for object heap').
@@ -522,7 +536,7 @@ When such extra basepairs are present, it will be noted in FastQC.
 
 Finally, to check the quality of the trimmed sequence using the command:
 
-```{bash}
+```bin
 
 fastqc --outdir ${path_fastqc_out} ${path_trimm_out}/${filename_trimmed}
 ```
@@ -541,7 +555,7 @@ Before use, the reference sequence should be indexed so that the program knows w
 This only has to be done *once* for each reference genome.
 Index the reference genome using the command
 
-```{bash}
+```bash
 bwa index /path/to/reference/sequence/file.fasta
 ```
 
@@ -549,9 +563,10 @@ This creates 5 more files in the same folder as the reference genome that BWA us
 
 The alignment command should be given as
 
-```{bash}
+```bash
 
 bwa mem [options] ${path_refgenome} ${path_trimm_out}${filename_trimmed} > ${path_align_out} ${filename_trimmed::-6}'.sam'
+
 ```
 
 where `[options]` can be different statements as given in the
@@ -630,13 +645,13 @@ The meaning of the characters are:
 
 Create a .bam file using the command
 
-```{bash}
+```bash
 samtools view –b ${path_align_out}${filename_trimmed::-6}'.sam' > ${path_align_out} ${filename_trimmed::-6}'.bam'
 ```
 
 Check if everything is ok with the .bam file using
 
-```{bash}
+```bash
 
 samtools quickcheck ${path_align_out}${filename_trimmed::-6}'.bam'
 ```
@@ -647,15 +662,13 @@ samtools quickcheck ${path_align_out}${filename_trimmed::-6}'.bam'
 - If no output is generated, the file is good.
 
 If desired, more information can be obtained using :
-
-```{bash}
+```bash
 samtools flagstat ${path_align_out}${filename_trimmed::-6}'.bam'
-```
 
-```{bash}
+```
+```bash
 samtools stats ${path_align_out}${filename_trimmed::-6}'.bam'
 ```
-
 Especially the latter can be a bit overwhelming with data, but this gives a thorough description of the quality of the bam file.
 For more information see [this documentation](http://www.htslib.org/doc/1.6/samtools.html).
 
@@ -663,9 +676,10 @@ For many downstream tools, the .bam file needs to be sorted.
 This can be done using SAMtools, but this might give problems.
 A faster and more reliable method is using the software sambamba using the command
 
-```{bash}
+```bash
 
 sambamba-0.7.1-linux-static sort –m 500MB ${path_align_out}${filename_trimmed::-6}'.bam'
+
 ```
 
 (where `–m` allows for specifying the memory usage which is 500MB in this example).
@@ -673,14 +687,14 @@ This creates a file with the extension .sorted.bam, which is the sorted version 
 Also an index is created with the extension .bam.bai.
 If this latter file is not created, it can be made using the command
 
-```{bash}
+```bash
 sambamba-0.7.1-linux-static index  ${path_align_out}${filename_trimmed::-6}'.bam'
 ```
 
 Now the reads are aligned to the reference genome and sorted and indexed.
 Further analysis is done in windows, meaning that the sorted .bam files needs to be moved to the shared folder.
 
-```{bash}
+```bash
 mv ${pathdata} ${path_sf}
 ```
 
@@ -690,7 +704,7 @@ Next, the data analysis is performed using custom made codes in Matlab in Window
 
 Before the data can be used as an input for the Matlab code provided by the Kornmann lab, it needs to be copied from the shared folder to the data folder using the command:
 
-```{bash}
+```bash
 mv "${path_sharedfolder}/"* ${path_align_out}
 ```
 
@@ -958,7 +972,6 @@ Segal, E. S., Gritsenko, V., Levitan, A., Yadav, B., Dror, N., Steenwyk, J. L., 
 
 Usaj, M., Tan, Y., Wang, W., VanderSluis, B., Zou, A., Myers, C. L., ... & Boone, C. (2017). TheCellMap. org: A web-accessible database for visualizing and mining the global yeast genetic interaction network. G3: Genes, Genomes, Genetics, 7(5), 1539-1549
 
-+++
 
 > ***"I want to be a healer, and love all things that grow and are not barren"***
 > - J.R.R. Tolkien

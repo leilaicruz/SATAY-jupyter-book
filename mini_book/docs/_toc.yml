@@ -1,0 +1,27 @@
+# - file: README
+
+- file: Introduction
+  numbered: true
+- part: Get started
+  chapters:
+  - file: Intro/flowchart
+  - file: Intro/satay_analysis_notes
+  - file: Intro/data-analysis-workflow
+  - file: Intro/Installation_Guide_SATAY_Analysis_Software
+- part: Bash GUI
+  chapters:
+  - file: bash-GUI/how-to-use-the-bash-gui
+- part: Data Stats 
+  chapters:
+  - file: transposonmapping_satay
+  - file: statistics_pergene
+  - file: statistics_perchromosome_Compare
+- part: Postprocessing scripts
+  chapters:
+  - file: gene_reads
+  - file: from-reads-to-essential-genes
+
+
+
+
+
