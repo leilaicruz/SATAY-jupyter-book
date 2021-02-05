@@ -1,2 +1,3 @@
 # Main steps of the BASH GUI
 
+Here will follow a workflow for the gui...
