@@ -1,17 +1,5 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: '0.8'
-    jupytext_version: 1.4.1+dev
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
 
-# " Software installation guide for whole genome sequencing and transposon mapping"
+# Software installation guide for whole genome sequencing and transposon mapping
 
 ## Introduction
 
@@ -20,7 +8,7 @@ Note that a part of the software is for windows and Linux, and a part is for Lin
 For a more detailed workflow and the commands of all the individual commands, see [satay_analysis_notes.md](https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis/blob/dev_Gregory/docs/satay_analysis_notes.md).
 
 A Linux virtual machine is already created that is completely set up and includes all the software discussed below.
-This is located on the N-drive in the 'VirtualMacines' folder.
+This is located on the N-drive in the 'VirtualMachines' folder.
 Step 0 below discusses how this virtual machine can be installed on your computer and how to use it.
 The following steps are only important when you want to create a virtual machine from scratch so you can set it up completely to your liking or using another operating system than Ubuntu that is used existing virtual machine on the N-drive.
 
