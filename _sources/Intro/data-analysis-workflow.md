@@ -114,7 +114,7 @@ Considering that :
 
 **`pathwin_data='C:\Users\gregoryvanbeek\Desktop\Cerevisiae_WT2_Seqdata_Michel2017\Cerevisiae_WT2_Seqdata_Michel2017_ProcessingTest'`**
 
-```{{bash}}
+```{bash}
 
 cp -r ${pathwin_data} "${pathwin_sharedfolder}"
 ```
@@ -197,7 +197,7 @@ The advantage of using 123FASTQ is that it can also do trimming (using Trimmomat
 
 If using the command line for checking a single file use the command:
 
-```{{bash}}
+```{bash}
 
 fastqc --outdir ${path_fastqc_out} ${pathdata}/${filename}
 ```
@@ -396,7 +396,7 @@ The convention is using field:parameter, where ‘parameter’ is typically a nu
 Trimmomatic can only run a single file at the time.
 If more files need to be trimmed using the same parameters, use
 
-```{{bash}}
+```{bash}
 for infile in *.fastq
   do
   base=$(basename $(infile) .fastq)
@@ -541,7 +541,7 @@ Before use, the reference sequence should be indexed so that the program knows w
 This only has to be done *once* for each reference genome.
 Index the reference genome using the command
 
-```{{bash}}
+```{bash}
 bwa index /path/to/reference/sequence/file.fasta
 ```
 
@@ -549,7 +549,7 @@ This creates 5 more files in the same folder as the reference genome that BWA us
 
 The alignment command should be given as
 
-```{{bash}}
+```{bash}
 
 bwa mem [options] ${path_refgenome} ${path_trimm_out}${filename_trimmed} > ${path_align_out} ${filename_trimmed::-6}'.sam'
 ```
@@ -630,13 +630,13 @@ The meaning of the characters are:
 
 Create a .bam file using the command
 
-```{{bash}}
+```{bash}
 samtools view –b ${path_align_out}${filename_trimmed::-6}'.sam' > ${path_align_out} ${filename_trimmed::-6}'.bam'
 ```
 
 Check if everything is ok with the .bam file using
 
-```{{bash}}
+```{bash}
 
 samtools quickcheck ${path_align_out}${filename_trimmed::-6}'.bam'
 ```

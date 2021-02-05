@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. ” Software installation guide for whole genome sequencing and transposon mapping” &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
+    <title>4. ” Software installation guide for whole genome sequencing and transposon mapping” &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="&lt;no title&gt;" href="../bash-GUI/how-to-use-the-bash-gui.html" />
-    <link rel="prev" title="2. All what you need to know from SATAY" href="satay_analysis_notes.html" />
+    <link rel="prev" title="3. Data analysis steps" href="data-analysis-workflow.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -96,7 +96,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../Introduction.html">
-   To reproduce an example of  Jupyter book, and you are a Windows user:
+   Status of the project
   </a>
  </li>
 </ul>
@@ -116,9 +116,14 @@
    2. All what you need to know from SATAY
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis-workflow.html">
+   3. Data analysis steps
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. ” Software installation guide for whole genome sequencing and transposon mapping”
+   4. ” Software installation guide for whole genome sequencing and transposon mapping”
   </a>
  </li>
 </ul>
@@ -131,6 +136,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../transposonmapping_satay.html">
    1. Python Translation of the Matlab code from Kornmann Lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../statistics_pergene.html">
+   2. Statistics per gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../statistics_perchromosome_Compare.html">
+   3. Comparison of the statistics per chromosome
   </a>
  </li>
 </ul>
@@ -146,18 +161,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../statistics_pergene.html">
-   2. Statistics per gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../statistics_perchromosome_Compare.html">
-   3. Comparison of the statistics per chromosome
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../from-reads-to-essential-genes.html">
-   4. From reads and insertions to essentiality prediction using a Regression Model
+   2. From reads and insertions to essentiality prediction using a Regression Model
   </a>
  </li>
 </ul>
@@ -248,76 +253,76 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   3.1. Introduction
+   4.1. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-the-already-existing-virtual-machine">
-   3.2. Using the already existing virtual machine
+   4.2. Using the already existing virtual machine
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#setting-up-already-existing-virtual-machine">
-     3.2.1. 0. Setting up already existing virtual machine
+     4.2.1. 0. Setting up already existing virtual machine
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-virtual-machine-from-scratch">
-   3.3. Creating a virtual machine from scratch
+   4.3. Creating a virtual machine from scratch
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#virtualbox-6-1-4">
-     3.3.1. 1. VirtualBox-6.1.4
+     4.3.1. 1. VirtualBox-6.1.4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fastqc-windows-or-linux">
-     3.3.2. 2. Fastqc (Windows or Linux)
+     4.3.2. 2. Fastqc (Windows or Linux)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-trimmomatic-0-39-windows-or-linux">
-     3.3.3. 3a. Trimmomatic-0.39 (Windows or Linux)
+     4.3.3. 3a. Trimmomatic-0.39 (Windows or Linux)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#fastq-v1-1-windows-optional">
-       3.3.3.1. 123Fastq-v1.1 (Windows) (optional)
+       4.3.3.1. 123Fastq-v1.1 (Windows) (optional)
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#b-bbduk-38-84-windows-or-linux">
-     3.3.4. 3b. BBDuk-38.84 (Windows or Linux)
+     4.3.4. 3b. BBDuk-38.84 (Windows or Linux)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bwa-linux">
-     3.3.5. 4. BWA (Linux)
+     4.3.5. 4. BWA (Linux)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#samtools-and-bcftools-linux">
-     3.3.6. 5. SAMTools and bcftools (Linux)
+     4.3.6. 5. SAMTools and bcftools (Linux)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sambamba-linux">
-     3.3.7. 6. Sambamba (Linux)
+     4.3.7. 6. Sambamba (Linux)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#igv-windows-optional">
-     3.3.8. 7. IGV (Windows) (optional)
+     4.3.8. 7. IGV (Windows) (optional)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matlab-transposon-count-windows">
-     3.3.9. 8. Matlab Transposon count (Windows)
+     4.3.9. 8. Matlab Transposon count (Windows)
     </a>
    </li>
   </ul>
@@ -334,9 +339,9 @@
               <div>
                 
   <div class="section" id="software-installation-guide-for-whole-genome-sequencing-and-transposon-mapping">
-<h1><span class="section-number">3. </span>” Software installation guide for whole genome sequencing and transposon mapping”<a class="headerlink" href="#software-installation-guide-for-whole-genome-sequencing-and-transposon-mapping" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>” Software installation guide for whole genome sequencing and transposon mapping”<a class="headerlink" href="#software-installation-guide-for-whole-genome-sequencing-and-transposon-mapping" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This file discusses the installation procedures for the programs required for whole genome sequencing analysis and transposon mapping. The numbering corresponds with the order in which this software is used.
 Note that a part of the software is for windows and Linux, and a part is for Linux only. Therefore a virtual machine is included to run Ubuntu (or another unix based operating system to your liking).
 For a more detailed workflow and the commands of all the individual commands, see <a class="reference external" href="https://github.com/Gregory94/LaanLab-SATAY-DataAnalysis/blob/dev_Gregory/docs/satay_analysis_notes.md">satay_analysis_notes.md</a>.</p>
@@ -353,9 +358,9 @@ To check if the program is added to the path, use
 If it is not installed, download and install it from <span class="xref myst">https://www.java.com/nl/download/</span></p>
 </div>
 <div class="section" id="using-the-already-existing-virtual-machine">
-<h2><span class="section-number">3.2. </span>Using the already existing virtual machine<a class="headerlink" href="#using-the-already-existing-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>Using the already existing virtual machine<a class="headerlink" href="#using-the-already-existing-virtual-machine" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="setting-up-already-existing-virtual-machine">
-<h3><span class="section-number">3.2.1. </span>0. Setting up already existing virtual machine<a class="headerlink" href="#setting-up-already-existing-virtual-machine" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1. </span>0. Setting up already existing virtual machine<a class="headerlink" href="#setting-up-already-existing-virtual-machine" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">https://www.virtualbox.org/</span></p>
 <p>Running a virtual machine requires VirtualBox (VB), which can be downloaded from the above link and installed using the normal procedure for installing software on Windows machines.
 The memory of the virtual machine (called the virtual hard drive (vhd)) is stored on the N-drive in the VirtualMachines folder with the name VM_Ubuntu64_1.vhd.
@@ -405,9 +410,9 @@ Documents that are placed in the shared folder can be seen in both the virtual m
 </div>
 </div>
 <div class="section" id="creating-a-virtual-machine-from-scratch">
-<h2><span class="section-number">3.3. </span>Creating a virtual machine from scratch<a class="headerlink" href="#creating-a-virtual-machine-from-scratch" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.3. </span>Creating a virtual machine from scratch<a class="headerlink" href="#creating-a-virtual-machine-from-scratch" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="virtualbox-6-1-4">
-<h3><span class="section-number">3.3.1. </span>1. VirtualBox-6.1.4<a class="headerlink" href="#virtualbox-6-1-4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.1. </span>1. VirtualBox-6.1.4<a class="headerlink" href="#virtualbox-6-1-4" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">https://www.virtualbox.org/</span>, <span class="xref myst">https://ubuntu.com/download/desktop</span></p>
 <p>VirtualBox is used for running Linux based sofware on a Windows machine.
 For the operating system, recommended is to download Ubuntu 18.04 LTS 64-bit from <span class="xref myst">https://ubuntu.com/#download</span>, but any other Linux OS should be fine.
@@ -450,7 +455,7 @@ There are several ways of installing Java, but one of the simplest ways is using
 </ol>
 </div>
 <div class="section" id="fastqc-windows-or-linux">
-<h3><span class="section-number">3.3.2. </span>2. Fastqc (Windows or Linux)<a class="headerlink" href="#fastqc-windows-or-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.2. </span>2. Fastqc (Windows or Linux)<a class="headerlink" href="#fastqc-windows-or-linux" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">https://www.bioinformatics.babraham.ac.uk/projects/fastqc/</span></p>
 <p>Fastqc is used for quality checking.
 To install Fastqc in Linux, open the bash and go to the fastqc folder in the bash.
@@ -459,14 +464,14 @@ To run interactively, click the ‘run-fastqc’ batch file.
 To run non-interactively, enter in ‘fastqc’ in the command line.</p>
 </div>
 <div class="section" id="a-trimmomatic-0-39-windows-or-linux">
-<h3><span class="section-number">3.3.3. </span>3a. Trimmomatic-0.39 (Windows or Linux)<a class="headerlink" href="#a-trimmomatic-0-39-windows-or-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.3. </span>3a. Trimmomatic-0.39 (Windows or Linux)<a class="headerlink" href="#a-trimmomatic-0-39-windows-or-linux" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">http://www.usadellab.org/cms/?page=trimmomatic</span></p>
 <p>Trimmomatic is used for trimming fastq files.
 It is java based and therefore does not need to be installed.
 To run, enter ‘trimmomatic-0.39’ in the command line.
 The adapters folder contains some adapters that can be used during trimming if desired.</p>
 <div class="section" id="fastq-v1-1-windows-optional">
-<h4><span class="section-number">3.3.3.1. </span>123Fastq-v1.1 (Windows) (optional)<a class="headerlink" href="#fastq-v1-1-windows-optional" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">4.3.3.1. </span>123Fastq-v1.1 (Windows) (optional)<a class="headerlink" href="#fastq-v1-1-windows-optional" title="Permalink to this headline">¶</a></h4>
 <p><span class="xref myst">https://sourceforge.net/projects/project-123ngs/</span></p>
 <p>123Fastq is Fastqc and Trimmomatic combined in one interactive program.
 It is java based and therefore does not need to be installed.
@@ -474,7 +479,7 @@ Click the 123fastq executable jar file to run the program.</p>
 </div>
 </div>
 <div class="section" id="b-bbduk-38-84-windows-or-linux">
-<h3><span class="section-number">3.3.4. </span>3b. BBDuk-38.84 (Windows or Linux)<a class="headerlink" href="#b-bbduk-38-84-windows-or-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.4. </span>3b. BBDuk-38.84 (Windows or Linux)<a class="headerlink" href="#b-bbduk-38-84-windows-or-linux" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">https://jgi.doe.gov/data-and-tools/bbtools/</span></p>
 <p>BBDuk is an alternative for Trimmomatic for trimming of fastq files.
 It java based and therefore does not need to be installed.
@@ -484,7 +489,7 @@ Run the <a class="reference external" href="http://bbduk.sh">bbduk.sh</a> execut
 The adapter.fa file is included and located in the /resources directory.</p>
 </div>
 <div class="section" id="bwa-linux">
-<h3><span class="section-number">3.3.5. </span>4. BWA (Linux)<a class="headerlink" href="#bwa-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.5. </span>4. BWA (Linux)<a class="headerlink" href="#bwa-linux" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">http://bio-bwa.sourceforge.net/</span></p>
 <p>BWA is used for aligning the reads to a reference genome and to index the reference sequence.
 After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
@@ -498,7 +503,7 @@ sudo apt-get install bwa
 <p>To run, enter <code class="docutils literal notranslate"><span class="pre">bwa</span></code> in the terminal.</p>
 </div>
 <div class="section" id="samtools-and-bcftools-linux">
-<h3><span class="section-number">3.3.6. </span>5. SAMTools and bcftools (Linux)<a class="headerlink" href="#samtools-and-bcftools-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.6. </span>5. SAMTools and bcftools (Linux)<a class="headerlink" href="#samtools-and-bcftools-linux" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">http://www.htslib.org/</span></p>
 <p>Samtools is used for processing after alignment, for example for converting SAM files to BAM files.
 After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
@@ -513,7 +518,7 @@ sudo apt-get install samtools
 Do the same protocol for bcftools.</p>
 </div>
 <div class="section" id="sambamba-linux">
-<h3><span class="section-number">3.3.7. </span>6. Sambamba (Linux)<a class="headerlink" href="#sambamba-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.7. </span>6. Sambamba (Linux)<a class="headerlink" href="#sambamba-linux" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">https://lomereiter.github.io/sambamba/</span></p>
 <p>Sambamba is used for processing after alignment, for example for sorting and indexing the BAM files.
 After downloading the software in the VM, install it by entering the following commands in the terminal:</p>
@@ -526,13 +531,13 @@ sudo ln -s /path/to/sambamba-0.7.1-linux-static /usr/local/bin
 To run, enter <code class="docutils literal notranslate"><span class="pre">sambamba</span></code> in the terminal.</p>
 </div>
 <div class="section" id="igv-windows-optional">
-<h3><span class="section-number">3.3.8. </span>7. IGV (Windows) (optional)<a class="headerlink" href="#igv-windows-optional" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.8. </span>7. IGV (Windows) (optional)<a class="headerlink" href="#igv-windows-optional" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">https://software.broadinstitute.org/software/igv/</span></p>
 <p>IGV (Integrative Genomic Viewer) is used for visually check the results.
 Click the IGV_Win_2.8.0-installer and run the install process.</p>
 </div>
 <div class="section" id="matlab-transposon-count-windows">
-<h3><span class="section-number">3.3.9. </span>8. Matlab Transposon count (Windows)<a class="headerlink" href="#matlab-transposon-count-windows" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.3.9. </span>8. Matlab Transposon count (Windows)<a class="headerlink" href="#matlab-transposon-count-windows" title="Permalink to this headline">¶</a></h3>
 <p><span class="xref myst">https://sites.google.com/site/satayusers/complete-protocol/bioinformatics-analysis</span></p>
 <p>This code relates the number of reads and transposon counts to the genes.
 This code is provided from the Kornmann-Lab.</p>
@@ -568,7 +573,7 @@ This code is provided from the Kornmann-Lab.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="satay_analysis_notes.html" title="previous page"><span class="section-number">2. </span>All what you need to know from SATAY</a>
+    <a class='left-prev' id="prev-link" href="data-analysis-workflow.html" title="previous page"><span class="section-number">3. </span>Data analysis steps</a>
     <a class='right-next' id="next-link" href="../bash-GUI/how-to-use-the-bash-gui.html" title="next page">&lt;no title&gt;</a>
 
     </div>

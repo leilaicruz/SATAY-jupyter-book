@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Data analysis steps &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
+    <title>3. Data analysis steps &#8212; SATAY DATA ANALYSIS LAAN-LAB TU DELFT</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -62,7 +62,8 @@
     <link rel="shortcut icon" href="../_static/Greg.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="1. Flowchart of the pipeline" href="flowchart.html" />
+    <link rel="next" title="4. ” Software installation guide for whole genome sequencing and transposon mapping”" href="Installation_Guide_SATAY_Analysis_Software.html" />
+    <link rel="prev" title="2. All what you need to know from SATAY" href="satay_analysis_notes.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,7 +96,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../Introduction.html">
-   To reproduce an example of  Jupyter book, and you are a Windows user:
+   Status of the project
   </a>
  </li>
 </ul>
@@ -110,9 +111,58 @@
    1. Flowchart of the pipeline
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="satay_analysis_notes.html">
+   2. All what you need to know from SATAY
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Data analysis steps
+   3. Data analysis steps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Installation_Guide_SATAY_Analysis_Software.html">
+   4. ” Software installation guide for whole genome sequencing and transposon mapping”
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Data Stats
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../transposonmapping_satay.html">
+   1. Python Translation of the Matlab code from Kornmann Lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../statistics_pergene.html">
+   2. Statistics per gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../statistics_perchromosome_Compare.html">
+   3. Comparison of the statistics per chromosome
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Postprocessing scripts
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gene_reads.html">
+   1. Gene reads script
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../from-reads-to-essential-genes.html">
+   2. From reads and insertions to essentiality prediction using a Regression Model
   </a>
  </li>
 </ul>
@@ -203,61 +253,61 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview">
-   2.1. Step 1 data analysis; From raw data to essential protein overview
+   3.1. Step 1 data analysis; From raw data to essential protein overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#workflow">
-   2.2. Workflow
+   3.2. Workflow
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#initializing">
-     2.2.1. Initializing
+     3.2.1. Initializing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#quality-checking-of-the-sequencing-reads-fastqc-0-11-9">
-     2.2.2. 1. Quality checking of the sequencing reads; FASTQC (0.11.9)
+     3.2.2. 1. Quality checking of the sequencing reads; FASTQC (0.11.9)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#trimming-of-the-sequencing-reads">
-     2.2.3. 2. Trimming of the sequencing reads
+     3.2.3. 2. Trimming of the sequencing reads
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#a-trimming-of-the-sequencing-reads-trimmomatic-0-39">
-       2.2.3.1. 2a. Trimming of the sequencing reads; Trimmomatic (0.39)
+       3.2.3.1. 2a. Trimming of the sequencing reads; Trimmomatic (0.39)
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#b-trimming-of-the-sequencing-reads-bbduk-38-84">
-       2.2.3.2. 2b. Trimming of the sequencing reads; BBDuk (38.84)
+       3.2.3.2. 2b. Trimming of the sequencing reads; BBDuk (38.84)
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sequence-alignment-and-reference-sequence-indexing-bwa-0-7-17-linux">
-     2.2.4. 3. Sequence alignment and Reference sequence indexing; BWA (0.7.17) (Linux)
+     3.2.4. 3. Sequence alignment and Reference sequence indexing; BWA (0.7.17) (Linux)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#converting-sam-file-to-bam-file-samtools-1-7-and-sambamba-0-7-1-linux">
-     2.2.5. 4. Converting SAM file to BAM file; SAMtools (1.7) and sambamba (0.7.1) (Linux)
+     3.2.5. 4. Converting SAM file to BAM file; SAMtools (1.7) and sambamba (0.7.1) (Linux)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#determining-transposon-insertions-matlab-code-from-benoit-michel-et-al-2017">
-     2.2.6. 5. Determining transposon insertions: Matlab (Code from Benoit [Michel et. al. 2017])
+     3.2.6. 5. Determining transposon insertions: Matlab (Code from Benoit [Michel et. al. 2017])
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bibliography">
-   2.3. Bibliography
+   3.3. Bibliography
   </a>
  </li>
 </ul>
@@ -272,7 +322,7 @@
               <div>
                 
   <div class="section" id="data-analysis-steps">
-<h1><span class="section-number">2. </span>Data analysis steps<a class="headerlink" href="#data-analysis-steps" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Data analysis steps<a class="headerlink" href="#data-analysis-steps" title="Permalink to this headline">¶</a></h1>
 <p>For data analysis, the following steps need to be taken:</p>
 <ol class="simple">
 <li><p>Process data and represent this in a standardized way that can be easily processed.</p></li>
@@ -290,7 +340,7 @@ interactions.</p></li>
 </ol>
 <p>First, the main focus will be step 1 of the analysis (see next section).</p>
 <div class="section" id="step-1-data-analysis-from-raw-data-to-essential-protein-overview">
-<h2><span class="section-number">2.1. </span>Step 1 data analysis; From raw data to essential protein overview<a class="headerlink" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Step 1 data analysis; From raw data to essential protein overview<a class="headerlink" href="#step-1-data-analysis-from-raw-data-to-essential-protein-overview" title="Permalink to this headline">¶</a></h2>
 <p>SATAY experiments need to be sequenced which results in a FASTQ file.
 The sequence reads from this file needs to be aligned to create a SAM file (and/or the compressed {bash}ary equivalent BAM file).
 Using the BAM file, the number of transposons can be determined for each insertion location.</p>
@@ -299,7 +349,7 @@ Using the BAM file, the number of transposons can be determined for each inserti
 <p>Raw data (.FASTQ file) discussed in the paper of Michel <a class="reference external" href="http://et.al">et.al</a>. 2017 can be found at [<a class="reference external" href="https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/">https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4885/samples/</a>].</p>
 </div>
 <div class="section" id="workflow">
-<h2><span class="section-number">2.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <p>The results from the sequencing is typically represented in FASTA or FASTQ format.
 This needs to be aligned according to a reference sequence to create a SAM and BAM file.
 Before alignment, the data needs to be checked for quality and possibly trimmed to remove unwanted and unnecessary sequences.
@@ -342,7 +392,7 @@ Also (<a class="reference external" href="https://lomereiter.github.io/sambamba/
 <li><p>Creating transposon insertion maps for the genome (see the <a class="reference external" href="https://sites.google.com/site/satayusers/">satay users website</a>) and comparison essential genes between different genetic backgrounds using Venn diagrams, customized software needs to be created.</p></li>
 </ol>
 <div class="section" id="initializing">
-<h3><span class="section-number">2.2.1. </span>Initializing<a class="headerlink" href="#initializing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1. </span>Initializing<a class="headerlink" href="#initializing" title="Permalink to this headline">¶</a></h3>
 <p>The steps discussed in this section are not obligatory, but might help in organizing the data.
 The <strong>bold</strong> printed commands in this and the following sections are put so that they can be copied directly to the {bash}.
 (Note to modify the respective paths on your own machine in this Initialization step, though).
@@ -411,7 +461,7 @@ The variables containing the paths and names in this file can be changed to poin
 Then all the commands can be easily copy-pasted in the {bash} and all the processing steps can be traced back later using this text file.</p>
 </div>
 <div class="section" id="quality-checking-of-the-sequencing-reads-fastqc-0-11-9">
-<h3><span class="section-number">2.2.2. </span>1. Quality checking of the sequencing reads; FASTQC (0.11.9)<a class="headerlink" href="#quality-checking-of-the-sequencing-reads-fastqc-0-11-9" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2. </span>1. Quality checking of the sequencing reads; FASTQC (0.11.9)<a class="headerlink" href="#quality-checking-of-the-sequencing-reads-fastqc-0-11-9" title="Permalink to this headline">¶</a></h3>
 <p>FASTQC creates a report for the quality of sequencing data.
 The input should be a fastq (both zipped and unzipped), sam or bam file (it can handle multiple files at once).
 The program does not need to be installed, but after downloading only requires to be unzipped.
@@ -481,7 +531,7 @@ If you want to turn this module on again, go to the Configuration folder in the 
 </ul>
 </div>
 <div class="section" id="trimming-of-the-sequencing-reads">
-<h3><span class="section-number">2.2.3. </span>2. Trimming of the sequencing reads<a class="headerlink" href="#trimming-of-the-sequencing-reads" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3. </span>2. Trimming of the sequencing reads<a class="headerlink" href="#trimming-of-the-sequencing-reads" title="Permalink to this headline">¶</a></h3>
 <p>Next is the trimming of the sequencing reads to cut out, for example, repeated (adapter) sequences and low quality reads.
 There are two software tools adviced, Trimmomatic and BBDuk.
 Trimmomatic is relative simple to use and can be used interactively together with FASTQC.
@@ -492,7 +542,7 @@ Both software packages are explained below, but only one needs to be used.
 Currently, it is advised to use BBDuk (see section 2b).</p>
 <p>For a discussion about trimming, see for example the discussion in <a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fgene.2014.00013/full">MacManes et.al. 2014</a>, <a class="reference external" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0085024">Del Fabbro et.al. 2013</a> or <a class="reference external" href="https://pdfs.semanticscholar.org/daa6/191f2a91a1bd5008f2bda068ae3f99ec85fd.pdf">Delhomme et. al. 2014</a> or at <a class="reference external" href="https://www.basepairtech.com/blog/trimming-for-rna-seq-data/#:~:text=Quality%20trimming%20decreases%20the%20overall,useful%20data%20for%20downstream%20analyses.&amp;text=Too%20aggressive%20quality%20trimming%20can,%2C%20estimation%20of%20gene%20expression">basepairtech.com</a> (although this discussion is on RNA, similar arguments hold for DNA sequence analysis).</p>
 <div class="section" id="a-trimming-of-the-sequencing-reads-trimmomatic-0-39">
-<h4><span class="section-number">2.2.3.1. </span>2a. Trimming of the sequencing reads; Trimmomatic (0.39)<a class="headerlink" href="#a-trimming-of-the-sequencing-reads-trimmomatic-0-39" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.2.3.1. </span>2a. Trimming of the sequencing reads; Trimmomatic (0.39)<a class="headerlink" href="#a-trimming-of-the-sequencing-reads-trimmomatic-0-39" title="Permalink to this headline">¶</a></h4>
 <p>Trimmomatic alters the sequencing result by trimming the reads from unwanted sequences, as is specified by the user.
 The program does not need to be installed, but after downloading only requires to be unzipped.
 Trimmomatic can be ran as an interactive program (for this 123FASTQ needs to be used) or non-interactively using the command line options.</p>
@@ -563,7 +613,7 @@ If more files need to be trimmed using the same parameters, use</p>
 <p>Where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> should be replaced with the commands for trimmomatic.</p>
 </div>
 <div class="section" id="b-trimming-of-the-sequencing-reads-bbduk-38-84">
-<h4><span class="section-number">2.2.3.2. </span>2b. Trimming of the sequencing reads; BBDuk (38.84)<a class="headerlink" href="#b-trimming-of-the-sequencing-reads-bbduk-38-84" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.2.3.2. </span>2b. Trimming of the sequencing reads; BBDuk (38.84)<a class="headerlink" href="#b-trimming-of-the-sequencing-reads-bbduk-38-84" title="Permalink to this headline">¶</a></h4>
 <p>BBDuk is part of the BBMap package and alters the sequencing result by trimming the reads from unwanted sequences, as is specified by the user.
 The program does not need to be installed, but after downloading only requires to be unzipped.</p>
 <p>Before running BBDuk, a .fasta file can to be created that allows clipping unwanted sequences in the reads.
@@ -659,7 +709,7 @@ When such extra basepairs are present, it will be noted in FastQC.</p></li>
 </div>
 </div>
 <div class="section" id="sequence-alignment-and-reference-sequence-indexing-bwa-0-7-17-linux">
-<h3><span class="section-number">2.2.4. </span>3. Sequence alignment and Reference sequence indexing; BWA (0.7.17) (Linux)<a class="headerlink" href="#sequence-alignment-and-reference-sequence-indexing-bwa-0-7-17-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.4. </span>3. Sequence alignment and Reference sequence indexing; BWA (0.7.17) (Linux)<a class="headerlink" href="#sequence-alignment-and-reference-sequence-indexing-bwa-0-7-17-linux" title="Permalink to this headline">¶</a></h3>
 <p>The alignment can be completed using different algorithms within BWA, but the ‘Maximal Exact Matches’ (MEM) algorithm is the recommended one (which is claimed to be the most accurate and fastest algorithm and is compatible with many downstream analysis tools, see <a class="reference external" href="http://bio-bwa.sourceforge.net/bwa.shtml">documentation</a> for more information).
 BWA uses a FM-index, which uses the Burrows Wheeler Transform (BWT), to exactly align all the reads to the reference genome at the same time.
 Each alignment is given a score, based on the number of matches, mismatches and potential gaps and insertions.
@@ -685,7 +735,7 @@ documentation. Most importantly are:</p>
 After BWA is finished, a new .sam file is created in the same folder as the .fastq file.</p>
 </div>
 <div class="section" id="converting-sam-file-to-bam-file-samtools-1-7-and-sambamba-0-7-1-linux">
-<h3><span class="section-number">2.2.5. </span>4. Converting SAM file to BAM file; SAMtools (1.7) and sambamba (0.7.1) (Linux)<a class="headerlink" href="#converting-sam-file-to-bam-file-samtools-1-7-and-sambamba-0-7-1-linux" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.5. </span>4. Converting SAM file to BAM file; SAMtools (1.7) and sambamba (0.7.1) (Linux)<a class="headerlink" href="#converting-sam-file-to-bam-file-samtools-1-7-and-sambamba-0-7-1-linux" title="Permalink to this headline">¶</a></h3>
 <p>SAMtools allows for different additional processing of the data. For an overview of all functions, simply type samtools in the command line. Some useful tools are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">view</span></code> This converts files from SAM into BAM format. Enter samtools view to see the help for all commands. The format of the input file is detected automatically. Most notably are:</p>
@@ -752,7 +802,7 @@ Further analysis is done in windows, meaning that the sorted .bam files needs to
 <p>Next, the data analysis is performed using custom made codes in Matlab in Windows.</p>
 </div>
 <div class="section" id="determining-transposon-insertions-matlab-code-from-benoit-michel-et-al-2017">
-<h3><span class="section-number">2.2.6. </span>5. Determining transposon insertions: Matlab (Code from Benoit [Michel et. al. 2017])<a class="headerlink" href="#determining-transposon-insertions-matlab-code-from-benoit-michel-et-al-2017" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.6. </span>5. Determining transposon insertions: Matlab (Code from Benoit [Michel et. al. 2017])<a class="headerlink" href="#determining-transposon-insertions-matlab-code-from-benoit-michel-et-al-2017" title="Permalink to this headline">¶</a></h3>
 <p>Before the data can be used as an input for the Matlab code provided by the Kornmann lab, it needs to be copied from the shared folder to the data folder using the command:</p>
 <p>The Matlab code is provided by Benoit (see the <a class="reference external" href="https://sites.google.com/site/satayusers/complete-protocol/bioinformatics-analysis/matlab-script">website</a>) and is based on the <a class="reference external" href="https://elifesciences.org/articles/23570">paper by Michel et. al.</a>.
 Running the code requires the user to select a .bam  or .sorted.bam file (or .ordered.bam which is similar to the .sorted.bam).
@@ -958,7 +1008,7 @@ read count is the actual count (and thus not used the equation
 </div>
 </div>
 <div class="section" id="bibliography">
-<h2><span class="section-number">2.3. </span>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <p>Chen, P., Wang, D., Chen, H., Zhou, Z., &amp; He, X. (2016). The nonessentiality of essential genes in yeast provides therapeutic insights into a human disease. Genome research, 26(10), 1355-1362.</p>
 <p>Del Fabbro, C., Scalabrin, S., Morgante, M., &amp; Giorgi, F. M. (2013). An extensive evaluation of read trimming effects on Illumina NGS data analysis. PloS one, 8(12).</p>
 <p>Delhomme, N., Mähler, N., Schiffthaler, B., Sundell, D., Mannepperuma, C., &amp; Hvidsten, T. R. (2014). Guidelines for RNA-Seq data analysis. Epigenesys protocol, 67, 1-24.</p>
@@ -1004,7 +1054,8 @@ read count is the actual count (and thus not used the equation
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="flowchart.html" title="previous page"><span class="section-number">1. </span>Flowchart of the pipeline</a>
+    <a class='left-prev' id="prev-link" href="satay_analysis_notes.html" title="previous page"><span class="section-number">2. </span>All what you need to know from SATAY</a>
+    <a class='right-next' id="next-link" href="Installation_Guide_SATAY_Analysis_Software.html" title="next page"><span class="section-number">4. </span>” Software installation guide for whole genome sequencing and transposon mapping”</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
