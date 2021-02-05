@@ -1,5 +1,5 @@
 
-# " Software installation guide for whole genome sequencing and transposon mapping"
+# Software installation guide for whole genome sequencing and transposon mapping
 
 ## Introduction
 
